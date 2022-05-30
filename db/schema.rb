@@ -10,8 +10,99 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 0) do
+ActiveRecord::Schema[7.0].define(version: 2022_05_30_144215) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "associations", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "bookings", force: :cascade do |t|
+    t.datetime "start_at"
+    t.integer "amount"
+    t.string "currency"
+    t.string "status"
+    t.integer "rating"
+    t.text "comment"
+    t.string "location"
+    t.bigint "offer_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["offer_id"], name: "index_bookings_on_offer_id"
+    t.index ["user_id"], name: "index_bookings_on_user_id"
+  end
+
+  create_table "certifications", force: :cascade do |t|
+    t.string "title"
+    t.text "description"
+    t.bigint "association_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["association_id"], name: "index_certifications_on_association_id"
+  end
+
+  create_table "offers", force: :cascade do |t|
+    t.string "name"
+    t.string "category"
+    t.integer "duration"
+    t.integer "price"
+    t.text "briefing"
+    t.string "level"
+    t.string "unit_duration"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_offers_on_user_id"
+  end
+
+  create_table "user_associations", force: :cascade do |t|
+    t.integer "member_number"
+    t.bigint "association_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["association_id"], name: "index_user_associations_on_association_id"
+    t.index ["user_id"], name: "index_user_associations_on_user_id"
+  end
+
+  create_table "user_certifications", force: :cascade do |t|
+    t.bigint "certification_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["certification_id"], name: "index_user_certifications_on_certification_id"
+    t.index ["user_id"], name: "index_user_certifications_on_user_id"
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "first_name"
+    t.string "last_name"
+    t.string "phone_number"
+    t.boolean "teacher"
+    t.string "languages", default: [], array: true
+    t.text "bio"
+    t.string "location"
+    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  end
+
+  add_foreign_key "bookings", "offers"
+  add_foreign_key "bookings", "users"
+  add_foreign_key "certifications", "associations"
+  add_foreign_key "offers", "users"
+  add_foreign_key "user_associations", "associations"
+  add_foreign_key "user_associations", "users"
+  add_foreign_key "user_certifications", "certifications"
+  add_foreign_key "user_certifications", "users"
 end
