@@ -1,0 +1,44 @@
+  </div>
+    <%= simple_form_for (@offer) do |f| %>
+      <%= f.error_notification %>
+
+      <div class="form-inputs">
+        <div class="row g-3">
+          <div class="col 6">
+          <%= f.input :name, placeholder:"" %>
+          </div>
+          <div class="col 6">
+          <%= f.input :category, placeholder:"" %>
+          </div>
+        </div>
+      <div>
+        <div class="row g-3">
+          <div class="col 6">
+        <%= f.input :duration, placeholder:"" %>
+          </div>
+          <div class="col 6">
+        <%= f.input :unit_duration, placeholder:"" %>
+          </div>
+          <div class="col 6">
+          <%= f.input :price, placeholder:"" %>
+          </div>
+          <div class="col 6">
+          <%= f.input :currency, placeholder:"" %>
+          </div>
+          <div class="col 6">
+          <%= f.input :level, placeholder:"" %>
+          </div>
+        <div class="description">
+        <%= f.input :briefing, placeholder: "" %>
+        </div>
+        <%= f.input :photos, as: :file, input_html: { multiple: true }  %>
+      </div>
+
+      <div class="form-actions">
+        <div class="d-grid col-6 mx-auto mt-4">
+        <%= f.button :submit, "Create offer", class: "btn btn-primary" %>
+        </div>
+      </div>
+    <% end %>
+    </div>
+  </div>
