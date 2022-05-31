@@ -1,1 +1,8 @@
-<h1>Ceci est la show de <%= @pro.first_name %></h1>
+<div class="banner">
+</div>
+<div class= "avatar-profile">
+  <%= cl_image_tag @pro.avatar.key, class: "avatar-profile" %>
+</div>
+<h1><%= @pro.first_name %> <%= @pro.last_name[0].capitalize%>.</h1>
+
+<h2>All offers of <%= @pro.first_name %> </h2>

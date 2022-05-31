@@ -22,7 +22,7 @@
           <%= cl_image_tag p.avatar.key if p.avatar.present? %>
           <div class="card-infos font-weight-light">
             <div>
-              <h2><%= p.first_name %></h2>
+              <h2><%= p.first_name %> <%= p.last_name[0].capitalize%>.</h2>
               <p><%= p.bio %></p>
             </div>
           </div>
