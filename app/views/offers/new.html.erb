@@ -1,33 +1,37 @@
+<div class="card border-white p-5">
+  <div class="text-center">
+    <h2 class="py-2"> Add a new offer</h2>
   </div>
-    <%= simple_form_for (@offer) do |f| %>
-      <%= f.error_notification %>
+<%= simple_form_for (@offer) do |f| %>
+  <%= f.error_notification %>
 
-      <div class="form-inputs">
-        <div class="row g-3">
-          <div class="col 6">
-          <%= f.input :name, placeholder:"" %>
-          </div>
-          <div class="col 6">
-          <%= f.input :category, placeholder:"" %>
-          </div>
+    <div class="form-inputs">
+      <div class="row g-3">
+        <div class="col 6">
+        <%= f.input :name, placeholder:"" %>
         </div>
-      <div>
-        <div class="row g-3">
-          <div class="col 6">
+        <div class="col 6">
+        <%= f.input :category, placeholder:"" %>
+        </div>
+      </div>
+
+      <div class="row g-3">
+        <div class="col 6">
         <%= f.input :duration, placeholder:"" %>
-          </div>
-          <div class="col 6">
+        </div>
+        <div class="col 6">
         <%= f.input :unit_duration, placeholder:"" %>
-          </div>
-          <div class="col 6">
-          <%= f.input :price, placeholder:"" %>
-          </div>
-          <div class="col 6">
-          <%= f.input :currency, placeholder:"" %>
-          </div>
-          <div class="col 6">
-          <%= f.input :level, placeholder:"" %>
-          </div>
+        </div>
+        <div class="col 6">
+        <%= f.input :price, placeholder:"" %>
+        </div>
+        <div class="col 6">
+        <%= f.input :currency, placeholder:"" %>
+        </div>
+        <div class="col 6">
+        <%= f.input :level, placeholder:"" %>
+        </div>
+
         <div class="description">
         <%= f.input :briefing, placeholder: "" %>
         </div>
@@ -39,6 +43,6 @@
         <%= f.button :submit, "Create offer", class: "btn btn-primary" %>
         </div>
       </div>
-    <% end %>
-    </div>
-  </div>
+  <% end %>
+
+</div>
