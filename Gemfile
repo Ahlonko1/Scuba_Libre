@@ -29,6 +29,7 @@ gem "jbuilder"
 gem "devise"
 gem "pundit"
 gem "dotenv-rails", groups: [:development, :test]
+gem "cloudinary"
 
 
 # Use Redis adapter to run Action Cable in production
