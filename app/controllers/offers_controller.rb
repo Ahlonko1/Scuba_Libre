@@ -2,7 +2,6 @@ class OffersController < ApplicationController
   skip_before_action :authenticate_user!
   before_action :set_offer, only: %i[show edit update destroy]
 
-
   def show
     authorize @offer
     @booking = Booking.new
@@ -47,6 +46,7 @@ class OffersController < ApplicationController
   end
 
   def offer_params
-    params.require(:offer).permit(:name, :category, :duration, :unit_duration, :price, :currency, :level, :briefing, photos: [])
+    params.require(:offer).permit(:name, :category, :duration, :unit_duration, :price, :currency, :level, :briefing,
+                                  photos: [])
   end
 end

@@ -15,5 +15,4 @@ class Booking < ApplicationRecord
   def set_currency
     self.currency = offer.currency
   end
-
 end

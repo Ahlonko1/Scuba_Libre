@@ -2,7 +2,7 @@ class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
-          :recoverable, :rememberable, :validatable
+         :recoverable, :rememberable, :validatable
 
   has_many :offers, dependent: :destroy
   has_many :bookings
@@ -22,4 +22,10 @@ class User < ApplicationRecord
 
   scope :pro, -> { where(pro: true) }
 
+  def pro_profile_complete?
+    return true unless pro?
+
+    phone_number.present? &&
+      location.present?
+  end
 end

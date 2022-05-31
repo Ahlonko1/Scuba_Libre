@@ -1,5 +1,5 @@
 class ProsController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:index, :show]
+  skip_before_action :authenticate_user!, only: %i[index show]
 
   def index
     @pros = User.pro
@@ -8,5 +8,4 @@ class ProsController < ApplicationController
   def show
     @pro = User.find(params[:id])
   end
-
 end
