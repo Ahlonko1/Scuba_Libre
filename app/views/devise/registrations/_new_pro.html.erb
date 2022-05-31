@@ -5,22 +5,16 @@ data: {turbo: false}) do |f| %>
   <%= f.error_notification %>
 
   <div class="form-inputs">
-    <%= f.input :firstname,
+    <%= f.input :first_name,
                 required: true,
                 autofocus: true,
                 input_html: { autocomplete: "firstname" }  %>
-    <%= f.input :lastname,
+    <%= f.input :last_name,
                 required: true,
                 autofocus: true,
                 input_html: { autocomplete: "lastname" }  %>
-    <%= f.input :assocation,
-                required: true,
-                autofocus: true,
-                input_html: { autocomplete: "association" }%>
-    <%= f.input :member_number,
-                required: true,
-                autofocus: true,
-                input_html: { autocomplete: "member_number" }%>
+
+
     <%= f.input :password,
                 required: true,
                 hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
