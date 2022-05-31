@@ -11,6 +11,9 @@ class User < ApplicationRecord
   has_many :certifications, through: :user_certifications
   has_one_attached :avatar
 
+  geocoded_by :location
+  after_validation :geocode, if: :will_save_change_to_location?
+
   # Renvoie les offres que j'ai reservées
   has_many :booked_offers, through: :bookings, source: :offer
 

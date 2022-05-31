@@ -28,8 +28,8 @@ gem "stimulus-rails"
 gem "jbuilder"
 gem "devise"
 gem "pundit"
-gem "dotenv-rails", groups: [:development, :test]
 gem "cloudinary"
+gem "geocoder"
 
 
 # Use Redis adapter to run Action Cable in production
