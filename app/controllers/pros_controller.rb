@@ -4,6 +4,12 @@ class ProsController < ApplicationController
 
   def index
     @pros = User.pro
+    @markers = @pros.geocoded.map do |pro|
+      {
+        lat: pro.latitude,
+        lng: pro.longitude
+      }
+    end
   end
 
   def show
