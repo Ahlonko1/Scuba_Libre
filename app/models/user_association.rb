@@ -1,4 +1,4 @@
 class UserAssociation < ApplicationRecord
-  belongs_to :asociation
+  belongs_to :organism
   belongs_to :user
 end

@@ -7,8 +7,7 @@ class User < ApplicationRecord
   has_many :offers, dependent: :destroy
   has_many :bookings
   has_many :user_associations
-  has_many :associations, through: :user_associations
-  has_many :user_associations
+  has_many :organisms, through: :user_associations
   has_many :certifications, through: :user_certifications
   has_one_attached :avatar
 
