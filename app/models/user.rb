@@ -16,7 +16,7 @@ class User < ApplicationRecord
   has_many :booked_offers, through: :bookings, source: :offer
 
   # renvoie les offres qu'on m'a reservées
-  has_many :booking_requested, through: :bookings, source: :bookings
+  has_many :booking_requested, through: :offers, source: :bookings
   validates :first_name, :last_name, presence: true
   has_one_attached :avatar
 
