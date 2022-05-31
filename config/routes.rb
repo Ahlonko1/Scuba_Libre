@@ -17,8 +17,7 @@ Rails.application.routes.draw do
   get "pros", to: "pros#index"
   get "pros/:id", to: "pros#show"
 
+  # Routes pour les pages ->
+  get "dashboard", to: "pages#dashboard"
 
-
-  # Defines the root path route ("/")
-  # root "articles#index"
 end
