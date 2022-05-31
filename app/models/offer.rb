@@ -1,5 +1,5 @@
 class Offer < ApplicationRecord
-  belongs_to :user
+  belongs_to :user, dependant: :destroy
   has_many :bookings
   has_many_attached :photos
   validates :name, :category, :duration, :unit_duration, :price, :currency, :level, :briefing, presence: true
