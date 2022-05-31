@@ -14,7 +14,7 @@ Organism.destroy_all
 puts "Creating users..."
 puts "Create user 1..."
 user_1 = User.create!(first_name: "William", last_name: "Peirs", email: "wpeirs@gmail.com", phone_number: "0603865265",password:"azerty", languages:["French", "English", "Spanish"], location:"Gili Islands", pro: true,date_of_birth:"1990-02-04", bio: "Hi! My name is William. I am a French instructor and I love sharing my knowledge with other people. I am passionate about marine life and I can't wait to meet you for another diving experience !" )
-puts "User 1 created"
+
 user_1.avatar.attach(
   {
     io: File.open('public/images/1.jpeg'),
@@ -23,10 +23,11 @@ user_1.avatar.attach(
   }
 )
 user_1.save!
+puts "User 1 created"
 
 user_2 = User.create!(first_name: "Michele", last_name: "Campana", email: "mcampana@scubalibre.com", phone_number: "0767869809",password:"azerty", languages:["French", "English","Italian","German"], location:"Malta", pro: true,date_of_birth:"1991-05-29", bio:" Hello, I'm Michele from Switzerland. I discovered technical diving a few years ago and now I love to teach technical skills to other students." )
 puts "User 2 created"
-user_1.avatar.attach(
+user_2.avatar.attach(
   {
     io: File.open('public/images/2.jpeg'),
     filename: 'anyname.jpg',
