@@ -14,7 +14,7 @@ Organism.destroy_all
 puts "Creating users..."
 puts "Create user 1..."
 user_1 = User.create!(first_name: "William", last_name: "Peirs", email: "wpeirs@gmail.com", phone_number: "0603865265",password:"azerty", languages:["French", "English", "Spanish"], location:"Gili Islands", pro: true,date_of_birth:"1990-02-04", bio: "Hi! My name is William. I am a French instructor and I love sharing my knowledge with other people. I am passionate about marine life and I can't wait to meet you for another diving experience !" )
-puts "User 1 created"
+
 user_1.avatar.attach(
   {
     io: File.open('public/images/1.jpeg'),
@@ -23,10 +23,11 @@ user_1.avatar.attach(
   }
 )
 user_1.save!
+puts "User 1 created"
 
 user_2 = User.create!(first_name: "Michele", last_name: "Campana", email: "mcampana@scubalibre.com", phone_number: "0767869809",password:"azerty", languages:["French", "English","Italian","German"], location:"Malta", pro: true,date_of_birth:"1991-05-29", bio:" Hello, I'm Michele from Switzerland. I discovered technical diving a few years ago and now I love to teach technical skills to other students." )
 puts "User 2 created"
-user_1.avatar.attach(
+user_2.avatar.attach(
   {
     io: File.open('public/images/2.jpeg'),
     filename: 'anyname.jpg',
@@ -199,7 +200,7 @@ user_14.avatar.attach(
 user_14.save!
 
 puts "Create user 15..."
-user_15= User.create!(first_name: "Reilly", last_name: "Fogarty", email: "rfogarty@scubalibre.com", phone_number: "02133865205",password:"azerty", languages:["English","Italian"], location:"Cabo San Lucas",pro: true, date_of_birth:"1993-09-12",bio: "Reilly Fogarty is technical diving instructor based in Rockport, Massachusetts. A USCG Licensed Captain and rEvo Factory Instructor, his professional background includes surgical and wilderness emergency medicine, hyperbarics research and large-scale diving risk mitigation and first aid program design and management. He has previously worked on human trials in extreme exposure physiology for the Duke Center for Hyperbaric Medicine and Environmental Physiology and as the Risk Mitigation Team Lead for Divers Alert Network. His writing and photography work can be found in Scuba Diving Magazine, Alert Diver, Sport Diver Magazine, GUE InDepth, and numerous other outlets. When not diving or teaching, Reilly can be found taking pictures of his dog Toby, backpacking, or restoring motorcycles.")
+user_15 = User.create!(first_name: "Reilly", last_name: "Fogarty", email: "rfogarty@scubalibre.com", phone_number: "02133865205",password:"azerty", languages:["English","Italian"], location:"Cabo San Lucas",pro: true, date_of_birth:"1993-09-12",bio: "Reilly Fogarty is technical diving instructor based in Rockport, Massachusetts. A USCG Licensed Captain and rEvo Factory Instructor, his professional background includes surgical and wilderness emergency medicine, hyperbarics research and large-scale diving risk mitigation and first aid program design and management. He has previously worked on human trials in extreme exposure physiology for the Duke Center for Hyperbaric Medicine and Environmental Physiology and as the Risk Mitigation Team Lead for Divers Alert Network. His writing and photography work can be found in Scuba Diving Magazine, Alert Diver, Sport Diver Magazine, GUE InDepth, and numerous other outlets. When not diving or teaching, Reilly can be found taking pictures of his dog Toby, backpacking, or restoring motorcycles.")
 
 user_15.avatar.attach(
   {
@@ -211,7 +212,7 @@ user_15.avatar.attach(
 user_15.save!
 
 puts "Create user 16..."
-user_16= User.create!(first_name: "Gauthier", last_name: "Nadaud", email: "gnadaud@scubalibre.com",password:"azerty", teacher: false)
+user_16 = User.create!(first_name: "Gauthier", last_name: "Nadaud", email: "gnadaud@scubalibre.com", password:"azerty", pro: false)
 
 user_16.avatar.attach(
   {
@@ -223,7 +224,7 @@ user_16.avatar.attach(
 user_16.save!
 
 puts "Create user 17..."
-user_17= User.create!(first_name: "Ahlonko", last_name: "Kowouvi", email: "akowouvi@scubalibre.com",password:"azerty", teacher: false)
+user_17 = User.create!(first_name: "Ahlonko", last_name: "Kowouvi", email: "akowouvi@scubalibre.com", password:"azerty", pro: false)
 
 user_17.avatar.attach(
   {
@@ -235,7 +236,7 @@ user_17.avatar.attach(
 user_17.save!
 
 puts "Create organism 18..."
-user_18= User.create!(first_name: "Morgan", last_name: "Le Moroux", email: "mlemoroux@scubalibre.com",password:"azerty", teacher: false)
+user_18 = User.create!(first_name: "Morgan", last_name: "Le Moroux", email: "mlemoroux@scubalibre.com", password:"azerty", pro: false)
 
 user_18.avatar.attach(
   {
@@ -247,13 +248,13 @@ user_18.avatar.attach(
 user_18.save!
 
 puts "Create organism 1..."
-organism_1= Organism.create!(name: "PADI")
- organism_1.save!
+Organism_1 = Organism.create!(name: "PADI")
+Organism_1.save!
 
 puts "Create organism 2..."
-organism_2= Organism.create!(name: "SSI")
-organism_2.save!
+Organism_2 = Organism.create!(name: "SSI")
+Organism_2.save!
 
- puts "Create organism 3..."
-organism_3= Organism.create!(name: "TDI")
- organism_3.save!
+puts "Create organism 3..."
+Organism_3 = Organism.create!(name: "TDI")
+Organism_3.save!
