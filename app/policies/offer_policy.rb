@@ -23,5 +23,4 @@ class OfferPolicy < ApplicationPolicy
   def destroy?
     offer.user == user
   end
-
 end
