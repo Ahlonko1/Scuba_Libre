@@ -20,4 +20,6 @@ class User < ApplicationRecord
   validates :first_name, :last_name, presence: true
   has_one_attached :avatar
 
+  scope :pro, -> { where(pro: true) }
+
 end
