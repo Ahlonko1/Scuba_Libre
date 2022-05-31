@@ -7,7 +7,7 @@
 #   Character.create(name: "Luke", movie: movies.first)
 Offer.destroy_all
 User.destroy_all
-Association.destroy_all
+Organism.destroy_all
 
 
 
@@ -234,7 +234,7 @@ user_17.avatar.attach(
 )
 user_17.save!
 
-puts "Create association 18..."
+puts "Create organism 18..."
 user_18= User.create!(first_name: "Morgan", last_name: "Le Moroux", email: "mlemoroux@scubalibre.com",password:"azerty", teacher: false)
 
 user_18.avatar.attach(
@@ -246,14 +246,14 @@ user_18.avatar.attach(
 )
 user_18.save!
 
-puts "Create association 1..."
-association_1= Association.create!(name: "PADI")
- association_1.save!
+puts "Create organism 1..."
+organism_1= Organism.create!(name: "PADI")
+ organism_1.save!
 
-puts "Create association 2..."
-association_2= Association.create!(name: "SSI")
-association_2.save!
+puts "Create organism 2..."
+organism_2= Organism.create!(name: "SSI")
+organism_2.save!
 
- puts "Create association 3..."
-association_3= Association.create!(name: "TDI")
- association_3.save!
+ puts "Create organism 3..."
+organism_3= Organism.create!(name: "TDI")
+ organism_3.save!

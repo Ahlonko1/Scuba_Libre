@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_05_31_130156) do
+ActiveRecord::Schema[7.0].define(version: 2022_05_31_141744) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -42,12 +42,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_31_130156) do
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
 
-  create_table "associations", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "bookings", force: :cascade do |t|
     t.datetime "start_at"
     t.integer "amount"
@@ -67,10 +61,10 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_31_130156) do
   create_table "certifications", force: :cascade do |t|
     t.string "title"
     t.text "description"
-    t.bigint "association_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["association_id"], name: "index_certifications_on_association_id"
+    t.bigint "organism_id"
+    t.index ["organism_id"], name: "index_certifications_on_organism_id"
   end
 
   create_table "offers", force: :cascade do |t|
@@ -88,13 +82,19 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_31_130156) do
     t.index ["user_id"], name: "index_offers_on_user_id"
   end
 
+  create_table "organisms", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "user_associations", force: :cascade do |t|
     t.integer "member_number"
-    t.bigint "association_id", null: false
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["association_id"], name: "index_user_associations_on_association_id"
+    t.bigint "organism_id"
+    t.index ["organism_id"], name: "index_user_associations_on_organism_id"
     t.index ["user_id"], name: "index_user_associations_on_user_id"
   end
 
@@ -131,9 +131,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_31_130156) do
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "bookings", "offers"
   add_foreign_key "bookings", "users"
-  add_foreign_key "certifications", "associations"
   add_foreign_key "offers", "users"
-  add_foreign_key "user_associations", "associations"
   add_foreign_key "user_associations", "users"
   add_foreign_key "user_certifications", "certifications"
   add_foreign_key "user_certifications", "users"
