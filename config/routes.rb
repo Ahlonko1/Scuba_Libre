@@ -15,7 +15,7 @@ Rails.application.routes.draw do
 
   # Routes pour les pros ->
   get "pros", to: "pros#index"
-  get "pros/:id", to: "pros#show"
+  get "pros/:id", to: "pros#show", as: :pro
 
   # Routes pour les pages ->
   get "dashboard", to: "pages#dashboard"
