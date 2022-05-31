@@ -13,6 +13,11 @@ Rails.application.routes.draw do
     end
   end
 
-  # Defines the root path route ("/")
-  # root "articles#index"
+  # Routes pour les pros ->
+  get "pros", to: "pros#index"
+  get "pros/:id", to: "pros#show"
+
+  # Routes pour les pages ->
+  get "dashboard", to: "pages#dashboard"
+
 end
