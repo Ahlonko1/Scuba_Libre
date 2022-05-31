@@ -56,6 +56,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_31_095211) do
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "currency"
     t.index ["user_id"], name: "index_offers_on_user_id"
   end
 
@@ -93,6 +94,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_31_095211) do
     t.string "languages", default: [], array: true
     t.text "bio"
     t.string "location"
+    t.date "date_of_birth"
     t.float "latitude"
     t.float "longitude"
     t.index ["email"], name: "index_users_on_email", unique: true
