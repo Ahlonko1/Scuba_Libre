@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
   # Pundit: white-list approach
   after_action :verify_authorized, except: :index, unless: :skip_pundit?
   # after_action :verify_policy_scoped, only: :index, unless: :skip_pundit?@
-  # before_action :verify_profile_complete
+  before_action :verify_profile_complete
 
   # Uncomment when you *really understand* Pundit!
   # rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
@@ -26,12 +26,12 @@ class ApplicationController < ActionController::Base
 
   private
 
-  # def verify_profile_complete
-  #   return unless user_signed_in?
-  #   return if (params[:controller] == 'pages' && params[:action] == 'dashboard')
+  def verify_profile_complete
+    return unless user_signed_in?
+    return if (params[:controller] == 'pages' && params[:action] == 'dashboard')
 
-  #   redirect_to dashboard_path, notice: 'prout' if current_user.pro_profile_complete?
-  # end
+    redirect_to dashboard_path, notice: 'prout' if current_user.pro_profile_complete?
+  end
 
   def skip_pundit?
     devise_controller? || params[:controller] =~ /(^(rails_)?admin)|(^pages$)/

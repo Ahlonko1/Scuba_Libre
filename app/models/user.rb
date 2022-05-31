@@ -24,7 +24,6 @@ class User < ApplicationRecord
   def pro_profile_complete?
     return true unless pro?
 
-    phone_number.present? &&
-      location.present?
+    phone_number.present? && location.present?
   end
 end
