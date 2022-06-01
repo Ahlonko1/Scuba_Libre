@@ -3,29 +3,39 @@
 data: {turbo: false}) do |f| %>
   <%= f.error_notification %>
 
-  <div class="form-inputs">
+  <div class="form-inputs mt-3">
     <%= f.input :first_name,
                 required: true,
                 autofocus: true,
-                input_html: { autocomplete: "firstname" }  %>
+                label: false,
+                input_html: { autocomplete: "firstname" },
+                placeholder: "Firstname*"  %>
     <%= f.input :last_name,
                 required: true,
                 autofocus: true,
-                input_html: { autocomplete: "lastname" }  %>
+                label: false,
+                input_html: { autocomplete: "lastname" },
+                placeholder: "Lastname*"  %>
 
     <%= f.input :email,
                 required: true,
                 autofocus: true,
-                input_html: { autocomplete: "email" }%>
+                label: false,
+                input_html: { autocomplete: "email" },
+                placeholder: "email*"%>
 
                 <%= hidden_field_tag :pro, true %>
     <%= f.input :password,
                 required: true,
+                label: false,
                 hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                input_html: { autocomplete: "new-password" } %>
+                input_html: { autocomplete: "new-password" },
+                placeholder: "password*" %>
     <%= f.input :password_confirmation,
                 required: true,
-                input_html: { autocomplete: "new-password" } %>
+                label: false,
+                input_html: { autocomplete: "new-password" },
+                placeholder: "password confirmation*" %>
 
 
 
