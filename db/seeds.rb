@@ -5,8 +5,11 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+puts "Destroy Offer"
 Offer.destroy_all
+puts "Destroy User"
 User.destroy_all
+puts "Destroy Organism"
 Organism.destroy_all
 
 
@@ -281,7 +284,7 @@ Final exam; open water dives 3 and 4; celebrate!!!",
   prerequisites: "To learn to dive and to enroll in the PADI Open Diver course or Junior Open Water Diver course, you must be 10 years or older
   You will also need to be able to swim: there is a 200m swim test or 300m snorkel test that you will need to pass during the course
   You will be required to demonstrate that you can comfortably float or tread water for 10 minutes.  You will also need to complete a 200m surface swim or a 300m swim using a mask, snorkel and fins",
-  included:"Equipment Rental
+  included: "Equipment Rental
   Dive Computer Rental
   PADI Open Water – E-Manual
   Logbook
@@ -289,6 +292,10 @@ Final exam; open water dives 3 and 4; celebrate!!!",
   dives: 4)
 offer_1.user = User.all.sample
 offer_1.save!
+
+puts "Offer 1 OK"
+
+puts "Create offer 1..."
 
 offer_2 = Offer.new(name: "PADI Discover Scuba Diving",
   category: "Course",
@@ -301,12 +308,16 @@ offer_2 = Offer.new(name: "PADI Discover Scuba Diving",
   level: "Beginner",
   prerequisites: "You must be 10 years or older
   No previous experience is necessary, but you must be able to complete the diver medical statement.",
-  included:"Equipment rental
+  included: "Equipment rental
   One ocean dive
   Pool training session",
   dives: 1)
 offer_2.user = User.all.sample
 offer_2.save!
+
+puts "Offer 2 OK"
+
+puts "Create offer 3..."
 
 offer_3 = Offer.new(name: "PADI Scuba Diver ",
   category: "Course",
@@ -330,14 +341,19 @@ offer_3 = Offer.new(name: "PADI Scuba Diver ",
   prerequisites: "To learn to dive and to enroll in the PADI Scuba Diver Course, you must be 10 years or older
   You need adequate swimming skills and need to be in good physical health
   No prior experience with scuba diving is required, but you can try it first through the Discover Scuba Diving program",
-  included:"Equipment Rental
+  included: "Equipment Rental
   Dive Computer Rental
   PADI Open Water – E-Manual
   Logbook
   PADI Certification",
   dives: 2)
+
 offer_3.user = User.all.sample
 offer_3.save!
+
+puts "Offer 3 OK"
+
+puts "Create offer 4..."
 
 offer_4 = Offer.new(name: "PADI Advanced Open Water ",
   category: "Course",
@@ -361,6 +377,10 @@ offer_4 = Offer.new(name: "PADI Advanced Open Water ",
 offer_4.user = User.all.sample
 offer_4.save!
 
+puts "Offer 4 OK"
+
+puts "Create offer 5..."
+
 offer_5 = Offer.new(name: "Emergency First Response (EFR)",
   category: "Course",
   duration: 1,
@@ -379,10 +399,14 @@ offer_5 = Offer.new(name: "Emergency First Response (EFR)",
   These skills can be used in any area or environment.  Most work organizations will accept this as a recognized first aid certificate.",
   level: "Advanced",
   prerequisites: "If you already hold a First AID & CPR training certificate issued within the last 2 years, then you will not need to complete the Emergency First Responder (EFR) training.  However, we do recommend a refresher",
-  included: "",
+  included: "La mère à Will",
   dives: 0)
 offer_5.user = User.all.sample
 offer_5.save!
+
+puts "Offer 5 OK"
+
+puts "Create offer 6..."
 
 
 
@@ -427,6 +451,10 @@ offer_6 = Offer.new(name: "PADI Rescue Diver",
 offer_6.user = User.all.sample
 offer_6.save!
 
+puts "Offer 6 OK"
+
+puts "Create offer 7..."
+
 offer_7 = Offer.new(name: "PADI enriched Air Diver (NITROX)",
   category: "Course",
   duration: 3 ,
@@ -453,6 +481,10 @@ offer_7 = Offer.new(name: "PADI enriched Air Diver (NITROX)",
   dives: 5)
 offer_7.user = User.all.sample
 offer_7.save!
+
+puts "Offer 7 OK"
+
+puts "Create offer 8..."
 
 
 
@@ -482,6 +514,10 @@ offer_8 = Offer.new(name: "PADI Deep Diver Course",
   dives: 4)
   offer_8.user = User.all.sample
   offer_8.save!
+
+puts "Offer 8 OK"
+
+puts "Create offer 9..."
 
 offer_9 = Offer.new(name: "PADI Sidemount Diver Course",
   category: "Course",
@@ -513,6 +549,10 @@ offer_9 = Offer.new(name: "PADI Sidemount Diver Course",
 offer_9.user = User.all.sample
 offer_9.save!
 
+puts "Offer 9 OK"
+
+puts "Create offer 10..."
+
 offer_10 = Offer.new(name: "PADI Wreck Diver Course",
   category: "Course",
   duration: 2,
@@ -541,6 +581,10 @@ offer_10 = Offer.new(name: "PADI Wreck Diver Course",
   dives: 4)
 offer_10.user = User.all.sample
 offer_10.save!
+
+puts "Offer 10 OK"
+
+puts "Create offer 11..."
 
 offer_11 = Offer.new(name: "PADI Night Diver Course",
   category: "Course",
@@ -571,6 +615,10 @@ offer_11 = Offer.new(name: "PADI Night Diver Course",
 offer_11.user = User.all.sample
 offer_11.save!
 
+puts "Offer 11 OK"
+
+puts "Create offer 12..."
+
 offer_12 = Offer.new(name: "PADI Peak Performance Buoyancy Course",
   category: "Course",
   duration: 1,
@@ -597,6 +645,10 @@ offer_12 = Offer.new(name: "PADI Peak Performance Buoyancy Course",
 offer_12.user = User.all.sample
 offer_12.save!
 
+puts "Offer 12 OK"
+
+puts "Create offer 13..."
+
 offer_13 = Offer.new(name: "PADI Search & Recovery Course",
   category: "Course",
   duration: 2,
@@ -618,6 +670,10 @@ offer_13 = Offer.new(name: "PADI Search & Recovery Course",
   dives: 4)
 offer_13.user = User.all.sample
 offer_13.save!
+
+puts "Offer 13 OK"
+
+puts "Create offer 14..."
 
 offer_14 = Offer.new(name: "PADI Project Aware Shark Conservation Specialty Course",
   category: "Course",
@@ -642,6 +698,10 @@ offer_14 = Offer.new(name: "PADI Project Aware Shark Conservation Specialty Cour
   dives: 2)
 offer_14.user = User.all.sample
 offer_14.save!
+
+puts "Offer 14 OK"
+
+puts "Create offer 15..."
 
 offer_15 = Offer.new(name: "PADI Digital Underwater Photographer Course",
   category: "Course",
@@ -670,3 +730,5 @@ offer_15 = Offer.new(name: "PADI Digital Underwater Photographer Course",
   dives: 2)
 offer_15.user = User.all.sample
 offer_15.save!
+
+puts "Offer 15 OK"
