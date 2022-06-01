@@ -1,16 +1,19 @@
 
-  <div class="nav nav-tabs">
-    <div class="nav-link active" data-bs-toggle="tab" aria-selected="true">Sign up as a diver</div>
-    <%= render "new_diver" %>
+  <div class="container opacity" style="width: 550px">
+  <div class="card border-white p-5">
+  <h1>Sign up</h1>
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+      <li class="nav-item" role="presentation" >
+        <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Sign up as a diver</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">Sign up as a pro</button>
+      </li>
+    </ul>
+    <div class="tab-content" id="myTabContent">
+      <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab"><%= render "new_diver" %></div>
+      <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab"><%= render "new_pro" %></div>
+    </div>
+  <%= render "devise/shared/links" %>
   </div>
-
-<div class="nav nav-tabs">
-  <div class="nav-link" data-bs-toggle="tab" aria-selected="false">Sign up as a pro</div>
-<%= render "new_pro" %>
-</div>
-
-<%# if subscribe as a diver -> %>
-
-<%# else subsribe as a pro -> %>
-
-<%= render "devise/shared/links" %>
+  </div>
