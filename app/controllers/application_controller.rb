@@ -28,7 +28,7 @@ class ApplicationController < ActionController::Base
 
   def verify_profile_complete
     return unless user_signed_in?
-    return if (params[:controller] == 'pages' && params[:action] == 'dashboard')
+    return if params[:controller] == 'pages' && params[:action] == 'dashboard'
 
     redirect_to dashboard_path, notice: 'prout' if current_user.pro_profile_complete?
   end
