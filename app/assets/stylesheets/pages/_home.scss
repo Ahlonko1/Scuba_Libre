@@ -1,1 +1,36 @@
 // Specific CSS for your home-page
+#background-video {
+  height: 100vh;
+  width: 100vw;
+  object-fit: cover;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: -1;
+  position: fixed;
+  }
+
+
+
+.banner {
+  background-size: fill;
+  background-position: center;
+  padding: 250px 0;
+  // background-image: url('batal.jpg')
+
+}
+
+.banner h1 {
+  margin: 0;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-size: 37px;
+  font-weight: bold;
+}
+
+.banner p {
+  font-size: 25px;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
+}
