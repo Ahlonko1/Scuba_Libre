@@ -3,7 +3,11 @@ class ProsController < ApplicationController
   skip_after_action :verify_authorized
 
   def index
-    @pros = User.pro
+    if params[:query].present?
+      @pros = User.global_search("%#{params[:query]}%")
+    else
+      @pros = User.pro
+    end
     @markers = @pros.geocoded.map do |pro|
       {
         lat: pro.latitude,
