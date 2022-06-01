@@ -1,12 +1,54 @@
-.navbar-lewagon {
+// Navbar LE WAGON ///
+
+.navbar-transparent {
   justify-content: space-between;
-  background: white;
+  background-color: transparent;
+  transition: 0.5s background-color ease;
+    .navbar-collapse {
+      flex-grow: 0;
+    }
+    .navbar-brand img {
+      width: 40px;
+    }
 }
 
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
+.container-transparent-navbar {
+  margin-top: 120px;
 }
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
+// Navbar White ///
+
+.navbar-plain {
+  justify-content: space-between;
+  background-color: white;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+    .navbar-collapse {
+      flex-grow: 0;
+    }
+    .btn-outline-light {
+      color: black;
+      background-color: white;
+      border-color: black;
+      &:hover {
+        color: white;
+        background-color: black;
+        border-color: white;
+      }
+    }
+}
+
+// DROPDOWN MENU
+
+.navbar .dropdown a {
+  color: $blue;
+}
+
+.navbar .dropdown-menu {
+  border-radius: 3px;
+}
+
+.HellonoHover{
+  pointer-events: none;
+  text-align: center;
+  border-bottom: 0.5px solid $blue;
 }
