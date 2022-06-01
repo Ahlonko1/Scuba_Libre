@@ -14,5 +14,6 @@ class ProsController < ApplicationController
 
   def show
     @pro = User.find(params[:id])
+    @offers = @pro.offers
   end
 end

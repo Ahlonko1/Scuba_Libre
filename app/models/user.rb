@@ -25,8 +25,9 @@ class User < ApplicationRecord
   scope :pro, -> { where(pro: true) }
 
   def pro_profile_complete?
-    return true unless pro?
+    return false
+  #   return true unless pro?
 
-    phone_number.present? && location.present?
+  #   phone_number.present? && location.present?
   end
 end
