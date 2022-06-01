@@ -1,10 +1,16 @@
-<%= render "new_diver" %>
+
+  <div class="nav nav-tabs">
+    <div class="nav-link active" data-bs-toggle="tab" aria-selected="true">Sign up as a diver</div>
+    <%= render "new_diver" %>
+  </div>
+
+<div class="nav nav-tabs">
+  <div class="nav-link" data-bs-toggle="tab" aria-selected="false">Sign up as a pro</div>
 <%= render "new_pro" %>
+</div>
+
 <%# if subscribe as a diver -> %>
 
 <%# else subsribe as a pro -> %>
-
-
-
 
 <%= render "devise/shared/links" %>
