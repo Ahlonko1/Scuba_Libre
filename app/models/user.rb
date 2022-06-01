@@ -4,12 +4,24 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+  include PgSearch::Model
+
+
   has_many :offers, dependent: :destroy
   has_many :bookings
   has_many :user_associations
   has_many :organisms, through: :user_associations
   has_many :certifications, through: :user_certifications
   has_one_attached :avatar
+
+  pg_search_scope :global_search,
+  against: [ :first_name, :last_name, :location ],
+  associated_against: {
+    offers: [ :name, :category, :level ]
+  },
+  using: {
+    tsearch: { prefix: true }
+}
 
   geocoded_by :location
   after_validation :geocode, if: :will_save_change_to_location?
