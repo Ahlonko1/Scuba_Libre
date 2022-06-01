@@ -28,8 +28,8 @@
           <div class="card-infos font-weight-light">
             <div>
               <h2><%= p.first_name %> <%= p.last_name[0].capitalize%>.</h2>
-              <p><%= p.bio %></p>
-            </div>
+                <p><%= truncate p.bio, length: 160 %> </p>
+              </div>
           </div>
         </div>
       <% end %>

@@ -399,7 +399,7 @@ offer_5 = Offer.new(name: "Emergency First Response (EFR)",
   These skills can be used in any area or environment.  Most work organizations will accept this as a recognized first aid certificate.",
   level: "Advanced",
   prerequisites: "If you already hold a First AID & CPR training certificate issued within the last 2 years, then you will not need to complete the Emergency First Responder (EFR) training.  However, we do recommend a refresher",
-  included: "La mère à Will",
+  included: "Equipment rental",
   dives: 0)
 offer_5.user = User.all.sample
 offer_5.save!
