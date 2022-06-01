@@ -5,15 +5,14 @@
 </div>
 <h1><%= @pro.first_name %> <%= @pro.last_name[0].capitalize%>.</h1>
 
-<h2>All offers of <%= @pro.first_name %> </h2>
+
+<h2>Modal on - All offers of <%= @pro.first_name %> </h2>
 
 <div class="cards mb-4">
     <% @offers.each do |o| %>
-        <div class="card-offers">
-          <h2><%= o.name %></h2>
-          <p><%= o.price %> <%= o.currency %></p>
-        </div>
+        <%= render "offers/show_offers_pro", offer: o %>
     <% end %>
 </div>
+
 
 <%= link_to "Create a new offer", new_offer_path %>
