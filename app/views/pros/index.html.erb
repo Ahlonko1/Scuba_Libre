@@ -34,8 +34,8 @@
             <div>
               <h2><%= p.first_name %> <%= p.last_name[0].capitalize%>.</h2>
               <h6><i class="fa-solid fa-location-pin"></i> </h6>
-
-                <p><%= truncate p.bio, length: 160 %> </p>
+                <p><%= truncate p.bio, length: 100 %> </p>
+                <p><%= p.location %></p>
               </div>
           </div>
         </div>

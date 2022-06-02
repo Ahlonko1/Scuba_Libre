@@ -1,4 +1,4 @@
-// Navbar LE WAGON ///
+// Navbar Transparent ///
 
 .navbar-transparent {
   justify-content: space-between;
@@ -13,7 +13,7 @@
 }
 
 .container-transparent-navbar {
-  margin-top: 120px;
+  margin-top: 80px;
 }
 
 // Navbar White ///
@@ -35,7 +35,12 @@
         border-color: white;
       }
     }
-}
+    .btn-pro {
+      margin-left: -10px;
+      color: $red;
+      font-size: smaller;
+    }
+  }
 
 // DROPDOWN MENU
 
@@ -62,23 +67,23 @@
   border: 1px solid #e7e7e9;
   justify-content: left !important;
     i {
-    color: white;
+      color: white;
     }
     .form-control {
-    border: none;
-    border-radius: 25px;
-    background-color: white;
-    &:focus {
+      border: none;
+      border-radius: 25px;
+      background-color: white;
+      &:focus {
       box-shadow: none;
       }
     }
-
-  .btn-primary {
-    border-radius: 100px;
-    margin: 3px;
-    margin-left: 40px;
-  }
+    .btn-primary {
+      border-radius: 100px;
+      margin: 3px;
+      margin-left: 40px;
+    }
 }
+
 .btn-filter {
   background-color: #eef3f9;
   color: #3439C9;
@@ -93,3 +98,13 @@
   height: 350px;
   margin: 10px auto;
 }
+
+  
+.btn-secondary {
+    background-color: #eef3f9;
+    color: #3439C9;
+    border: none;
+    border-radius: 23px;
+    margin-bottom: 10px
+}
+

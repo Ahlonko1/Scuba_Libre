@@ -1,1 +1,11 @@
-<h1>Ceci est un dashboard de qualité.</h1>
+<div class="container-transparent-navbar">
+
+  <div>
+        <div class="text-center">
+          <h1><i class="fa-solid fa-dharmachakra"></i> Dashboard</h1>
+          <h2>Welcome <%= current_user.first_name %>, 🤿</h2>
+        </div>
+        <%= render "bookings/dashboard"%>
+        <%# <%= render "boats/owner_boats"%>
+  </div>
+</div>

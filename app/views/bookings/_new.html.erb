@@ -1,0 +1,22 @@
+<div class="mt-3">
+<h3>Request the booking of this dive</h3>
+<%= simple_form_for [offer, @booking], data: { controller: 'flatpickr' } do |f| %>
+            <%= f.error_notification %>
+            <div class="d-flex align-items-center">
+              <div class="mb-3 me-3 string optional start_at">
+                <%= f.input :start_at,
+                            as: :string,
+                            input_html: {
+                              class: "start_at",
+                              data: {flatpickr_target: "dateInput"}
+                            }
+                            %>
+              </div>
+              <% if user_signed_in? %>
+                <%= f.submit 'Book dive', class: "btn btn-primary" %>
+              <% else %>
+                <%= f.submit 'Book dive', class: "disabled btn" %>
+              <% end %>
+            </div>
+          <% end %>
+</div>
