@@ -19,6 +19,7 @@ class ProsController < ApplicationController
   def show
     @pro = User.find(params[:id])
     @offers = @pro.offers
+    @booking = Booking.new
   end
 
 end
