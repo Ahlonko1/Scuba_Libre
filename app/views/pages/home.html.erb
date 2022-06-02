@@ -1,19 +1,18 @@
 <div class="container">
-  <div class="banner" >
-      <h1>Welcome to Scuba libre</h1>
-      <p>Find a scuba instructor for your next dive!</p>
-      <div class="search w-25">
-          <%= form_tag pros_path, method: :get, class: "d-flex" do %>
-            <%= text_field_tag :query,
-              params[:query],
-              class: "form-control",
-              placeholder: "Find a pro"
-            %>
-          <button name="button" type="submit" class="btn btn-primary">
-            <i class="fas fa-search"></i>
-          </button>
-          <% end %>
-      </div>
+<div class="banner" >
+    <h1>Welcome to Scuba libre</h1>
+    <p>Find a scuba instructor for your next dive!</p>
+    <div class="search w-25">
+        <%= form_tag pros_path, method: :get, class: "d-flex" do %>
+          <%= text_field_tag :query,
+            params[:query],
+            class: "form-control",
+            placeholder: "Where do you want to dive?"
+          %>
+        <button name="button" type="submit" class="btn btn-primary">
+          <i class="fas fa-search"></i>
+        </button>
+        <% end %>
     </div>
   <%= video_tag "https://res.cloudinary.com/dmpzucunq/video/upload/v1654116041/sea_-_13704_Original_osebcs.mp4", autoplay: true, muted: true, loop: true, id: "background-video" %>
 </div>

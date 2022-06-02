@@ -4,7 +4,7 @@ class ProsController < ApplicationController
 
   def index
     if params[:query].present?
-      @pros = User.global_search("%#{params[:query]}%")
+      @pros = User.pro.near(params[:query], 100)
     else
       @pros = User.pro
     end
@@ -20,4 +20,5 @@ class ProsController < ApplicationController
     @pro = User.find(params[:id])
     @offers = @pro.offers
   end
+
 end
