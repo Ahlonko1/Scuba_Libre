@@ -30,9 +30,10 @@
         <h5>Prerequisites:</h5>
         <p><%= offer.prerequisites %></p>
       </div>
-      <div class="modal-footer">
+      <div class="modal-footer justify-content-between">
+      <%= render "bookings/new", offer: offer %>
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Request booking</button>
+        <%# <button type="button" class="btn btn-primary">Request booking</button> %>
       </div>
     </div>
   </div>

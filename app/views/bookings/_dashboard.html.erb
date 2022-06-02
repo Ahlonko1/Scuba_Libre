@@ -1,0 +1,17 @@
+<h5>Pending bookings of your requests :</h5>
+  <% @bookings_user.each do |b| %>
+    <div class="card-booking">
+
+      <div class="card-booking-infos">
+        <h2>Offer: <%= b.offer.name %></h2>
+        <p>Status: <%=b.status %></p>
+        <p>Pro: <%=b.offer.user.first_name %></p>
+        <p>Start date: <%= b.start_at %></p>
+        <p>Location: <%= b.location %></p>
+        <p>Price: <%= b.amount %></p>
+      </div>
+      <div class="buttons d-grid">
+        <i style="font-size: 35px; color:blue;" class="fa-solid fa-user-clock"></i>
+       </div>
+    </div>
+<% end %>
