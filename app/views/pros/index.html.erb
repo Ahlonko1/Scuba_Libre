@@ -28,14 +28,14 @@
   <div class="cards mb-4">
     <% @pros.each do |p| %>
       <%= link_to pro_path(p) do %>
-        <div class="card-pro">
+        <div class="card-pro shadow-sm">
           <%= cl_image_tag p.avatar.key if p.avatar.present? %>
           <div class="card-infos font-weight-light">
             <div>
               <h2><%= p.first_name %> <%= p.last_name[0].capitalize%>.</h2>
-              <h6><i class="fa-solid fa-location-pin"></i> </h6>
-                <p><%= truncate p.bio, length: 100 %> </p>
-                <p><%= p.location %></p>
+              <h6><i style="color:#477E9F" class="fa-solid fa-location-pin mx-1"></i><p><%= p.location %></p></h6>
+                <p><%= truncate p.bio, length: 100 %></p>
+
               </div>
           </div>
         </div>
