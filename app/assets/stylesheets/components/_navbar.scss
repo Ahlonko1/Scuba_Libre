@@ -1,4 +1,4 @@
-// Navbar LE WAGON ///
+// Navbar Transparent ///
 
 .navbar-transparent {
   justify-content: space-between;
@@ -35,7 +35,12 @@
         border-color: white;
       }
     }
-}
+    .btn-pro {
+      margin-left: -10px;
+      color: $red;
+      font-size: smaller;
+    }
+  }
 
 // DROPDOWN MENU
 
