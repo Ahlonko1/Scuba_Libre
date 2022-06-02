@@ -22,15 +22,15 @@ class BookingsController < ApplicationController
 
   def denied
     @booking = Booking.find(params[:id])
-    @booking.status = "denied"
     authorize @booking
+    @booking.status = "denied"
     redirect_to dashboard_path
   end
 
   def cancelled
     @booking = Booking.find(params[:id])
-    @booking.status = "cancelled"
     authorize @booking
+    @booking.status = "cancelled"
     redirect_to dashboard_path
   end
 
