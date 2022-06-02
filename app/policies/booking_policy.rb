@@ -5,7 +5,28 @@ class BookingPolicy < ApplicationPolicy
     #   scope.all
     # end
   end
+
+  def show?
+    true
+  end
+
+  def new?
+    true
+  end
+
   def create?
     true
+  end
+
+  def accepted?
+    record.offer.user == user
+  end
+
+  def denied?
+    record.offer.user == user
+  end
+
+  def cancelled?
+    record.offer.user == user
   end
 end

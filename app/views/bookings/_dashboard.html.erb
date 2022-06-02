@@ -1,13 +1,13 @@
-<h3>Your pending bookings</h3>
-  <div class="cards d-flex">
+<h3 class="mx-5"><u>YOUR BOOKINGS</u></h3>
+  <div class="cards mx-5 mb-5">
   <% @bookings_user.each do |b| %>
 
-      <div class="card-booking px-5 py-5">
+      <div class="card-pro shadow-sm">
         <div class="buttons d-grid">
           <i style="font-size: 25px; color:blue;" class="fa-solid fa-user-clock"></i>
         </div>
 
-        <div class="card-booking-infos">
+        <div class="card-infos">
           <h5><%= b.offer.name %></h5>
           <p><span class="badge badge-pill">Status</span> <%=b.status %></p>
           <p><span class="badge badge-pill">Pro</span> <%=b.offer.user.first_name %></p>
@@ -16,9 +16,14 @@
           <p><span class="badge badge-pill">Price</span> <%= b.amount %></p>
         </div>
 
-      <% if b.status == "pending"  %>
+          <% if b.status == "pending"  %>
+            <div class="text-center">
+              <%= link_to "Cancel", cancelled_booking_path(b), data: {turbo_method: :patch, turbo_confirm: "Are you sure?"}, class: "btn btn-outline-warning" %>
+            </div>
+          <% end %>
+          <% if b.status == "cancelled"  %>
             <div class="buttons d-grid">
-              <%= link_to "Cancel", cancelled_booking_path(b), data: {turbo_method: :patch, turbo_confirm: "Are you sure?"}, class: "btn btn-outline-danger" %>
+              <i style="font-size: 25px; color:orange;" class="fa-regular fa-face-frown"></i>
             </div>
           <% end %>
 
@@ -26,16 +31,16 @@
   <% end %>
 </div>
 
-<h3>Bookings requested</h3>
-  <div class="cards d-flex">
+<h3 class="mx-5"><u>BOOKINGS AWAITING YOUR CONFIRMATION</u></h3>
+  <div class="cards mx-5 mb-5">
   <% @bookings_owner.each do |b| %>
 
-      <div class="card-booking px-5 py-5">
+      <div class="card-pro shadow-sm">
         <div class="buttons d-grid">
           <i style="font-size: 25px; color:blue;" class="fa-solid fa-user-clock"></i>
         </div>
 
-        <div class="card-booking-infos">
+        <div class="card-infos">
           <h5><%= b.offer.name %></h5>
           <p><span class="badge badge-pill">Status</span> <%=b.status %></p>
           <p><span class="badge badge-pill">Pro</span> <%=b.user.first_name %></p>
@@ -44,14 +49,19 @@
           <p><span class="badge badge-pill">Price</span> <%= b.amount %></p>
         </div>
         <% if b.status == "pending"  %>
-            <div class="buttons d-grid">
+            <div class="text-center">
               <%= link_to "Accept", accepted_booking_path(b), data: {turbo_method: :patch, turbo_confirm: "Are you sure?"}, class: "btn btn-outline-success" %>
-              <%= link_to "Deny", denied_booking_path(b), data: {turbo_method: :patch}, class: "btn btn-outline-warning" %>
+              <%= link_to "Deny", denied_booking_path(b), data: {turbo_method: :patch, turbo_confirm: "Are you sure?"}, class: "btn btn-outline-danger" %>
             </div>
           <% end %>
           <% if b.status == "accepted"  %>
             <div class="buttons d-grid">
-              <i style="font-size: 35px; color:green;" class="fa-solid fa-check"></i>
+              <i style="font-size: 25px; color:green;" class="fa-solid fa-check"></i>
+            </div>
+          <% end %>
+          <% if b.status == "denied"  %>
+            <div class="buttons d-grid">
+              <i style="font-size: 25px; color:red;" class="fa-solid fa-xmark"></i>
             </div>
           <% end %>
     </div>
