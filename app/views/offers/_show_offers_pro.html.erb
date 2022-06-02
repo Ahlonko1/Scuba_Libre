@@ -1,10 +1,12 @@
 <div class="card-offers">
   <h2><%= offer.name %></h2>
-  <p><%= offer.price %> <%= offer.currency %></p>
-  <!-- Button trigger modal -->
-  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal<%=offer.id%>">
-  View offer
-  </button>
+  <div class="card-offers-bottom">
+    <p><%= offer.price %> <%= offer.currency %></p>
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal<%=offer.id%>">
+    View offer
+    </button>
+  </div>
 </div>
 <!-- Modal -->
 <div class="modal fade" id="exampleModal<%=offer.id%>" tabindex="-1" aria-labelledby="exampleModal<%=offer.id%>Label" aria-hidden="true">
@@ -15,11 +17,22 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <%= offer.briefing %>
+        <div class="d-flex justify-content-between">
+          <p>Category: <%= offer.category %></p>
+          <p>Level: <%= offer.level %></p>
+        </div>
+        <p>Number of dives: <%= offer.dives %></p>
+        <p>Duration: <%= offer.duration %> <%= offer.unit_duration %></p>
+        <h5>Briefing:</h5>
+        <p><%= offer.briefing %></p>
+        <h5>Included:</h5>
+        <p><%= offer.included %></p>
+        <h5>Prerequisites:</h5>
+        <p><%= offer.prerequisites %></p>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="button" class="btn btn-primary">Request booking</button>
       </div>
     </div>
   </div>

@@ -1,8 +1,16 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+
+<%# Conditions on the navbar class depending on the dark or light them%>
+
+<% if ((controller_name == "pages" && action_name == "home") || (controller_name == "pros" && action_name == "show"))  %>
+  <div class="navbar navbar-expand-sm navbar-transparent navbar-dark fixed-top">
+<% else %>
+  <div class="navbar navbar-expand-sm navbar-plain navbar-light fixed-top">
+<% end %>
+
+
+<%# The rest of the navbar%>
   <div class="container-fluid">
-    <%= link_to "SCUBA LIBRE", root_path, class: "navbar-brand"%>
-
-
+    <%= link_to "Scuba Libre", root_path, class: "navbar-brand"%>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -12,10 +20,10 @@
       <%= link_to "Pro divers", pros_path, class:"nav-link" %>
         <% if user_signed_in? %>
           <li class="nav-item active">
-            <%= link_to "Home", root_path, class: "nav-link" %>
+            <%= link_to "Dashboard", dashboard_path, class: "nav-link" %>
           </li>
           <li class="nav-item">
-            <%# <%= link_to "Messages", "#", class: "nav-link" %>
+            <%= link_to "Index", pros_path, class: "nav-link" %>
           </li>
           <li class="nav-item dropdown">
             <%= image_tag "https://kitt.lewagon.com/placeholder/users/Ahlonko1", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
@@ -28,7 +36,7 @@
           </li>
         <% else %>
           <li class="nav-item">
-            <%= link_to "Log in", new_user_session_path, class: "nav-link" %>
+            <%= link_to "Login", new_user_session_path, class: "btn btn-outline-light" %>
           </li>
         <% end %>
       </ul>

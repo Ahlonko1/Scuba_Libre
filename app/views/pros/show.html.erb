@@ -1,18 +1,21 @@
-<div class="banner">
-</div>
-<div class= "avatar-profile">
+<div class="banner-show-pro d-flex">
   <%= cl_image_tag @pro.avatar.key, class: "avatar-profile" %>
-</div>
-<h1><%= @pro.first_name %> <%= @pro.last_name[0].capitalize%>.</h1>
-
-
-<h2>Modal on - All offers of <%= @pro.first_name %> </h2>
-
-<div class="cards mb-4">
-    <% @offers.each do |o| %>
-        <%= render "offers/show_offers_pro", offer: o %>
-    <% end %>
+  <div class="banner-pro-info">
+    <h1><%= @pro.first_name %> <%= @pro.last_name[0].capitalize%>.</h1>
+    <h5><i class="fa-solid fa-location-pin"></i> <%= @pro.location %></h3>
+    <p><%= @pro.bio%></p>
+  </div>
 </div>
 
+<%= link_to "Back", :back %>
 
-<%= link_to "Create a new offer", new_offer_path %>
+<div class="container mt-5">
+  <h2>Discover everything <%=@pro.first_name%> is offering:</h2>
+
+  <div class="offers mb-4">
+      <% @offers.each do |o| %>
+          <%= render "offers/show_offers_pro", offer: o %>
+      <% end %>
+  </div>
+  <%= link_to "Create a new offer", new_offer_path %>
+</div>
