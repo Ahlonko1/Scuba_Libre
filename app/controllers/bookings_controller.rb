@@ -27,6 +27,13 @@ class BookingsController < ApplicationController
     redirect_to dashboard_path
   end
 
+  def cancelled
+    @booking = Booking.find(params[:id])
+    @booking.status = "cancelled"
+    authorize @booking
+    redirect_to dashboard_path
+  end
+
   private
 
   def booking_params

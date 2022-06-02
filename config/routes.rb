@@ -10,6 +10,7 @@ Rails.application.routes.draw do
     member do
       patch :accepted
       patch :denied
+      patch :cancelled
     end
   end
 
