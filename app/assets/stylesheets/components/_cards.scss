@@ -11,7 +11,7 @@
 
 .card-pro {
   overflow: hidden;
-  background: white;
+  background: transparent;
   // box-shadow: $box-shadow-cards;
   margin-top: 10px;
   border-radius: 5px;
@@ -23,22 +23,24 @@
   h2 {
     font-size: 20px;
     font-weight: bold;
-    color: #272343;
+    color: #3439C9;    ;
     margin: 0;
-    margin-top: 10px;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    font-family: $headers-font;
   }
   p {
     font-size: 12px;
-    margin: 0;
-    color: black;
+    margin: 5;
+    color: $gray;
     // font-weight: $font-weight-light;
   }
   .card-infos {
-    padding: 25px 35px;
     justify-content: space-between;
     align-items: flex-end;
     position: relative;
     border-bottom: 3px;
+    font-family: $body-font
   }
   .tag {
     background-color: #272343;
@@ -74,7 +76,7 @@
     color: #272343;
   }
   p {
-    font-size: 12px;
+    font-size: 14px;
     margin: 0;
     color: black;
     // font-weight: $font-weight-light;
