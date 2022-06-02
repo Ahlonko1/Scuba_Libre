@@ -12,7 +12,7 @@
   <div class="container-fluid">
     <div class="d-flex">
       <%= link_to "ScubaLibre", root_path, class: "navbar-brand"%>
-      <% if current_user.pro? %>
+      <% if user_signed_in? && current_user.pro? %>
         <div class="navbar-brand btn-pro">Pro</div>
       <% end %>
     </div>
