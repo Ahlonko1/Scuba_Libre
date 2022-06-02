@@ -7,15 +7,14 @@
   </div>
 </div>
 
-<%= link_to "Back", :back %>
-
 <div class="container mt-5">
-  <h2>Discover everything <%=@pro.first_name%> is offering:</h2>
+  <%= link_to "Back", :back, class: "btn btn-secondary" %>
+  <%# <%= link_to "Create a new offer", new_offer_path, class: "btn btn-secondary" %>
+  <h2><%=@pro.first_name%>'s specilaties</h2>
 
   <div class="offers mb-4">
       <% @offers.each do |o| %>
           <%= render "offers/show_offers_pro", offer: o %>
       <% end %>
   </div>
-  <%= link_to "Create a new offer", new_offer_path %>
 </div>
