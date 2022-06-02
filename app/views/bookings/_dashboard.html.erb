@@ -1,8 +1,9 @@
-<h3>Pending bookings</h3>
+<h3>Your pending bookings</h3>
+  <div class="cards d-flex">
   <% @bookings_user.each do |b| %>
-    <div class="cards d-flex">
+
       <div class="card-booking px-5 py-5">
-      <div class="buttons d-grid">
+        <div class="buttons d-grid">
           <i style="font-size: 25px; color:blue;" class="fa-solid fa-user-clock"></i>
         </div>
 
@@ -15,6 +16,28 @@
           <p><span class="badge badge-pill">Price</span> <%= b.amount %></p>
         </div>
 
-      </div>
-<% end %>
     </div>
+  <% end %>
+</div>
+
+<h3>Bookings requested</h3>
+  <div class="cards d-flex">
+  <% @bookings_owner.each do |b| %>
+
+      <div class="card-booking px-5 py-5">
+        <div class="buttons d-grid">
+          <i style="font-size: 25px; color:blue;" class="fa-solid fa-user-clock"></i>
+        </div>
+
+        <div class="card-booking-infos">
+          <h5><%= b.offer.name %></h5>
+          <p><span class="badge badge-pill">Status</span> <%=b.status %></p>
+          <p><span class="badge badge-pill">Pro</span> <%=b.user.first_name %></p>
+          <p><span class="badge badge-pill">Start date</span> <%= b.start_at %></p>
+          <p><span class="badge badge-pill">Location</span> <%= b.location %></p>
+          <p><span class="badge badge-pill">Price</span> <%= b.amount %></p>
+        </div>
+
+    </div>
+  <% end %>
+</div>

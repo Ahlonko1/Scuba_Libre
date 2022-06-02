@@ -13,6 +13,20 @@ class BookingsController < ApplicationController
     end
   end
 
+  def accepted
+    @booking = Booking.find(params[:id])
+    authorize @booking
+    @booking.status = "accepted"
+    redirect_to dashboard_path
+  end
+
+  def denied
+    @booking = Booking.find(params[:id])
+    @booking.status = "denied"
+    authorize @booking
+    redirect_to dashboard_path
+  end
+
   private
 
   def booking_params
