@@ -4,12 +4,23 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+  include PgSearch::Model
+
   has_many :offers, dependent: :destroy
   has_many :bookings
   has_many :user_associations
   has_many :organisms, through: :user_associations
   has_many :certifications, through: :user_certifications
   has_one_attached :avatar
+
+  pg_search_scope :global_search,
+                  against: %i[first_name last_name location],
+                  associated_against: {
+                    offers: %i[name category level]
+                  },
+                  using: {
+                    tsearch: { prefix: true }
+                  }
 
   geocoded_by :location
   after_validation :geocode, if: :will_save_change_to_location?
@@ -25,8 +36,9 @@ class User < ApplicationRecord
   scope :pro, -> { where(pro: true) }
 
   def pro_profile_complete?
-    return true unless pro?
+    return false
+    #   return true unless pro?
 
-    phone_number.present? && location.present?
+    #   phone_number.present? && location.present?
   end
 end

@@ -1,6 +1,7 @@
+<div class="container opacity mt-2" style="width: 600px">
 <div class="card border-white p-5">
   <div class="text-center">
-    <h2 class="py-2"> Add a new offer</h2>
+    <h2 class="py-2">🤿 Add a new offer</h2>
   </div>
 <%= simple_form_for (@offer) do |f| %>
   <%= f.error_notification %>
@@ -8,32 +9,44 @@
     <div class="form-inputs">
       <div class="row g-3">
         <div class="col 6">
-        <%= f.input :name, placeholder:"" %>
+        <%= f.input :name, label: false, placeholder:"Name*", required: false %>
         </div>
         <div class="col 6">
-        <%= f.input :category, placeholder:"" %>
+        <%= f.input :category, label: false, placeholder:"Category*", required: false %>
+        </div>
+      </div>
+      <div class="row g-3">
+        <div class="col 6">
+        <%= f.input :level, label: false, placeholder:"Level*", required: false %>
+        </div>
+        <div class="col 6">
+        <%= f.input :duration, label: false, placeholder:"Duration*", required: false %>
+        </div>
+        <div class="col 6">
+        <%= f.input :unit_duration, label: false, placeholder:"Unit_duration*", required: false %>
+        </div>
+      </div>
+      <div class="row g-3">
+        <div class="col 6">
+        <%= f.input :price, label: false, placeholder:"Price*", required: false %>
+        </div>
+        <div class="col 6">
+        <%= f.input :currency, label: false, placeholder:"Currency*", required: false %>
+        </div>
+        <div class="col 6">
+        <%= f.input :dives, label: false, placeholder:"Dives*", required: false %>
         </div>
       </div>
 
-      <div class="row g-3">
         <div class="col 6">
-        <%= f.input :duration, placeholder:"" %>
+        <%= f.input :prerequisites, label: false, placeholder:"Prerequisites*", required: false %>
         </div>
         <div class="col 6">
-        <%= f.input :unit_duration, placeholder:"" %>
-        </div>
-        <div class="col 6">
-        <%= f.input :price, placeholder:"" %>
-        </div>
-        <div class="col 6">
-        <%= f.input :currency, placeholder:"" %>
-        </div>
-        <div class="col 6">
-        <%= f.input :level, placeholder:"" %>
+        <%= f.input :included, label: false, placeholder:"Included*", required: false %>
         </div>
 
         <div class="description">
-        <%= f.input :briefing, placeholder: "" %>
+        <%= f.input :briefing, label: false, placeholder:"Briefing*", required: false %>
         </div>
 
       </div>
@@ -44,5 +57,5 @@
         </div>
       </div>
   <% end %>
-
+</div>
 </div>
