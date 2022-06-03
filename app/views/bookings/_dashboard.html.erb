@@ -1,4 +1,4 @@
-<h3 class="mx-5 mt-5">YOUR BOOKINGS</h3>
+  <h3 class="mx-5 mt-5">YOUR BOOKINGS</h3>
   <div class="cards mx-5 mb-5">
   <% @bookings_user.each do |b| %>
 
@@ -43,6 +43,7 @@
 </div>
 
 <% if current_user.pro? %>
+
 <h3 class="mx-5">BOOKINGS AWAITING YOUR CONFIRMATION</h3>
 
     <div class="cards mx-5 mb-5">
