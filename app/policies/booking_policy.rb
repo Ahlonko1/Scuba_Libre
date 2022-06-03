@@ -27,6 +27,6 @@ class BookingPolicy < ApplicationPolicy
   end
 
   def cancelled?
-    record.offer.user == user
+    record.user == user
   end
 end

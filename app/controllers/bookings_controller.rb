@@ -17,6 +17,7 @@ class BookingsController < ApplicationController
     @booking = Booking.find(params[:id])
     authorize @booking
     @booking.status = "accepted"
+    @booking.save
     redirect_to dashboard_path
   end
 
@@ -24,6 +25,7 @@ class BookingsController < ApplicationController
     @booking = Booking.find(params[:id])
     authorize @booking
     @booking.status = "denied"
+    @booking.save
     redirect_to dashboard_path
   end
 
@@ -31,6 +33,7 @@ class BookingsController < ApplicationController
     @booking = Booking.find(params[:id])
     authorize @booking
     @booking.status = "cancelled"
+    @booking.save
     redirect_to dashboard_path
   end
 
