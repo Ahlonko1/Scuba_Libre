@@ -1,9 +1,9 @@
 // Cards de l'index des pros
 .cards{
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   flex-grow: 1;
-  grid-gap: 16px;
+  grid-gap: 28px;
   a {
     text-decoration: none;
   }
@@ -26,12 +26,12 @@
     color: #3439C9;    ;
     margin: 0;
     margin-top: 15px;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
     font-family: $headers-font;
   }
   p {
     font-size: 12px;
-    margin: 5;
+    margin: 0;
     color: $gray;
     // font-weight: $font-weight-light;
   }
@@ -100,4 +100,10 @@
     width: fit-content;
     padding: 2px 6px 2px 6px;
   }
+}
+
+.underline{
+  text-decoration: underline;
+  font-size: 12px;
+  color: $gray;
 }
