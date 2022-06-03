@@ -1,6 +1,6 @@
 class Booking < ApplicationRecord
-  belongs_to :offer, dependent: :destroy
-  belongs_to :user, dependent: :destroy
+  belongs_to :offer
+  belongs_to :user
 
   after_create :set_price, :set_currency, :set_location
 

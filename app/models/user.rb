@@ -7,8 +7,8 @@ class User < ApplicationRecord
   include PgSearch::Model
 
   has_many :offers, dependent: :destroy
-  has_many :bookings
-  has_many :user_associations
+  has_many :bookings, dependent: :destroy
+  has_many :user_associations, dependent: :destroy
   has_many :organisms, through: :user_associations
   has_many :certifications, through: :user_certifications
   has_one_attached :avatar
