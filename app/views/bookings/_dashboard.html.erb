@@ -19,6 +19,7 @@
               <i style="font-size: 25px; color:blue;" class="fa-solid fa-user-clock"></i>
             </div>
             <div class="text-center">
+              <%= link_to "Details", booking_path(b), class: "btn btn-outline-success" %>
               <%= link_to "Cancel", cancelled_booking_path(b), data: {turbo_method: :patch, turbo_confirm: "Are you sure?"}, class: "btn btn-outline-warning" %>
             </div>
           <% end %>
@@ -47,12 +48,8 @@
 <h3 class="mx-5">BOOKINGS AWAITING YOUR CONFIRMATION</h3>
 
     <div class="cards mx-5 mb-5">
-
       <% @bookings_owner.each do |b| %>
-
         <div class="card-pro shadow-sm p-2">
-
-
           <div class="card-infos">
             <h5><%= b.offer.name %></h5>
             <p><span class="badge badge-pill">Status</span><strong> <%=b.status %></strong></p>
@@ -87,6 +84,5 @@
             <% end %>
         </div>
       <% end %>
-
 </div>
 <% end %>
