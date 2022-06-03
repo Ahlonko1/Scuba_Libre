@@ -12,6 +12,7 @@ Rails.application.routes.draw do
       patch :denied
       patch :cancelled
     end
+    resources :messages, only: :create
   end
 
   # Routes pour les pros ->
