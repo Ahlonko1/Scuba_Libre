@@ -79,3 +79,16 @@
   background-color:darkcyan;
   font-size:smaller;
 }
+
+
+// MODAL
+
+.modal-dialog {
+  max-width: 800px;
+}
+
+.modal-header {
+  background-color: $deep_blue;
+  color: white;
+  height: 200px;
+}
