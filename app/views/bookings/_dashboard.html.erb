@@ -2,7 +2,7 @@
   <div class="cards mx-5 mb-5">
   <% @bookings_user.each do |b| %>
 
-      <div class="card-pro shadow-sm p-4">
+      <div class="card-pro shadow-sm p-2">
 
 
         <div class="card-infos">
@@ -11,7 +11,7 @@
           <p><span class="badge badge-pill">Pro</span> <%=b.offer.user.first_name %></p>
           <p><span class="badge badge-pill">Start date</span> <%= b.start_at %></p>
           <p><span class="badge badge-pill">Location</span> <%= b.location %></p>
-          <p><span class="badge badge-pill">Price</span> <%= b.amount %></p>
+          <p><span class="badge badge-pill">Price</span> <%= b.currency %> <%= b.amount %></p>
         </div>
 
           <% if b.status == "pending"  %>
@@ -50,7 +50,7 @@
 
       <% @bookings_owner.each do |b| %>
 
-        <div class="card-pro shadow-sm p-4">
+        <div class="card-pro shadow-sm p-2">
 
 
           <div class="card-infos">
@@ -59,7 +59,7 @@
             <p><span class="badge badge-pill">Pro</span> <%=b.user.first_name %></p>
             <p><span class="badge badge-pill">Start date</span> <%= b.start_at %></p>
             <p><span class="badge badge-pill">Location</span> <%= b.location %></p>
-            <p><span class="badge badge-pill">Price</span> <%= b.amount %></p>
+            <p><span class="badge badge-pill">Price</span> <%= b.currency %> <%= b.amount %></p>
           </div>
           <% if b.status == "pending"  %>
               <div class="buttons d-grid">
