@@ -7,6 +7,7 @@ class Booking < ApplicationRecord
   scope :pending, -> { where(status: "pending") }
   scope :accepted, -> { where(status: "accepted") }
   scope :denied, -> { where(status: "denied") }
+  scope :cancelled, -> { where(status: "cancelled") }
 
   validates :start_at, presence: true
 
