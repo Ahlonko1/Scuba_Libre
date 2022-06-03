@@ -8,24 +8,35 @@
 </div>
 
 <div class="container mt-5">
-  <div class="d-flex justify-content-between">
-    <p>Category: <%= @booking.offer.category %></p>
-    <p>Level: <%= @booking.offer.level %></p>
-  </div>
-  <div class="d-flex justify-content-between">
-    <p>Number of dives: <%= @booking.offer.dives %></p>
-    <p>Duration: <%= @booking.offer.duration %> <%= @booking.offer.unit_duration %></p>
-  </div>
-  <h5>Briefing:</h5>
-  <p><%= @booking.offer.briefing %></p>
-  <div class="d-flex">
-    <div class="col-4">
-      <h5>Included:</h5>
-      <p><%= @booking.offer.included %></p>
+  <div class="d-flex justify-content-between p-4">
+    <div class= "col-9 mr-3">
+      <div class="d-flex justify-content-between">
+        <p>Category: <%= @booking.offer.category %></p>
+        <p>Level: <%= @booking.offer.level %></p>
+      </div>
+      <div class="d-flex justify-content-between">
+        <p>Number of dives: <%= @booking.offer.dives %></p>
+        <p>Duration: <%= @booking.offer.duration %> <%= @booking.offer.unit_duration %></p>
+      </div>
+      <h5>Briefing:</h5>
+      <p><%= @booking.offer.briefing %></p>
+      <div class="d-flex justify-content-between">
+        <div class="col-4">
+          <h5>Prerequisites:</h5>
+          <p><%= @booking.offer.prerequisites %></p>
+        </div>
+        <div class="col-4">
+          <h5>Included:</h5>
+          <p><%= @booking.offer.included %></p>
+        </div>
+      </div>
     </div>
-    <div class="col-4">
-      <h5>Prerequisites:</h5>
-      <p><%= @booking.offer.prerequisites %></p>
+    <div>
+      <h1>Contact:</h1>
+      <h3>Teacher:</h3>
+      <p><%= @booking.offer.user.email %></p>
+      <h3>Booker:</h3>
+      <p><%= @booking.user.email %></p>
     </div>
   </div>
 </div>
@@ -46,22 +57,6 @@
     </div>
   </div>
 <% end %>
-
-
-<div class="container mt-5">
-  <h1>Contact:</h1>
-  <div class="d-flex">
-    <div class="p-3">
-      <h3>Teacher:</h3>
-      <p><%= @booking.offer.user.email %></p>
-    </div>
-    <div class="p-3">
-      <h3>Booker:</h3>
-      <p><%= @booking.user.email %></p>
-    </div>
-  </div>
-</div>
-
 
 <%# modèle à adapter ->  %>
 <%# <%= cl_image_tag @pro.avatar.key, class: "avatar-profile" %>
