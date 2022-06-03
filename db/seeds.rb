@@ -20,7 +20,7 @@ user_1 = User.create!(first_name: "William", last_name: "Peirs", email: "wpeirs@
 
 user_1.avatar.attach(
   {
-    io: File.open('public/images/1.jpeg'),
+    io: File.open('public/images/WP.jpeg'),
     filename: 'anyname.jpg',
     content_type: 'image/jpg'
   }
