@@ -7,10 +7,12 @@
 #   Character.create(name: "Luke", movie: movies.first)
 puts "Destroy Offer"
 Offer.destroy_all
-puts "Destroy User"
-User.destroy_all
 puts "Destroy Organism"
 Organism.destroy_all
+puts "Destroy Bookings"
+Booking.destroy_all
+puts "Destroy User"
+User.destroy_all
 
 
 
@@ -39,10 +41,10 @@ user_2.avatar.attach(
 )
 user_2.save!
 
-user_3 = User.create!(first_name: "Laura", last_name: "Kazi", email: "lkazi@scubalibre.com", phone_number: "0767869800",password:"azerty", languages:["Polish", "English"], location:"Gili Islands,Indonesia", pro: true,date_of_birth:"1983-07-12",bio:"I’m your Course Director at Trawangan Dive. When I’m not teaching the new generation of scuba professionals, you can find me on Closed Circuit Rebreather dives exploring deep walls of Lombok, diving in a cave in Mexico, writing articles and blogs to dive magazines or representing sustainable brands and organizing underwater cleanups.
-Ocean has been my office for almost a decade. I’ve trained thousands of students, yet I’m still extremely excited every time I take someone underwater. My purpose is to pass this passion and knowledge to you, new SCUBA instructors.
-The Ocean Advocate IDC program is designed to show you how to teach SCUBA divers following PADI standards as well as how to use various tools to preserve the natural beauty of our ocean. So join me on a life-changing adventure and enjoy the vibe of the tropical paradise of Gili Trawangan." )
-puts "User 3 created"
+ user_3 = User.create!(first_name: "Laura", last_name: "Kazi", email: "lkazi@scubalibre.com", phone_number: "0767869800",password:"azerty", languages:["Polish", "English"], location:"Gili Islands,Indonesia", pro: true,date_of_birth:"1983-07-12",bio:"I’m your Course Director at Trawangan Dive. When I’m not teaching the new generation of scuba professionals, you can find me on Closed Circuit Rebreather dives exploring deep walls of Lombok, diving in a cave in Mexico, writing articles and blogs to dive magazines or representing sustainable brands and organizing underwater cleanups.
+ Ocean has been my office for almost a decade. I’ve trained thousands of students, yet I’m still extremely excited every time I take someone underwater. My purpose is to pass this passion and knowledge to you, new SCUBA instructors.
+ The Ocean Advocate IDC program is designed to show you how to teach SCUBA divers following PADI standards as well as how to use various tools to preserve the natural beauty of our ocean. So join me on a life-changing adventure and enjoy the vibe of the tropical paradise of Gili Trawangan." )
+ puts "User 3 created"
 user_3.avatar.attach(
   {
     io: File.open('public/images/3.jpeg'),
@@ -263,472 +265,475 @@ Organism_3 = Organism.create!(name: "TDI")
 Organism_3.save!
 
 puts "Create offer 1..."
-offer_1 = Offer.new(name: "PADI Open Water",
-  category: "Course",
-  duration: 3,
-  unit_duration: "days",
-  price: 350,
-  currency: "USD",
-  briefing: "Become a certified diver and receive a license to dive unsupervised to a maximum depth of 18m. This PADI certification is recognized worldwide and is valid for the rest of your life.  The course involves dive theory, video presentations; confined water pool training which ease you into the fundamentals of diving; and four boat dives where you will master the skills learnt in the pool.  Two dives to a maximum depth of 12m and two dives to a maximum depth of 18m.
-  The course schedule can be flexible to accommodate any necessary changes but generally:
-
-Day 1 (8.15-4.30pm)
-The first 3 sections of theory, confined water dives 1 and 2 and open water dive 1.
-
-Day 2 (8.15am – 4.30pm)
-The remaining theory sections, confined water dives 3,4 and 5; waterman ship skills and open water dive 2.
-
-Day 3 (8.15am – 3pm)
-Final exam; open water dives 3 and 4; celebrate!!!",
-  level: "Beginner",
-  prerequisites: "To learn to dive and to enroll in the PADI Open Diver course or Junior Open Water Diver course, you must be 10 years or older
-  You will also need to be able to swim: there is a 200m swim test or 300m snorkel test that you will need to pass during the course
-  You will be required to demonstrate that you can comfortably float or tread water for 10 minutes.  You will also need to complete a 200m surface swim or a 300m swim using a mask, snorkel and fins",
-  included: "Equipment Rental
-  Dive Computer Rental
-  PADI Open Water – E-Manual
-  Logbook
-  PADI Certification",
-  dives: 4)
-offer_1.user = User.all.sample
-offer_1.save!
-
-puts "Offer 1 OK"
-
-puts "Create offer 1..."
-
-offer_2 = Offer.new(name: "PADI Discover Scuba Diving",
-  category: "Course",
-  duration: 1,
-  unit_duration: "day",
-  price: 70,
-  currency: "USD",
-  briefing: "The PADI Discover Scuba Diving program is an introduction to scuba diving aimed at those who are unsure if they want to get certified, or have limited time.  You will begin with a short safety briefing before trying on the scuba gear in the pool. We teach basic diving skills and hand signals to boost your confidence under water.
-  After the pool session you will go for a dive in the ocean to a maximum depth of 12 meters.  Turtles are frequently seen along with other reef fish and beautiful coral. During your dive you will be permanently supervised by a scuba instructor.",
-  level: "Beginner",
-  prerequisites: "You must be 10 years or older
-  No previous experience is necessary, but you must be able to complete the diver medical statement.",
-  included: "Equipment rental
-  One ocean dive
-  Pool training session",
-  dives: 1)
-offer_2.user = User.all.sample
-offer_2.save!
-
-puts "Offer 2 OK"
-
-puts "Create offer 3..."
-
-offer_3 = Offer.new(name: "PADI Scuba Diver ",
-  category: "Course",
-  duration: 2,
-  unit_duration: "days",
-  price: 250,
-  currency: "USD",
-  briefing:"The PADI Scuba Diver course is a subset of the PADI Open Water Diver course. If you’re short on time but really want to become a diver, the PADI Scuba Diver rating might be right for you ̶ particularly if you expect to go scuba diving primarily with a dive guide. This course is an intermediate step for earning an Open Water Diver certification, if that’s your ultimate goal.
-
-  The PADI Scuba Diver course is ideal for those with limited time. It involves 3 modules of theory from the Open Water course, half a day of confined pool training and 2 open water dives up to 12 meters.
-
-  You will receive a certification that lets you dive to 12 meters under the supervision of a Divemaster or Instructor. This license is valid worldwide.
-
-  PADI Scuba Divers are qualified to:
-  Dive under the direct supervision of a PADI Professional to a maximum depth of 12 metres/40 feet.
-  Obtain air fills, rent or purchase scuba equipment and participate in dive activities as long as properly supervised.
-  Continue dive training by completing the PADI Open Water Diver certification and taking certain specialty diver courses.",
-
-
-  level: "Beginner",
-  prerequisites: "To learn to dive and to enroll in the PADI Scuba Diver Course, you must be 10 years or older
-  You need adequate swimming skills and need to be in good physical health
-  No prior experience with scuba diving is required, but you can try it first through the Discover Scuba Diving program",
-  included: "Equipment Rental
-  Dive Computer Rental
-  PADI Open Water – E-Manual
-  Logbook
-  PADI Certification",
-  dives: 2)
-
-offer_3.user = User.all.sample
-offer_3.save!
-
-puts "Offer 3 OK"
-
-puts "Create offer 4..."
-
-offer_4 = Offer.new(name: "PADI Advanced Open Water ",
-  category: "Course",
-  duration: 3,
-  unit_duration: "days",
-  price: 370,
-  currency: "USD",
-  briefing:"Once you complete your PADI Open Water Course, you will want to continue your diving education with the PADI Adventure Diver or the Advanced Open Water course.
-  This course consists of 5 Adventure dives designed to build confidence and expand your scuba skills.  There are no videos or exams, just a bit of reading and some knowledge review questions to answer.
-  The Deep (30m) and navigation dives are mandatory but the other three dives can be selected, meaning you can tailor the course to suit your interests. Some of the more popular options include wreck, night, drift, nitrox and photography. Your instructor will discuss all the options available with you.",
-  level: "Advanced",
-  prerequisites: "Certified as a PADI Open Water Diver, or equivalent from agencies recognized by PADI
-  Must be 12 years or older
-  Must be able to complete the PADI medical statement",
-  included:"Equipment Rental
-  Dive Computer Rental
-  PADI Adventures in diving – E-Manual
-  Logbook
-  PADI Certification",
-  dives: 5)
-offer_4.user = User.all.sample
-offer_4.save!
-
-puts "Offer 4 OK"
-
-puts "Create offer 5..."
-
-offer_5 = Offer.new(name: "Emergency First Response (EFR)",
-  category: "Course",
-  duration: 1,
-  unit_duration: "day",
-  price: 150,
-  currency: "USD",
-  briefing:"First aid and CPR are good skills for everyone, not just scuba divers. You will need this certificate before starting the PADI Rescue Diver course or any of the professional diver courses. The Emergency First Response (EFR) course teaches you medical emergency response skills and prepares you for assisting in any medical emergency.
-
-  What you learn in the EFR course:
-
-  BLS (Basic Life Support) CPR and rescue breaths
-  Treatment for shock
-  Spinal injury management
-  Use of barriers to reduce disease transmission risks
-  Basic first aid and first aid kit considerations
-  These skills can be used in any area or environment.  Most work organizations will accept this as a recognized first aid certificate.",
-  level: "Advanced",
-  prerequisites: "If you already hold a First AID & CPR training certificate issued within the last 2 years, then you will not need to complete the Emergency First Responder (EFR) training.  However, we do recommend a refresher",
-  included: "Equipment rental",
-  dives: 0)
-offer_5.user = User.all.sample
-offer_5.save!
-
-puts "Offer 5 OK"
-
-puts "Create offer 6..."
-
-
-
-offer_6 = Offer.new(name: "PADI Rescue Diver",
-  category: "Course",
-  duration: 3,
-  unit_duration: "days",
-  price: 299,
-  currency: "USD",
-  briefing:"The PADI Rescue Diver course is informative and challenging and will build your confidence as a recreational diver. The intensive classroom and in-water rescue training will be both fun and rewarding. Throughout the course students complete 12 open water training exercises which will enhance ability to self rescue, assist distressed divers or deal with a variety of emergency situations. The scenarios and skills are spread over 4 dives.
-
-  If you do not have a current recognized first aid certificate that has been issued or updated in the last 2 years, you can complete the Emergency First Response course prior to starting the Rescue Course.
-
-  Includes:
-
-  First aid for diving injuries
-  First aid for marine injuries
-  Emergency procedures
-  Rescue equipment consideration and usage
-  Distress recognition
-  Self-rescue
-  Rescue entries, approaches and exits
-  Assist and transportation of patients
-  Missing, unconscious and submerged diver rescue
-  In-water artificial respiration
-  Accident recording and reporting
-  Expand your knowledge of diving with the PADI Rescue Diver Course
-  By the end of the course, you will have expanded your knowledge of diving, increased your level of diving skill and be more aware of what is happening in the diving environment. Most importantly, rescue training can help you to save lives and increase safety by preparing you to properly respond to diving emergencies. That’s because the PADI Rescue Course is the most rewarding course for advanced scuba divers.
-
-  After completing CPR and first aid and the PADI Rescue Diver course, you will be allowed to become a PADI member by joining the Professional levels, starting with the Divemaster Course.",
-  level: "Advanced",
-  prerequisites:"Be 12 years or older
-  Have a PADI Adventure Diver certification (or PADI Advanced Open Water), or have a qualifying certification from another organization
-  Certified Emergency First Responce Primary and Secondary care within the last 24 months",
-  included: "Equipment Rental
-  Dive Computer Rental
-  PADI Rescue Diver – E-Manual
-  Logbook
-  PADI Certification
-  EFR",
-  dives: 5)
-offer_6.user = User.all.sample
-offer_6.save!
-
-puts "Offer 6 OK"
-
-puts "Create offer 7..."
-
-offer_7 = Offer.new(name: "PADI enriched Air Diver (NITROX)",
-  category: "Course",
-  duration: 3 ,
-  unit_duration: "days",
-  price: 299,
-  currency: "USD",
-  briefing:"The benefits of more time underwater and less time between dives makes the Enriched Air (NITROX) Diver PADI’s most popular speciality course.  Scuba diving with enriched air gives you more ‘no decompression’ dive time which means more time underwater, especially on repetitive dives.
-
-  What You Will Learn:
-
-  Diving techniques using enriched air NITROX for longer recreational dives, safety considerations and avoiding possible hazards.
-  Equipment and enriched air considerations; managing oxygen exposure and tank contents; and setting a dive computer.
-  Planning and making no-decompression dives using air NITROX blends between 22% and 40% oxygen.
-  Enriched air production methods.",
-  level: "Advanced",
-  prerequisites: "Be at least 12 years old
-  Certified as a PADI Open Water Diver, or equivalent from agencies recognized by PADI",
-  included: "Equipment Rental
-  Dive Computer Rental
-  Gas
-  PADI Enriched Air Diver – E-Manual
-  Logbook
-  PADI Certification",
-  dives: 5)
-offer_7.user = User.all.sample
-offer_7.save!
-
-puts "Offer 7 OK"
-
-puts "Create offer 8..."
-
-
-
-offer_8 = Offer.new(name: "PADI Deep Diver Course",
-  category: "Course",
-  duration: 2,
-  unit_duration: "days" ,
-  price: 250,
-  currency: "USD",
-  briefing:"After your first few dives, you may want to visit dive sites that are slightly deeper. Learn to explore those exciting wonders and mysteries between 18 and 40 metres.
-
-  What you will learn:
-
-  The importance of personal limits and ‘why dive deep’.
-  Specialist equipment required for deep diving.
-  Planning, safety, buddy contact procedures and buoyancy control.
-  Managing gas supply and gas narcosis awareness.
-  This course is often combined with the Sidemount and Nitrox specialities to explore further for longer on our more challenging dive sites.",
-  level: "Advanced",
-  prerequisites: "Be at least 15 years old
-  Be certified as a Advanced Open Water Diver / Adventure Diver, or equivalent from agencies recognized by PADI",
-  included: "Equipment Rental
-  Dive Computer Rental
-  PADI Deep Diver Manual
-  Logbook
-  PADI Certification",
-  dives: 4)
-  offer_8.user = User.all.sample
-  offer_8.save!
-
-puts "Offer 8 OK"
-
-puts "Create offer 9..."
-
-offer_9 = Offer.new(name: "PADI Sidemount Diver Course",
-  category: "Course",
-  duration: 2,
-  unit_duration: "days" ,
-  price: 300,
-  currency: "USD",
-  briefing: "Whether you’re looking to bridge the gap between recreational and technical diving or searching for a new challenge and extended dive times, the Sidemount course is for you. This course teaches flexibility and streamlining through custom gear configuration while focusing on improving trim and fundamental skills in the water.
-
-  This course is often combined with the Deep and Nitrox specialities which allow divers to explore more challenging dive sites.
-
-  What you will learn:
-
-  Benefits of diving with a sidemount configuration
-  Properly assemble and configure sidemount scuba diving equipment.
-  Trim your weight system and sidemount gear so you’re perfectly balanced in the water.
-  Manage gas by switching second stages as planned, if wearing two cylinders.
-  Respond correctly to potential problems when sidemount diving.",
-  level: "Advanced",
-  prerequisites: "Be at least 15 years old
-  Certified as a PADI Open Water Diver, or equivalent from agencies recognized by PADI
-  Be certified as a Advanced Open Water Diver / Adventure Diver, or equivalent from agencies recognized by PADI",
-  included: "Equipment Rental
-  Dive Computer Rental
-  PADI Sidemount Manual
-  Logbook
-  PADI Certification",
-  dives: 3)
-offer_9.user = User.all.sample
-offer_9.save!
-
-puts "Offer 9 OK"
-
-puts "Create offer 10..."
-
-offer_10 = Offer.new(name: "PADI Wreck Diver Course",
-  category: "Course",
-  duration: 2,
-  unit_duration: "days" ,
-  price: 340,
-  currency: "USD",
-  briefing:"Whether sunk on purpose as an artificial reef or the result of mishap, wrecks open fascinating windows to the past. Most divers find wrecked ships, airplanes and even automobiles nearly irresistible because they’re intriguing to explore, exciting avenues of discovery, and usually teeming with aquatic life. The PADI Wreck Diver course teaches you the ins and outs of rewarding, responsible wreck diving.
-
-  There are many different types of wrecks, some of which are protected by laws that guard their historical and cultural significance. Your training starts by reviewing guidelines for researching and respecting wrecks.
-
-  During four dives you’ll learn:
-
-  Safety considerations for navigating and exploring wrecks.
-  Surveying and mapping a wreck.
-  Using penetration lines and reels to guide exploration.
-  Techniques to avoid kicking up silt or disturbing the wreck and its inhabitants.
-  There are many different types of wrecks, some of which are protected by laws that guard their historical and cultural significance. Your training starts by reviewing guidelines for researching and respecting wrecks.",
-  level: "Advanced",
-  prerequisites:"Be at least 15 years old
-  Be certified as a PADI Adventure Diver, PADI Advanced Open Water Diver, or equivalent from agencies recognized by PADI",
-  included:"Equipment Rental
-  Dive Computer Rental
-  PADI Wreck Diver Manual
-  Logbook
-  PADI Certification",
-  dives: 4)
-offer_10.user = User.all.sample
-offer_10.save!
-
-puts "Offer 10 OK"
-
-puts "Create offer 11..."
-
-offer_11 = Offer.new(name: "PADI Night Diver Course",
-  category: "Course",
-  duration: 3,
-  unit_duration: "days" ,
-  price: 270,
-  currency: "USD",
-  briefing:"As the sun sets, slip into your dive gear, take a deep breath and back roll into a whole new world of diving. Although you’ve seen the reef many times before, the day creatures retire for the evening and you can watch the nocturnal life under the glow of your dive light.
-
-  While scuba diving at night, you are more focused on what you can see in your light’s beam. Learn dive planning, additional equipment requirements and navigation in the dark. We also teach buoyancy control with less visual reference, and methods for remaining in your buddy team.
-
-  Throughout the three night dives you will practice:
-
-  Light handling and communication techniques.
-  Entering, exiting and navigating in the dark.
-  Identifying how plants and animals differ or change behavior at night time.",
-
-  level: "Advanced",
-  prerequisites:"Be at least 12 years old
-  Be certified as a PADI Open Water Diver, or equivalent from agencies recognized by PADI",
-  included:"Equipment Rental
-  Dive Computer Rental
-  Torch Rental
-  PADI Night Diver Manual
-  Logbook
-  PADI Certification",
-  dives: 3)
-offer_11.user = User.all.sample
-offer_11.save!
-
-puts "Offer 11 OK"
-
-puts "Create offer 12..."
-
-offer_12 = Offer.new(name: "PADI Peak Performance Buoyancy Course",
-  category: "Course",
-  duration: 1,
-  unit_duration: "day" ,
-  price: 199,
-  currency: "USD",
-  briefing:"What is neutral buoyancy? Scuba divers like to be neutrally buoyant so they neither sink nor float. It can be a tricky thing. Divers who’ve mastered the highest performance levels in buoyancy stand apart. You’ve seen them underwater. They glide effortlessly, use less air and ascend, descend or hover, almost as if by thought. They interact gently with aquatic life and affect their surroundings minimally. The PADI Peak Performance Buoyancy course refines the basic skills you learned as a PADI Open Water Diver and elevates them to the next level. Neutral buoyancy is the key to conserving your air consumption and leaving minimal impact on the aquatic environment.
-
-  During two scuba dives, you’ll learn how to:
-
-  Determine the exact weight you need, so you’re not too light or too heavy.
-  Trim your weight system and scuba gear so you’re perfectly balanced in the water.
-  Streamline to save energy, use air more efficiently and move more smoothly through the water.
-  Hover effortlessly in any position – vertical or horizontal.",
-  level: "Advanced",
-  prerequisites:"Be at least 10 years old
-  Be certified as a PADI Open Water Diver, or equivalent from agencies recognized by PADI",
-  included:"Equipment Rental
-  Dive Computer Rental
-  Peak Performance Buoyancy Manual
-  Logbook
-  PADI Certification",
-  dives: 3)
-offer_12.user = User.all.sample
-offer_12.save!
-
-puts "Offer 12 OK"
-
-puts "Create offer 13..."
-
-offer_13 = Offer.new(name: "PADI Search & Recovery Course",
-  category: "Course",
-  duration: 2,
-  unit_duration: "days" ,
-  price: 249,
-  currency: "USD",
-  briefing:"Have you ever dropped something in the water? Are you looking for lost “treasure”? The PADI Search and Recovery Diver Specialty course will teach you effective ways to find objects underwater and bring them to the surface. Small, large or just awkward, there is a way to bring them up.
-
-  Gathering information and resources, then carefully planning a search are the first important steps you learn. During four scuba dives you’ll practice:
-
-  Swimming search patterns using your compass and natural navigation.
-  Locating large and small objects using various search patterns.
-  Using a lift bag for large or heavy objects, plus other recovery methods.
-  Planning a search operation based on facts gathered about a lost object prior to the dive.",
-  level: "Advanced",
-  prerequisites:"Be at least 12 years old
-  Be certified as a PADI Advanced Open Water Diver, or equivalent from agencies recognized by PADI. Open Water Divers with a PADI Underwater Navigator certification also qualify",
-  included:"Equipment Rental.Dive Computer Rental.Compass Rental.Search and Recovery Manual .Logbook.PADI Certification",
-  dives: 4)
-offer_13.user = User.all.sample
-offer_13.save!
-
-puts "Offer 13 OK"
-
-puts "Create offer 14..."
-
-offer_14 = Offer.new(name: "PADI Project Aware Shark Conservation Specialty Course",
-  category: "Course",
-  duration: 1,
-  unit_duration: "day" ,
-  price: 180,
-  currency: "USD",
-  briefing:"Sharks are crucial to marine ecosystems, but many shark species are in danger of becoming extinct. This course gives you the opportunity to learn more about sharks, what makes them unique, why they play a crucial role in keeping our ocean healthy and why they are in global decline. You can become a passionate shark defenders help take action to protect sharks.
-
-  This course will:
-
-  Inspire you to become a shark conservation advocate
-  Introduce sharks including their conservation status and why they are vulnerable to impacts
-  Introduce the major threats that are greatly reducing shark populations
-  Provide information on the value of sharks to the marine environment and to local economies
-  Introduce you to management approaches that can protect sharks
-  Provide a pathway for you to become actively involved in shark conservation
-  Show you how to identify hazards in marine environments and on land that threaten sharks.",
-  level: "Advanced",
-  prerequisites:"Be at least 12 years old.Certified as a PADI Open Water Diver, or equivalent from agencies recognized by PADI",
-  included:"Equipment Rental.Dive Computer Rental.Project AWARE Shark Conservation Manual.Logbook.PADI Certification",
-  dives: 2)
-offer_14.user = User.all.sample
-offer_14.save!
-
-puts "Offer 14 OK"
-
-puts "Create offer 15..."
-
-offer_15 = Offer.new(name: "PADI Digital Underwater Photographer Course",
-  category: "Course",
-  duration: 1,
-  unit_duration: "day" ,
-  price: 200,
-  currency: "USD",
-  briefing:"Underwater photography is one of the most popular diving specialities. With so many cameras and housings available, underwater photography is easier and more accessible. The PADI Digital Underwater Photographer course gets you started quickly, whether you’re using a point-and-shoot or a more sophisticated D-SLR like the professionals.
-
-  Throughout the two scuba dives, you’ll discover:
-
-  How to choose the right underwater camera system for you.
-  The PADI SEA (Shoot, Examine, Adjust) method for getting great shots quickly.
-  Principles for good composition of underwater images.
-  Practical techniques to take great photos with your digital camera.",
-  level: "Advanced",
-  prerequisites:"Be at least 10 years old
-  Certified as a PADI Open Water Diver, or equivalent from agencies recognized by PADI",
-  included:"Equipment Rental
-  Dive Computer Rental
-  PADI Digital Underwater Photographer Manual
-  Logbook
-  PADI Certification
-  All photos taken during the course
-  (Camera rental not included)",
-  dives: 2)
-offer_15.user = User.all.sample
-offer_15.save!
-
-puts "Offer 15 OK"
+User.all.each do |user|
+  offer_1 = Offer.new(name: "PADI Open Water",
+    category: "Course",
+    duration: 3,
+    unit_duration: "days",
+    price: 350,
+    currency: "USD",
+    briefing: "Become a certified diver and receive a license to dive unsupervised to a maximum depth of 18m. This PADI certification is recognized worldwide and is valid for the rest of your life.  The course involves dive theory, video presentations; confined water pool training which ease you into the fundamentals of diving; and four boat dives where you will master the skills learnt in the pool.  Two dives to a maximum depth of 12m and two dives to a maximum depth of 18m.
+    The course schedule can be flexible to accommodate any necessary changes but generally:
+
+  Day 1 (8.15-4.30pm)
+  The first 3 sections of theory, confined water dives 1 and 2 and open water dive 1.
+
+  Day 2 (8.15am – 4.30pm)
+  The remaining theory sections, confined water dives 3,4 and 5; waterman ship skills and open water dive 2.
+
+  Day 3 (8.15am – 3pm)
+  Final exam; open water dives 3 and 4; celebrate!!!",
+    level: "Beginner",
+    prerequisites: "To learn to dive and to enroll in the PADI Open Diver course or Junior Open Water Diver course, you must be 10 years or older
+    You will also need to be able to swim: there is a 200m swim test or 300m snorkel test that you will need to pass during the course
+    You will be required to demonstrate that you can comfortably float or tread water for 10 minutes.  You will also need to complete a 200m surface swim or a 300m swim using a mask, snorkel and fins",
+    included: "Equipment Rental
+    Dive Computer Rental
+    PADI Open Water – E-Manual
+    Logbook
+    PADI Certification",
+    dives: 4)
+  offer_1.user = user
+  offer_1.save!
+
+  puts "Offer 1 OK"
+
+  puts "Create offer 1..."
+
+  offer_2 = Offer.new(name: "PADI Discover Scuba Diving",
+    category: "Course",
+    duration: 1,
+    unit_duration: "day",
+    price: 70,
+    currency: "USD",
+    briefing: "The PADI Discover Scuba Diving program is an introduction to scuba diving aimed at those who are unsure if they want to get certified, or have limited time.  You will begin with a short safety briefing before trying on the scuba gear in the pool. We teach basic diving skills and hand signals to boost your confidence under water.
+    After the pool session you will go for a dive in the ocean to a maximum depth of 12 meters.  Turtles are frequently seen along with other reef fish and beautiful coral. During your dive you will be permanently supervised by a scuba instructor.",
+    level: "Beginner",
+    prerequisites: "You must be 10 years or older
+    No previous experience is necessary, but you must be able to complete the diver medical statement.",
+    included: "Equipment rental
+    One ocean dive
+    Pool training session",
+    dives: 1)
+  offer_2.user = user
+  offer_2.save!
+
+  puts "Offer 2 OK"
+
+  puts "Create offer 3..."
+
+  offer_3 = Offer.new(name: "PADI Scuba Diver ",
+    category: "Course",
+    duration: 2,
+    unit_duration: "days",
+    price: 250,
+    currency: "USD",
+    briefing:"The PADI Scuba Diver course is a subset of the PADI Open Water Diver course. If you’re short on time but really want to become a diver, the PADI Scuba Diver rating might be right for you ̶ particularly if you expect to go scuba diving primarily with a dive guide. This course is an intermediate step for earning an Open Water Diver certification, if that’s your ultimate goal.
+
+    The PADI Scuba Diver course is ideal for those with limited time. It involves 3 modules of theory from the Open Water course, half a day of confined pool training and 2 open water dives up to 12 meters.
+
+    You will receive a certification that lets you dive to 12 meters under the supervision of a Divemaster or Instructor. This license is valid worldwide.
+
+    PADI Scuba Divers are qualified to:
+    Dive under the direct supervision of a PADI Professional to a maximum depth of 12 metres/40 feet.
+    Obtain air fills, rent or purchase scuba equipment and participate in dive activities as long as properly supervised.
+    Continue dive training by completing the PADI Open Water Diver certification and taking certain specialty diver courses.",
+
+
+    level: "Beginner",
+    prerequisites: "To learn to dive and to enroll in the PADI Scuba Diver Course, you must be 10 years or older
+    You need adequate swimming skills and need to be in good physical health
+    No prior experience with scuba diving is required, but you can try it first through the Discover Scuba Diving program",
+    included: "Equipment Rental
+    Dive Computer Rental
+    PADI Open Water – E-Manual
+    Logbook
+    PADI Certification",
+    dives: 2)
+
+  offer_3.user = user
+  offer_3.save!
+
+  puts "Offer 3 OK"
+
+  puts "Create offer 4..."
+
+  offer_4 = Offer.new(name: "PADI Advanced Open Water ",
+    category: "Course",
+    duration: 3,
+    unit_duration: "days",
+    price: 370,
+    currency: "USD",
+    briefing:"Once you complete your PADI Open Water Course, you will want to continue your diving education with the PADI Adventure Diver or the Advanced Open Water course.
+    This course consists of 5 Adventure dives designed to build confidence and expand your scuba skills.  There are no videos or exams, just a bit of reading and some knowledge review questions to answer.
+    The Deep (30m) and navigation dives are mandatory but the other three dives can be selected, meaning you can tailor the course to suit your interests. Some of the more popular options include wreck, night, drift, nitrox and photography. Your instructor will discuss all the options available with you.",
+    level: "Advanced",
+    prerequisites: "Certified as a PADI Open Water Diver, or equivalent from agencies recognized by PADI
+    Must be 12 years or older
+    Must be able to complete the PADI medical statement",
+    included:"Equipment Rental
+    Dive Computer Rental
+    PADI Adventures in diving – E-Manual
+    Logbook
+    PADI Certification",
+    dives: 5)
+  offer_4.user = user
+  offer_4.save!
+
+  puts "Offer 4 OK"
+
+  puts "Create offer 5..."
+
+  offer_5 = Offer.new(name: "Emergency First Response (EFR)",
+    category: "Course",
+    duration: 1,
+    unit_duration: "day",
+    price: 150,
+    currency: "USD",
+    briefing:"First aid and CPR are good skills for everyone, not just scuba divers. You will need this certificate before starting the PADI Rescue Diver course or any of the professional diver courses. The Emergency First Response (EFR) course teaches you medical emergency response skills and prepares you for assisting in any medical emergency.
+
+    What you learn in the EFR course:
+
+    BLS (Basic Life Support) CPR and rescue breaths
+    Treatment for shock
+    Spinal injury management
+    Use of barriers to reduce disease transmission risks
+    Basic first aid and first aid kit considerations
+    These skills can be used in any area or environment.  Most work organizations will accept this as a recognized first aid certificate.",
+    level: "Advanced",
+    prerequisites: "If you already hold a First AID & CPR training certificate issued within the last 2 years, then you will not need to complete the Emergency First Responder (EFR) training.  However, we do recommend a refresher",
+    included: "Equipment rental",
+    dives: 0)
+  offer_5.user = user
+  offer_5.save!
+
+  puts "Offer 5 OK"
+
+  puts "Create offer 6..."
+
+
+
+  offer_6 = Offer.new(name: "PADI Rescue Diver",
+    category: "Course",
+    duration: 3,
+    unit_duration: "days",
+    price: 299,
+    currency: "USD",
+    briefing:"The PADI Rescue Diver course is informative and challenging and will build your confidence as a recreational diver. The intensive classroom and in-water rescue training will be both fun and rewarding. Throughout the course students complete 12 open water training exercises which will enhance ability to self rescue, assist distressed divers or deal with a variety of emergency situations. The scenarios and skills are spread over 4 dives.
+
+    If you do not have a current recognized first aid certificate that has been issued or updated in the last 2 years, you can complete the Emergency First Response course prior to starting the Rescue Course.
+
+    Includes:
+
+    First aid for diving injuries
+    First aid for marine injuries
+    Emergency procedures
+    Rescue equipment consideration and usage
+    Distress recognition
+    Self-rescue
+    Rescue entries, approaches and exits
+    Assist and transportation of patients
+    Missing, unconscious and submerged diver rescue
+    In-water artificial respiration
+    Accident recording and reporting
+    Expand your knowledge of diving with the PADI Rescue Diver Course
+    By the end of the course, you will have expanded your knowledge of diving, increased your level of diving skill and be more aware of what is happening in the diving environment. Most importantly, rescue training can help you to save lives and increase safety by preparing you to properly respond to diving emergencies. That’s because the PADI Rescue Course is the most rewarding course for advanced scuba divers.
+
+    After completing CPR and first aid and the PADI Rescue Diver course, you will be allowed to become a PADI member by joining the Professional levels, starting with the Divemaster Course.",
+    level: "Advanced",
+    prerequisites:"Be 12 years or older
+    Have a PADI Adventure Diver certification (or PADI Advanced Open Water), or have a qualifying certification from another organization
+    Certified Emergency First Responce Primary and Secondary care within the last 24 months",
+    included: "Equipment Rental
+    Dive Computer Rental
+    PADI Rescue Diver – E-Manual
+    Logbook
+    PADI Certification
+    EFR",
+    dives: 5)
+  offer_6.user = user
+  offer_6.save!
+
+  puts "Offer 6 OK"
+
+  puts "Create offer 7..."
+
+  offer_7 = Offer.new(name: "PADI enriched Air Diver (NITROX)",
+    category: "Course",
+    duration: 3 ,
+    unit_duration: "days",
+    price: 299,
+    currency: "USD",
+    briefing:"The benefits of more time underwater and less time between dives makes the Enriched Air (NITROX) Diver PADI’s most popular speciality course.  Scuba diving with enriched air gives you more ‘no decompression’ dive time which means more time underwater, especially on repetitive dives.
+
+    What You Will Learn:
+
+    Diving techniques using enriched air NITROX for longer recreational dives, safety considerations and avoiding possible hazards.
+    Equipment and enriched air considerations; managing oxygen exposure and tank contents; and setting a dive computer.
+    Planning and making no-decompression dives using air NITROX blends between 22% and 40% oxygen.
+    Enriched air production methods.",
+    level: "Advanced",
+    prerequisites: "Be at least 12 years old
+    Certified as a PADI Open Water Diver, or equivalent from agencies recognized by PADI",
+    included: "Equipment Rental
+    Dive Computer Rental
+    Gas
+    PADI Enriched Air Diver – E-Manual
+    Logbook
+    PADI Certification",
+    dives: 5)
+  offer_7.user = user
+  offer_7.save!
+
+  puts "Offer 7 OK"
+
+  puts "Create offer 8..."
+
+
+
+  offer_8 = Offer.new(name: "PADI Deep Diver Course",
+    category: "Course",
+    duration: 2,
+    unit_duration: "days" ,
+    price: 250,
+    currency: "USD",
+    briefing:"After your first few dives, you may want to visit dive sites that are slightly deeper. Learn to explore those exciting wonders and mysteries between 18 and 40 metres.
+
+    What you will learn:
+
+    The importance of personal limits and ‘why dive deep’.
+    Specialist equipment required for deep diving.
+    Planning, safety, buddy contact procedures and buoyancy control.
+    Managing gas supply and gas narcosis awareness.
+    This course is often combined with the Sidemount and Nitrox specialities to explore further for longer on our more challenging dive sites.",
+    level: "Advanced",
+    prerequisites: "Be at least 15 years old
+    Be certified as a Advanced Open Water Diver / Adventure Diver, or equivalent from agencies recognized by PADI",
+    included: "Equipment Rental
+    Dive Computer Rental
+    PADI Deep Diver Manual
+    Logbook
+    PADI Certification",
+    dives: 4)
+    offer_8.user = user
+    offer_8.save!
+
+  puts "Offer 8 OK"
+
+  puts "Create offer 9..."
+
+  offer_9 = Offer.new(name: "PADI Sidemount Diver Course",
+    category: "Course",
+    duration: 2,
+    unit_duration: "days" ,
+    price: 300,
+    currency: "USD",
+    briefing: "Whether you’re looking to bridge the gap between recreational and technical diving or searching for a new challenge and extended dive times, the Sidemount course is for you. This course teaches flexibility and streamlining through custom gear configuration while focusing on improving trim and fundamental skills in the water.
+
+    This course is often combined with the Deep and Nitrox specialities which allow divers to explore more challenging dive sites.
+
+    What you will learn:
+
+    Benefits of diving with a sidemount configuration
+    Properly assemble and configure sidemount scuba diving equipment.
+    Trim your weight system and sidemount gear so you’re perfectly balanced in the water.
+    Manage gas by switching second stages as planned, if wearing two cylinders.
+    Respond correctly to potential problems when sidemount diving.",
+    level: "Advanced",
+    prerequisites: "Be at least 15 years old
+    Certified as a PADI Open Water Diver, or equivalent from agencies recognized by PADI
+    Be certified as a Advanced Open Water Diver / Adventure Diver, or equivalent from agencies recognized by PADI",
+    included: "Equipment Rental
+    Dive Computer Rental
+    PADI Sidemount Manual
+    Logbook
+    PADI Certification",
+    dives: 3)
+  offer_9.user = user
+  offer_9.save!
+
+  puts "Offer 9 OK"
+
+  puts "Create offer 10..."
+
+  offer_10 = Offer.new(name: "PADI Wreck Diver Course",
+    category: "Course",
+    duration: 2,
+    unit_duration: "days" ,
+    price: 340,
+    currency: "USD",
+    briefing:"Whether sunk on purpose as an artificial reef or the result of mishap, wrecks open fascinating windows to the past. Most divers find wrecked ships, airplanes and even automobiles nearly irresistible because they’re intriguing to explore, exciting avenues of discovery, and usually teeming with aquatic life. The PADI Wreck Diver course teaches you the ins and outs of rewarding, responsible wreck diving.
+
+    There are many different types of wrecks, some of which are protected by laws that guard their historical and cultural significance. Your training starts by reviewing guidelines for researching and respecting wrecks.
+
+    During four dives you’ll learn:
+
+    Safety considerations for navigating and exploring wrecks.
+    Surveying and mapping a wreck.
+    Using penetration lines and reels to guide exploration.
+    Techniques to avoid kicking up silt or disturbing the wreck and its inhabitants.
+    There are many different types of wrecks, some of which are protected by laws that guard their historical and cultural significance. Your training starts by reviewing guidelines for researching and respecting wrecks.",
+    level: "Advanced",
+    prerequisites:"Be at least 15 years old
+    Be certified as a PADI Adventure Diver, PADI Advanced Open Water Diver, or equivalent from agencies recognized by PADI",
+    included:"Equipment Rental
+    Dive Computer Rental
+    PADI Wreck Diver Manual
+    Logbook
+    PADI Certification",
+    dives: 4)
+  offer_10.user = user
+  offer_10.save!
+
+  puts "Offer 10 OK"
+
+  puts "Create offer 11..."
+
+  offer_11 = Offer.new(name: "PADI Night Diver Course",
+    category: "Course",
+    duration: 3,
+    unit_duration: "days" ,
+    price: 270,
+    currency: "USD",
+    briefing:"As the sun sets, slip into your dive gear, take a deep breath and back roll into a whole new world of diving. Although you’ve seen the reef many times before, the day creatures retire for the evening and you can watch the nocturnal life under the glow of your dive light.
+
+    While scuba diving at night, you are more focused on what you can see in your light’s beam. Learn dive planning, additional equipment requirements and navigation in the dark. We also teach buoyancy control with less visual reference, and methods for remaining in your buddy team.
+
+    Throughout the three night dives you will practice:
+
+    Light handling and communication techniques.
+    Entering, exiting and navigating in the dark.
+    Identifying how plants and animals differ or change behavior at night time.",
+
+    level: "Advanced",
+    prerequisites:"Be at least 12 years old
+    Be certified as a PADI Open Water Diver, or equivalent from agencies recognized by PADI",
+    included:"Equipment Rental
+    Dive Computer Rental
+    Torch Rental
+    PADI Night Diver Manual
+    Logbook
+    PADI Certification",
+    dives: 3)
+  offer_11.user = user
+  offer_11.save!
+
+  puts "Offer 11 OK"
+
+  puts "Create offer 12..."
+
+  offer_12 = Offer.new(name: "PADI Peak Performance Buoyancy Course",
+    category: "Course",
+    duration: 1,
+    unit_duration: "day" ,
+    price: 199,
+    currency: "USD",
+    briefing:"What is neutral buoyancy? Scuba divers like to be neutrally buoyant so they neither sink nor float. It can be a tricky thing. Divers who’ve mastered the highest performance levels in buoyancy stand apart. You’ve seen them underwater. They glide effortlessly, use less air and ascend, descend or hover, almost as if by thought. They interact gently with aquatic life and affect their surroundings minimally. The PADI Peak Performance Buoyancy course refines the basic skills you learned as a PADI Open Water Diver and elevates them to the next level. Neutral buoyancy is the key to conserving your air consumption and leaving minimal impact on the aquatic environment.
+
+    During two scuba dives, you’ll learn how to:
+
+    Determine the exact weight you need, so you’re not too light or too heavy.
+    Trim your weight system and scuba gear so you’re perfectly balanced in the water.
+    Streamline to save energy, use air more efficiently and move more smoothly through the water.
+    Hover effortlessly in any position – vertical or horizontal.",
+    level: "Advanced",
+    prerequisites:"Be at least 10 years old
+    Be certified as a PADI Open Water Diver, or equivalent from agencies recognized by PADI",
+    included:"Equipment Rental
+    Dive Computer Rental
+    Peak Performance Buoyancy Manual
+    Logbook
+    PADI Certification",
+    dives: 3)
+  offer_12.user = user
+  offer_12.save!
+
+  puts "Offer 12 OK"
+
+  puts "Create offer 13..."
+
+  offer_13 = Offer.new(name: "PADI Search & Recovery Course",
+    category: "Course",
+    duration: 2,
+    unit_duration: "days" ,
+    price: 249,
+    currency: "USD",
+    briefing:"Have you ever dropped something in the water? Are you looking for lost “treasure”? The PADI Search and Recovery Diver Specialty course will teach you effective ways to find objects underwater and bring them to the surface. Small, large or just awkward, there is a way to bring them up.
+
+    Gathering information and resources, then carefully planning a search are the first important steps you learn. During four scuba dives you’ll practice:
+
+    Swimming search patterns using your compass and natural navigation.
+    Locating large and small objects using various search patterns.
+    Using a lift bag for large or heavy objects, plus other recovery methods.
+    Planning a search operation based on facts gathered about a lost object prior to the dive.",
+    level: "Advanced",
+    prerequisites:"Be at least 12 years old
+    Be certified as a PADI Advanced Open Water Diver, or equivalent from agencies recognized by PADI. Open Water Divers with a PADI Underwater Navigator certification also qualify",
+    included:"Equipment Rental.Dive Computer Rental.Compass Rental.Search and Recovery Manual .Logbook.PADI Certification",
+    dives: 4)
+  offer_13.user = user
+  offer_13.save!
+
+  puts "Offer 13 OK"
+
+  puts "Create offer 14..."
+
+  offer_14 = Offer.new(name: "PADI Project Aware Shark Conservation Specialty Course",
+    category: "Course",
+    duration: 1,
+    unit_duration: "day" ,
+    price: 180,
+    currency: "USD",
+    briefing:"Sharks are crucial to marine ecosystems, but many shark species are in danger of becoming extinct. This course gives you the opportunity to learn more about sharks, what makes them unique, why they play a crucial role in keeping our ocean healthy and why they are in global decline. You can become a passionate shark defenders help take action to protect sharks.
+
+    This course will:
+
+    Inspire you to become a shark conservation advocate
+    Introduce sharks including their conservation status and why they are vulnerable to impacts
+    Introduce the major threats that are greatly reducing shark populations
+    Provide information on the value of sharks to the marine environment and to local economies
+    Introduce you to management approaches that can protect sharks
+    Provide a pathway for you to become actively involved in shark conservation
+    Show you how to identify hazards in marine environments and on land that threaten sharks.",
+    level: "Advanced",
+    prerequisites:"Be at least 12 years old.Certified as a PADI Open Water Diver, or equivalent from agencies recognized by PADI",
+    included:"Equipment Rental.Dive Computer Rental.Project AWARE Shark Conservation Manual.Logbook.PADI Certification",
+    dives: 2)
+  offer_14.user = user
+  offer_14.save!
+
+  puts "Offer 14 OK"
+
+  puts "Create offer 15..."
+
+  offer_15 = Offer.new(name: "PADI Digital Underwater Photographer Course",
+    category: "Course",
+    duration: 1,
+    unit_duration: "day" ,
+    price: 200,
+    currency: "USD",
+    briefing:"Underwater photography is one of the most popular diving specialities. With so many cameras and housings available, underwater photography is easier and more accessible. The PADI Digital Underwater Photographer course gets you started quickly, whether you’re using a point-and-shoot or a more sophisticated D-SLR like the professionals.
+
+    Throughout the two scuba dives, you’ll discover:
+
+    How to choose the right underwater camera system for you.
+    The PADI SEA (Shoot, Examine, Adjust) method for getting great shots quickly.
+    Principles for good composition of underwater images.
+    Practical techniques to take great photos with your digital camera.",
+    level: "Advanced",
+    prerequisites:"Be at least 10 years old
+    Certified as a PADI Open Water Diver, or equivalent from agencies recognized by PADI",
+    included:"Equipment Rental
+    Dive Computer Rental
+    PADI Digital Underwater Photographer Manual
+    Logbook
+    PADI Certification
+    All photos taken during the course
+    (Camera rental not included)",
+    dives: 2)
+  offer_15.user = user
+  offer_15.save!
+
+  puts "Offer 15 OK"
+
+end
