@@ -29,15 +29,16 @@
     <% @pros.each do |p| %>
       <%= link_to pro_path(p) do %>
         <div class="card-pro">
-          <%= cl_image_tag p.avatar.key if p.avatar.present? %>
-          <div class="card-infos font-weight-light">
+          <div class="img-container">
+            <%= cl_image_tag p.avatar.key if p.avatar.present? %>
+          </div>
+          <div class="card-infos font-weight-light background-white">
             <div>
-              <h2><%= p.first_name %> <%= p.last_name[0].capitalize%>.</h2>
+                <h2><%= p.first_name %> <%= p.last_name[0].capitalize%>.</h2>
                 <p><%= truncate p.bio, length: 100 %></p>
                 <span class="underline">Read more</span>
-                  <p><i style="color:#477E9F d-flex" class="fa-solid fa-location-pin mx-1 "></i><%= p.location %></p>
-
-              </div>
+                <p><i style="color:#477E9F d-flex" class="fa-solid fa-location-pin mx-1 "></i><%= p.location %></p>
+            </div>
           </div>
         </div>
       <% end %>
