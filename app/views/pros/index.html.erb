@@ -3,7 +3,7 @@
 <div class="banner-show-pro">
 <div class="container container-transparent-navbar">
   <div class="my-4 text-center">
-    <h3 class="mb-10 ">Discover all our professionnal divers</h3>
+    <h3 class="mb-1.5rem ">Discover all our professionnal divers</h3>
     <div class="search d-grid gap-2 d-md-flex justify-content-center w-25 m-auto">
           <%= form_tag pros_path, method: :get, class: "d-flex" do %>
             <%= text_field_tag :query,
@@ -25,16 +25,17 @@
 <div class="container">
   <a class="btn btn-filter" href="#" role="button">Latest</a>
   <button class="btn btn-filter" type="submit">Popular</button>
-  <div class="cards mb-4">
+  <div class="cards mb-8">
     <% @pros.each do |p| %>
       <%= link_to pro_path(p) do %>
-        <div class="card-pro shadow-sm">
+        <div class="card-pro">
           <%= cl_image_tag p.avatar.key if p.avatar.present? %>
           <div class="card-infos font-weight-light">
             <div>
               <h2><%= p.first_name %> <%= p.last_name[0].capitalize%>.</h2>
-              <h6><i style="color:#477E9F" class="fa-solid fa-location-dot mx-1"></i><p><%= p.location %></p></h6>
                 <p><%= truncate p.bio, length: 100 %></p>
+                <span class="underline">Read more</span>
+                  <p><i style="color:#477E9F d-flex" class="fa-solid fa-location-pin mx-1 "></i><%= p.location %></p>
 
               </div>
           </div>
