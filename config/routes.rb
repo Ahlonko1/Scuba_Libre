@@ -6,7 +6,7 @@ Rails.application.routes.draw do
     resources :bookings, only: %i[new create destroy]
   end
 
-  resources :bookings, only: %i[show] do
+  resources :bookings, only: %i[show index] do
     member do
       patch :accepted
       patch :denied

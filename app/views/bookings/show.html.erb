@@ -1,0 +1,67 @@
+<div class="banner-show-booking d-flex">
+  <div class="banner-booking-info">
+    <h3>Your booking of:</h3>
+    <h1><%= @booking.offer.name %></h1>
+    <h3>Your teacher: <%=@booking.offer.user.first_name%> <%= @booking.user.last_name%></h3>
+    <h5><i class="fa-solid fa-location-pin"></i> <%= @booking.location%></h3>
+  </div>
+</div>
+
+<div class="container mt-5">
+  <div class="d-flex justify-content-between">
+    <p>Category: <%= @booking.offer.category %></p>
+    <p>Level: <%= @booking.offer.level %></p>
+  </div>
+  <div class="d-flex justify-content-between">
+    <p>Number of dives: <%= @booking.offer.dives %></p>
+    <p>Duration: <%= @booking.offer.duration %> <%= @booking.offer.unit_duration %></p>
+  </div>
+  <h5>Briefing:</h5>
+  <p><%= @booking.offer.briefing %></p>
+  <div class="d-flex">
+    <div class="col-4">
+      <h5>Included:</h5>
+      <p><%= @booking.offer.included %></p>
+    </div>
+    <div class="col-4">
+      <h5>Prerequisites:</h5>
+      <p><%= @booking.offer.prerequisites %></p>
+    </div>
+  </div>
+</div>
+
+<% if @booking.methods.include?(:messages) %>
+  <div class="container mt-5">
+    <h1>Messagerie:</h1>
+    <div class="messages">
+      <% @booking.messages.each do |message| %>
+        <div id="message-<%= message.id %>">
+          <small>
+            <strong><%= message.user.first_name %></strong>
+            <i><%= message.created_rat.strftime("%a %b %e at %l:%M %p") %></i>
+          </small>
+          <p><%= message.content %></p>
+        </div>
+      <% end %>
+    </div>
+  </div>
+<% end %>
+
+
+<div class="container mt-5">
+  <h1>Contact:</h1>
+  <div class="d-flex">
+    <div class="p-3">
+      <h3>Teacher:</h3>
+      <p><%= @booking.offer.user.email %></p>
+    </div>
+    <div class="p-3">
+      <h3>Booker:</h3>
+      <p><%= @booking.user.email %></p>
+    </div>
+  </div>
+</div>
+
+
+<%# modèle à adapter ->  %>
+<%# <%= cl_image_tag @pro.avatar.key, class: "avatar-profile" %>
