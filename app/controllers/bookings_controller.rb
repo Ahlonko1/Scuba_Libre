@@ -3,6 +3,8 @@ class BookingsController < ApplicationController
   def show
     @booking = Booking.find(params[:id])
     authorize @booking
+    @message = Message.new
+    authorize @message
   end
 
   def create

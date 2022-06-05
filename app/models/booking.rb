@@ -1,6 +1,8 @@
 class Booking < ApplicationRecord
   belongs_to :offer
   belongs_to :user
+  has_many :messages
+
 
   after_create :set_price, :set_currency, :set_location
 
