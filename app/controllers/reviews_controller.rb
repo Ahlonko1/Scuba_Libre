@@ -1,21 +1,20 @@
 class ReviewsController < ApplicationController
   def new
-    @pro = User.find(params[:id])
+    @booking = Booking.find(params[:booking_id])
     @review = Review.new
     authorize @review
-
   end
 
   def create
     @review = Review.new(review_params)
     @review.user = current_user
+    @review.booking_id = params[:booking_id]
     authorize @review
 
     if @review.save
-      redirect_to pro_path(params[:id])
+      redirect_to pro_path(@review.booking.offer.user)
     else
-      flash[:alert] = "Something went wrong."
-      render :new
+      render :new, status: :unprocessable_entity
     end
   end
 
