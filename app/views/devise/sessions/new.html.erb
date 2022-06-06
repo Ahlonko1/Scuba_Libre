@@ -1,3 +1,23 @@
+<div class="banner-show-pro">
+<div class="container container-transparent-navbar">
+  <div class="my-4 text-center">
+    <h3 class="mb-1.5rem "></h3>
+    <div class="search d-grid gap-2 d-md-flex justify-content-center w-25 m-auto">
+          <%= form_tag pros_path, method: :get, class: "d-flex" do %>
+            <%= text_field_tag :query,
+              params[:query],
+              class: "form-control",
+              placeholder: "Search for a pro"
+            %>
+          <button name="button" type="submit" class="btn btn-primary">
+            <i class="fas fa-search"></i>
+          </button>
+          <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
 <div class="container opacity mt-2" style="width: 600px">
     <div class="card border-white p-5">
     <div class="text-center p-3">
