@@ -1,6 +1,7 @@
 .btn-primary {
   border-radius: 100px;
   height: 40px;
+  color: white;
 }
 
 .btn-filter {
@@ -18,4 +19,10 @@
     border: none;
     border-radius: 23px;
     margin-bottom: 10px
+}
+
+.btn-orange{
+  color: white;
+  background-color: $orange;
+  font-family: $body-font
 }

@@ -18,16 +18,21 @@
 
       </div>
 </div>
-<div class="container">
-  <h3>Calendar:</h3>
-  <%= month_calendar(events: @bookings, attribute: :start_at) do |date, bookings| %>
-  <%= date %>
-
-  <% bookings.each do |booking| %>
-    <div class="meeting">
-      <%= link_to "#{booking.user.first_name}", booking_path(booking), class: "btn btn-outline-success" %>
-    </div>
-  <% end %>
-<% end %>
+<div class="container mt-3">
+  <ul class="nav nav-tabs" id="myTab" role="tablist">
+    <li class="nav-item" role="presentation" >
+      <button class="nav-link active" id="calendar-tab" data-bs-toggle="tab" data-bs-target="#calendar" type="button" role="tab" aria-controls="home" aria-selected="true">Calendar</button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link" id="booking-tab" data-bs-toggle="tab" data-bs-target="#bookings" type="button" role="tab" aria-controls="profile" aria-selected="false">Bookings</button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link" id="offer-tab" data-bs-toggle="tab" data-bs-target="#offers" type="button" role="tab" aria-controls="profile" aria-selected="false">Offers</button>
+    </li>
+  </ul>
+  <div class="tab-content" id="myTabContent">
+    <div class="tab-pane fade show active" id="calendar" role="tabpanel" aria-labelledby="calendar-tab"><%= render "pages/calendar" %></div>
+    <div class="tab-pane fade" id="bookings" role="tabpanel" aria-labelledby="bookings-tab"><%= render "bookings/dashboard" %></div>
+    <div class="tab-pane fade" id="offers" role="tabpanel" aria-labelledby="offers-tab"><%= render "pages/offers" %></div>
+  </div>
 </div>
-<%= render "bookings/dashboard"%>
