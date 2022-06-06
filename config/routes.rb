@@ -14,14 +14,15 @@ Rails.application.routes.draw do
       patch :cancelled
     end
     resources :messages, only: :create
+    resources :reviews, only: %i[new create]
   end
 
 
   # Routes pour les pros ->
   get "pros", to: "pros#index"
   get "pros/:id", to: "pros#show", as: "pro"
-  get "pros/:id/reviews/new", to: "reviews#new", as: "new_review"
-  post "pros/:id/reviews/", to: "reviews#create", as: "reviews"
+  # get "pros/:id/reviews/new", to: "reviews#new", as: "new_review"
+  # post "pros/:id/reviews/", to: "reviews#create", as: "reviews"
 
   # Routes pour les pages ->
   get "dashboard", to: "pages#dashboard"
