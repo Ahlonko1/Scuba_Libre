@@ -1,0 +1,39 @@
+<div class="container container-transparent-navbar">
+  <h1>OUAICH, ICI C'EST LA POSTE</h1>
+  <div class="messenger">
+
+    <%@bookings_owner.each do |b| %>
+      <% if b.messages.last %>
+        <div class="message d-flex justify-content-between">
+          <div>
+            <h3><%= b.offer.name %></h3>
+            <p><%=b.messages.last.user.first_name%>wrote: <%=b.messages.last.content%>/p>
+          </div>
+          <%= link_to "View conversation", booking_path(b), class: "btn btn-primary" %>
+        </div>
+      <% end %>
+    <% end %>
+
+    <%@bookings_user.each do |b| %>
+      <% if b.messages.last %>
+        <div class="message d-flex justify-content-between">
+          <div>
+            <h2><%= b.offer.name %></h2>
+            <p><%=b.messages.last.user.first_name%> wrote: <%=b.messages.last.content %></p>
+          </div>
+          <%= link_to "View conversation", booking_path(b), class: "btn btn-primary" %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+<%# @bookings_owner
+@bookings_user %>

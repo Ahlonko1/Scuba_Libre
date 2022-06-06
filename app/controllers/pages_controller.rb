@@ -13,4 +13,9 @@ class PagesController < ApplicationController
     # For a monthly view:
     @bookings = Booking.where(start_at: start_date.beginning_of_month.beginning_of_week..start_date.end_of_month.end_of_week)
   end
+
+  def mailbox
+    @bookings_owner = current_user.booking_requested
+    @bookings_user = current_user.bookings
+  end
 end
