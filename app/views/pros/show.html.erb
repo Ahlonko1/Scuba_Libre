@@ -2,14 +2,19 @@
   <%= cl_image_tag @pro.avatar.key, class: "avatar-profile" %>
   <div class="banner-pro-info">
     <h1><%= @pro.first_name %> <%= @pro.last_name[0].capitalize%>.</h1>
+    <div class="d-flex">
+        <p><% @pro.languages.each do |l|%>
+        <span class="badge badge-pill"><%= l %></span>
+        <% end %></p>
+      </div>
     <p><i class="fa-solid fa-location-dot"></i></i> <%= @pro.location %></p>
     <div class="d-flex align-items-center">
       <p><%= @pro.bio%></p>
       <p class="mx-5"><i style="font-size: 50px; color:orange;" class="fa-brands fa-instagram-square"></i></p>
     </div>
   </div>
-  <div class="vague-showpro">
-  </div>
+  <%# <div class="vague-showpro">
+  </div> %>
 </div>
   <div class="mt-3 ms-3">
     <%= link_to "Back", :back, class: "btn btn-secondary" %>
