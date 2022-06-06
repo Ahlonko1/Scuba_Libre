@@ -1,24 +1,28 @@
-  <div class="video">
+  <div class="video position-relative">
   <%= video_tag "https://res.cloudinary.com/dtohrmf4g/video/upload/v1654167319/aquarium_-_109184_Original_pgrubc.mp4", autoplay: true, muted: true, loop: true, id: "background-video" %>
-  </div>
-<div class="container">
-  <div class="banner" >
-    <h1>Welcome to ScubaLibre</h1>
-    <p>Find a scuba instructor for your next dive!</p>
-    <div class="search col-4">
-        <%= form_tag pros_path, method: :get, class: "d-flex" do %>
-          <%= text_field_tag :query,
-            params[:query],
-            class: "form-control",
-            placeholder: "Where do you want to dive?"
-          %>
-        <button name="button" type="submit" class="btn btn-primary">
-          <i class="fas fa-search"></i>
-        </button>
-        <% end %>
+    <div class="container">
+      <div class="banner" >
+        <h1>Welcome to ScubaLibre</h1>
+        <p>Find a scuba instructor for your next dive!</p>
+        <div class="search col-4">
+            <%= form_tag pros_path, method: :get, class: "d-flex" do %>
+              <%= text_field_tag :query,
+                params[:query],
+                class: "form-control",
+                placeholder: "Where do you want to dive?"
+              %>
+            <button name="button" type="submit" class="btn btn-primary">
+              <i class="fas fa-search"></i>
+            </button>
+            <% end %>
+        </div>
+      </div>
+    </div>
+    <div class="encircle bounce animated">
+      <div class="arrow">
+      </div>
     </div>
   </div>
-</div>
 <div class="dark fold">
   <div class="container">
     <h1>About us</h1>
