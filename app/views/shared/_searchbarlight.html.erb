@@ -1,0 +1,12 @@
+<div class="search-lite">
+            <%= form_tag pros_path, method: :get, class: "d-flex" do %>
+              <%= text_field_tag :query,
+                params[:query],
+                class: "form-control",
+                placeholder: "Where do you want to dive?"
+              %>
+            <button name="button" type="submit" class="btn btn-primary">
+              <i class="fas fa-search"></i>
+            </button>
+            <% end %>
+        </div>
