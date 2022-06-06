@@ -1,10 +1,35 @@
-<div class="banner-show-booking d-flex">
+<div class="banner-show-booking d-flex justify-content-between">
   <div class="banner-booking-info">
-    <h3>Your booking of:</h3>
-    <h1><%= @booking.offer.name %></h1>
-    <h3>Your teacher: <%=@booking.offer.user.first_name%> <%= @booking.user.last_name%></h3>
-    <h5><i class="fa-solid fa-location-pin"></i> <%= @booking.location%></h3>
-    <h5>Status: <%=@booking.status%></h5>
+      <h3>Your booking of:</h3>
+      <h1><%= @booking.offer.name %></h1>
+      <h3>Your teacher: <%=@booking.offer.user.first_name%> <%= @booking.user.last_name%></h3>
+      <h5><i class="fa-solid fa-location-pin"></i> <%= @booking.location%></h3>
+      <h5>Status: <%=@booking.status%></h5>
+  </div>
+  <div class="atcb" style="display:none;">
+    {
+      "name": "<%= @booking.offer.name %> with <%=@booking.offer.user.first_name%></h1>",
+      "description":"[url] <%=booking_url(@booking)%> [/url]",
+      "startDate": "<%=@booking.start_at.strftime("%F")%>",
+      "endDate":"<%=@booking.start_at.strftime("%F")%>",
+      "startTime":"10:13",
+      "endTime":"17:57",
+      "location": "<%= @booking.location %>",
+      "label":"Add to Calendar",
+      "options":[
+        "Apple",
+        "Google",
+        "iCal",
+        "Microsoft365",
+        "MicrosoftTeams",
+        "Outlook.com",
+        "Yahoo"
+      ],
+      "timeZone":"Europe/Berlin",
+      "timeZoneOffset":"+01:00",
+      "trigger":"click",
+      "iCalFileName":"Reminder-Event"
+    }
   </div>
 </div>
 
