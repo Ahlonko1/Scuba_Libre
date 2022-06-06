@@ -2,9 +2,9 @@
 
 <div class="banner-show-pro">
 <div class="container container-transparent-navbar">
-  <div class="my-4 text-center">
+  <div class="text-center">
     <h3 class="mb-1.5rem ">Discover all our professionnal divers</h3>
-    <div class="search d-grid gap-2 d-md-flex justify-content-center w-25 m-auto">
+    <div class="search justify-content-center w-25 m-auto">
           <%= form_tag pros_path, method: :get, class: "d-flex" do %>
             <%= text_field_tag :query,
               params[:query],
@@ -21,36 +21,35 @@
 </div>
 
 <%# FILTRES + CARDS PROS %>
-
-<div class="container">
-  <a class="btn btn-filter" href="#" role="button">Latest</a>
-  <button class="btn btn-filter" type="submit">Popular</button>
-  <div class="cards mb-8">
+<%# <a class="btn btn-filter" href="#" role="button">Latest</a>
+  <button class="btn btn-filter" type="submit">Popular</button> %>
+<div class="container d-flex">
+  <div class="cards">
     <% @pros.each do |p| %>
       <%= link_to pro_path(p) do %>
-        <div class="card-pro">
+        <div class="card-pro shadow-sm">
           <div class="img-container">
             <%= cl_image_tag p.avatar.key if p.avatar.present? %>
           </div>
-          <div class="card-infos font-weight-light background-white">
+          <div class="card-infos font-weight-light background-white p-3">
             <div>
                 <h2><%= p.first_name %> <%= p.last_name[0].capitalize%>.</h2>
                 <p><%= truncate p.bio, length: 100 %></p>
                 <span class="underline">Read more</span>
-                <p><i style="color:#477E9F d-flex" class="fa-solid fa-location-pin mx-1 "></i><%= p.location %></p>
+                <p><i style="color:#477E9F d-flex" class="fa-solid fa-location-dot"></i> <%= p.location %></p>
             </div>
           </div>
         </div>
       <% end %>
     <% end %>
     </div>
-  </div>
-</div>
-
 <%# LA MAP %>
-
-<div style="width: 100%; height: 200px; margin-left-30"
+    <div style="width: 75%; height: 700px; position: sticky; top: 0"
       data-controller="map"
       data-map-markers-value="<%= @markers.to_json %>"
       data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+    </div>
+  </div>
+
+
 </div>

@@ -3,7 +3,7 @@
     <div>
       <h1><%= @offer.name %></h1>
       <h3>With: <%=@offer.user.first_name%> <%= @offer.user.last_name%></h3>
-      <h5><i class="fa-solid fa-location-pin"></i> <%= @offer.user.location%></h5>
+      <h5><i class="fa-solid fa-location-dot"></i> <%= @offer.user.location%></h5>
     </div>
   </div>
 </div>
@@ -72,9 +72,9 @@
 
     </div>
   </div>
-  <h5>Briefing:</h5>
+  <h5><u>Briefing</u></h5>
   <p><%= @offer.briefing %></p>
-  <h5>Included:</h5>
+  <h5><u>Included</u></h5>
   <p><%= @offer.included %></p>
-  <h5>Prerequisites:</h5>
+  <h5><u>Prerequisites</u></h5>
   <p><%= @offer.prerequisites %></p>
