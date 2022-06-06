@@ -1,3 +1,10 @@
+.container-transparent-navbar {
+  padding-top: 80px;
+}
+
+.navbar {
+  padding: 1rem 2rem;
+}
 // Navbar Transparent ///
 
 .navbar-transparent {
@@ -17,16 +24,13 @@
     }
 }
 
-.container-transparent-navbar {
-  padding-top: 80px;
-}
-
 // Navbar White ///
 
 .navbar-plain {
   justify-content: space-between;
-  background-color: white;
-  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+  background-color: $deep_blue;
+  transition: 0.5s background-color ease;
+
     .navbar-collapse {
       flex-grow: 0;
     }
@@ -50,7 +54,7 @@
 // DROPDOWN MENU
 
 .navbar .dropdown a {
-  color: $blue;
+  color: $deep_blue;
 }
 
 .navbar .dropdown-menu {
@@ -61,54 +65,4 @@
   pointer-events: none;
   text-align: center;
   border-bottom: 0.5px solid $blue;
-}
-
-.search {
-  border: none;
-  border-radius: 100px;
-  background-color: white;
-  display: block;
-  padding: 10px 10px 10px 20px;
-  border: 1px solid #e7e7e9;
-  justify-content: left !important;
-    i {
-      color: white;
-    }
-    .form-control {
-      border: none;
-      border-radius: 25px;
-      background-color: white;
-      &:focus {
-      box-shadow: none;
-      }
-    }
-    .btn-primary {
-      border-radius: 100px;
-      margin: 3px;
-      margin-left: 40px;
-    }
-}
-
-.btn-filter {
-  background-color: #eef3f9;
-  color: #3439C9;
-  border: none;
-  border-radius: 23px;
-  margin-bottom: 10px;
-  margin-top: 40px;
-}
-
-#map{
-  width: 450px;
-  height: 350px;
-  margin: 10px auto;
-}
-
-
-.btn-secondary {
-    background-color: #eef3f9;
-    color: #3439C9;
-    border: none;
-    border-radius: 23px;
-    margin-bottom: 10px
 }
