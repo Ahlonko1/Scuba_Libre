@@ -14,7 +14,16 @@
 
   <div class="offers mb-4">
       <% @offers.each do |o| %>
-          <%= render "offers/show_offers_pro", offer: o %>
+          <div class="card-offers shadow-sm">
+            <h2><%= o.name %></h2>
+            <p><%= truncate o.briefing, length:150 %></p>
+            <p><i><%= o.duration %> <%= o.unit_duration %></i></p>
+            <div class="card-offers-bottom">
+              <p><strong><%= o.currency %> <%= o.price %></strong></p>
+              <!-- View offer details  -->
+              <%= link_to "Details", offer_path(o), class:"btn btn-primary" %>
+            </div>
+          </div>
       <% end %>
   </div>
 </div>
