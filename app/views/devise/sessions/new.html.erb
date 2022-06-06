@@ -1,54 +1,36 @@
-<div class="banner-show-pro">
-<div class="container container-transparent-navbar">
-  <div class="my-4 text-center">
-    <h3 class="mb-1.5rem "></h3>
-    <div class="search d-grid gap-2 d-md-flex justify-content-center w-25 m-auto">
-          <%= form_tag pros_path, method: :get, class: "d-flex" do %>
-            <%= text_field_tag :query,
-              params[:query],
-              class: "form-control",
-              placeholder: "Search for a pro"
-            %>
-          <button name="button" type="submit" class="btn btn-primary">
-            <i class="fas fa-search"></i>
-          </button>
-          <% end %>
+<div class="dark-bg min-h-90vh">
+  <div class="container opacity container-transparent-navbar" style="width: 600px",>
+      <div class="card border-white p-5">
+      <div class="text-center p-3">
+        <h2>🤿 Log in</h2>
       </div>
-    </div>
-  </div>
-</div>
+        <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name),
+          data: {turbo: false}) do |f| %>
+          <div class="form-inputs">
+            <div class="row g-1">
+                <%= f.input :email,
+                            required: false,
+                            autofocus: true,
+                            input_html: { autocomplete: "email" },
+                            placeholder: "email*",
+                            label: false %>
+                <%= f.input :password,
+                            required: false,
+                            input_html: { autocomplete: "current-password" },
+                            placeholder: "password*",
+                            label: false %>
+                <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
 
-<div class="container opacity mt-2" style="width: 600px">
-    <div class="card border-white p-5">
-    <div class="text-center p-3">
-      <h2>🤿 Log in</h2>
-    </div>
-      <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name),
-        data: {turbo: false}) do |f| %>
-        <div class="form-inputs">
-          <div class="row g-1">
-              <%= f.input :email,
-                          required: false,
-                          autofocus: true,
-                          input_html: { autocomplete: "email" },
-                          placeholder: "email*",
-                          label: false %>
-              <%= f.input :password,
-                          required: false,
-                          input_html: { autocomplete: "current-password" },
-                          placeholder: "password*",
-                          label: false %>
-              <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
-
-            </div>
-        </div>
-
-        <div class="form-actions">
-          <div class="d-grid col-3 mx-auto my-4">
-          <%= f.button :submit, "Log in", class: "btn btn-success" %>
+              </div>
           </div>
-        </div>
-      <% end %>
-      <%= render "devise/shared/links" %>
-    </div>
+
+          <div class="form-actions">
+            <div class="d-grid col-3 mx-auto my-4">
+            <%= f.button :submit, "Log in", class: "btn btn-success" %>
+            </div>
+          </div>
+        <% end %>
+        <%= render "devise/shared/links" %>
+      </div>
+  </div>
 </div>

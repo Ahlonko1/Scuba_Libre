@@ -13,3 +13,11 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+.dark-bg {
+  background-color: $deep_blue;
+}
+
+.min-h-90vh {
+  min-height: 90vh;
+}
