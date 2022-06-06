@@ -1,3 +1,10 @@
+.container-transparent-navbar {
+  padding-top: 80px;
+}
+
+.navbar {
+  padding: 1rem 2rem;
+}
 // Navbar Transparent ///
 
 .navbar-transparent {
@@ -17,16 +24,13 @@
     }
 }
 
-.container-transparent-navbar {
-  padding-top: 80px;
-}
-
 // Navbar White ///
 
 .navbar-plain {
   justify-content: space-between;
-  background-color: white;
-  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+  background-color: $deep_blue;
+  transition: 0.5s background-color ease;
+
     .navbar-collapse {
       flex-grow: 0;
     }
@@ -50,7 +54,7 @@
 // DROPDOWN MENU
 
 .navbar .dropdown a {
-  color: $blue;
+  color: $deep_blue;
 }
 
 .navbar .dropdown-menu {

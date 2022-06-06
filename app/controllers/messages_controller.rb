@@ -1,5 +1,10 @@
 class MessagesController < ApplicationController
 
+  def index
+    @bookings_owner = current_user.booking_requested
+    @bookings_user = current_user.bookings
+  end
+
   def create
     @booking = Booking.find(params[:booking_id])
     @message = Message.new(message_params)

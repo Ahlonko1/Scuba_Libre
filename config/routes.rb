@@ -27,4 +27,6 @@ Rails.application.routes.draw do
   # Routes pour les pages ->
   get "dashboard", to: "pages#dashboard"
 
+  resources :messages, only: :index
+
 end
