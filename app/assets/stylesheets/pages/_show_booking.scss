@@ -116,11 +116,9 @@
   border-left:1px solid lightgray;
 }
 
-
 .quarter-info {
   width: 25%;
 }
-
 
 .validate-banner {
   border-radius: 10px;
@@ -132,4 +130,31 @@
 .wave {
   background-position: right;
 
+}
+
+.infos-bookings {
+  padding: 19px 50px;
+  border: 1px solid lightgray;
+  margin-bottom: 40px;
+  border-radius: 10px;
+  h3{
+    color: #272343;
+  }
+  p {
+    color: #9aa0b1;
+  }
+}
+
+.badge-pending{
+    display: inline-block;
+    padding: 0.35em 0.65em;
+    font-size: 0.75em;
+    font-weight: 700;
+    line-height: 1;
+    color: #9aa0b1;
+    color: $deep_blue;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: 2px;
 }

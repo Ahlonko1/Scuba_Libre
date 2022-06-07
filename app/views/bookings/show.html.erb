@@ -1,67 +1,73 @@
-<div class="banner-show-booking d-flex justify-content-between">
-  <div class="banner-booking-info">
-      <h3>Your booking of:</h3>
+<div class="banner-show-booking d-flex justify-content-between position-relative">
+  <div class="row align-items-center justify-content-between">
+    <div class="banner-booking-info">
       <h1><%= @booking.offer.name %></h1>
-      <h3>Your teacher: <%=@booking.offer.user.first_name%> <%= @booking.user.last_name%></h3>
+      <h3><%=@booking.offer.user.first_name%> <%= @booking.user.last_name%></h3>
       <h5><i class="fa-solid fa-location-pin"></i> <%= @booking.location%></h3>
-      <h5>Status: <%=@booking.status%></h5>
-  </div>
-  <div class="atcb" style="display:none;">
-    {
-      "name": "<%= @booking.offer.name %> with <%=@booking.offer.user.first_name%></h1>",
-      "description":"[url] <%=booking_url(@booking)%> [/url]",
-      "startDate": "<%=@booking.start_at.strftime("%F")%>",
-      "endDate":"<%=@booking.start_at.strftime("%F")%>",
-      "startTime":"10:13",
-      "endTime":"17:57",
-      "location": "<%= @booking.location %>",
-      "label":"Add to Calendar",
-      "options":[
-        "Apple",
-        "Google",
-        "iCal",
-        "Microsoft365",
-        "MicrosoftTeams",
-        "Outlook.com",
-        "Yahoo"
-      ],
-      "timeZone":"Europe/Berlin",
-      "timeZoneOffset":"+01:00",
-      "trigger":"click",
-      "iCalFileName":"Reminder-Event"
-    }
+      <h4><span class="badge-pending bg-white mt-1"><i class="fa-solid fa-spinner color-$deepblue"></i> Status: <%=@booking.status%></span></h4>
+    </div>
+    <div class="wave">
+      <%= image_tag 'wave-02.png', class: 'position-absolute bottom-0 end-0 w-50' %>
+    </div>
+    <div class="atcb" style="display:none;"></div>
   </div>
 </div>
 
-<div class="container mt-5">
-  <div class="d-flex justify-content-between p-4">
-    <div class= "col-9 mr-3">
-      <div class="d-flex justify-content-between">
-        <p>Category: <%= @booking.offer.category %></p>
-        <p>Level: <%= @booking.offer.level %></p>
-      </div>
-      <div class="d-flex justify-content-between">
-        <p>Number of dives: <%= @booking.offer.dives %></p>
-        <p>Duration: <%= @booking.offer.duration %> <%= @booking.offer.unit_duration %></p>
-      </div>
-      <h5>Briefing:</h5>
-      <p><%= @booking.offer.briefing %></p>
-      <div class="d-flex justify-content-between">
-        <div class="col-4">
-          <h5>Prerequisites:</h5>
-          <p><%= @booking.offer.prerequisites %></p>
+  <%# </div>
+</div> %>
+
+<div class="d-flex w-100 align-items-start">
+  <div class="w-75 p-5">
+    <div class="d-flex justify-content-between infos-bookings">
+      <div class= "quarter-info">
+        <div class="d-flex justify-content-around" style="width 100%">
+          <div>
+            <p>Category:</p>
+            <h3><%= @booking.offer.category %></h3>
+          </div>
+          <div class="divider"></div>
         </div>
-        <div class="col-4">
-          <h5>Included:</h5>
-          <p><%= @booking.offer.included %></p>
+      </div>
+      <div class= "quarter-info">
+        <div class="d-flex justify-content-around" style="width 100%">
+          <div>
+            <p>Level:</p>
+            <h3><%= @booking.offer.level %></h3>
+          </div>
+          <div class="divider"></div>
+        </div>
+      </div>
+      <div class="quarter-info">
+        <div class="d-flex justify-content-around " style="width 100%">
+          <div>
+            <p>Number of dives:</p>
+            <h3><%= @booking.offer.dives %></h3>
+            </div>
+          <div class="divider"></div>
+        </div>
+      </div>
+      <div class="quarter-info">
+        <div class="d-flex justify-content-around " style="width 100%">
+          <div>
+            <p>Duration:</p>
+            <h3><%= @booking.offer.duration %> <%= @booking.offer.unit_duration %></h3>
+          </div>
         </div>
       </div>
     </div>
-    <div>
-      <h1>Contact:</h1>
-      <h3>Teacher:</h3>
+        <h5><u>Briefing:</u></h5>
+        <p><%= @booking.offer.briefing %></p>
+        <h5><u>Prerequisites:</u></h5>
+        <p><%= @booking.offer.prerequisites %></p>
+        <h5><u>Included:</u></h5>
+        <p><%= @booking.offer.included %></p>
+    </div>
+  <div class="validate-banner w-25 p-5 white shadow p-3 mx-5 bg-white rounded" style="margin-top: -70px; position: sticky; top: 100px;">
+    <div class="mt-3 justify-content-between">
+      <h4>Contact:</h4>
+      <h6>Teacher:</h6>
       <p><%= @booking.offer.user.email %></p>
-      <h3>Booker:</h3>
+      <h4>Booker:</h4>
       <p><%= @booking.user.email %></p>
     </div>
   </div>
