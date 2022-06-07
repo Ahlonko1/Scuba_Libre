@@ -19,10 +19,14 @@ class ProsController < ApplicationController
   def show
     @pro = User.find(params[:id])
     @offers = @pro.offers
+    if params[:category].present?
+      @offers = @offers.where(category: params[:category])
+    end
     if params[:level].present?
-      @offers = @pro.offers.where(level: params[:level])
-    else
-      @offers = @pro.offers
+      @offers = @offers.where(level: params[:level])
+    end
+    if params[:query].present?
+      @offers = @offers.where("price < ?", params[:query])
     end
     @booking = Booking.new
   end
