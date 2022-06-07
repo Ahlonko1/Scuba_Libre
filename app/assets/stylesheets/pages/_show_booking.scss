@@ -102,7 +102,7 @@
 .infos-offer {
   padding: 19px 50px;
   border: 1px solid lightgray;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
   border-radius: 10px;
   h3{
     color: #272343;
@@ -119,4 +119,17 @@
 
 .quarter-info {
   width: 25%;
+}
+
+
+.validate-banner {
+  border-radius: 10px;
+  h5{
+    color: $gray;
+  }
+}
+
+.wave {
+  background-position: right;
+
 }
