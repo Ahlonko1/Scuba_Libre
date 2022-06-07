@@ -440,7 +440,7 @@ User.all.each do |user|
   puts "Create offer 7..."
 
   offer_7 = Offer.new(name: "PADI enriched Air Diver (NITROX)",
-    category: "Course",
+    category: "Specialty Training",
     duration: 3 ,
     unit_duration: "days",
     price: 299,
@@ -473,7 +473,7 @@ User.all.each do |user|
 
 
   offer_8 = Offer.new(name: "PADI Deep Diver Course",
-    category: "Course",
+    category: "Specialty Training",
     duration: 2,
     unit_duration: "days" ,
     price: 250,
@@ -504,7 +504,7 @@ User.all.each do |user|
   puts "Create offer 9..."
 
   offer_9 = Offer.new(name: "PADI Sidemount Diver Course",
-    category: "Course",
+    category: "Specialty Training",
     duration: 2,
     unit_duration: "days" ,
     price: 300,
@@ -538,7 +538,7 @@ User.all.each do |user|
   puts "Create offer 10..."
 
   offer_10 = Offer.new(name: "PADI Wreck Diver Course",
-    category: "Course",
+    category: "Specialty Training",
     duration: 2,
     unit_duration: "days" ,
     price: 340,
@@ -571,7 +571,7 @@ User.all.each do |user|
   puts "Create offer 11..."
 
   offer_11 = Offer.new(name: "PADI Night Diver Course",
-    category: "Course",
+    category: "Specialty Training",
     duration: 3,
     unit_duration: "days" ,
     price: 270,
@@ -604,7 +604,7 @@ User.all.each do |user|
   puts "Create offer 12..."
 
   offer_12 = Offer.new(name: "PADI Peak Performance Buoyancy Course",
-    category: "Course",
+    category: "Specialty Training",
     duration: 1,
     unit_duration: "day" ,
     price: 199,
@@ -634,7 +634,7 @@ User.all.each do |user|
   puts "Create offer 13..."
 
   offer_13 = Offer.new(name: "PADI Search & Recovery Course",
-    category: "Course",
+    category: "Specialty Training",
     duration: 2,
     unit_duration: "days" ,
     price: 249,
@@ -660,7 +660,7 @@ User.all.each do |user|
   puts "Create offer 14..."
 
   offer_14 = Offer.new(name: "PADI Project Aware Shark Conservation Specialty Course",
-    category: "Course",
+    category: "Specialty Training",
     duration: 1,
     unit_duration: "day" ,
     price: 180,
@@ -688,7 +688,7 @@ User.all.each do |user|
   puts "Create offer 15..."
 
   offer_15 = Offer.new(name: "PADI Digital Underwater Photographer Course",
-    category: "Course",
+    category: "Specialty Training",
     duration: 1,
     unit_duration: "day" ,
     price: 200,
@@ -827,3 +827,61 @@ offer_21.user = user_2
 offer_21.save!
 
 puts "Offer 21 OK"
+
+offer_22 = Offer.new(name: "Fun Dive at Turtle Heaven",
+  category: "Fun Dive",
+  duration: 1,
+  unit_duration: "day" ,
+  price: 100,
+  currency: "USD",
+  briefing: "Turtle Heaven is situated on the north east side of Gili Meno. The majority of the dive site is a pinnacle that starts at 10 meters and drops down to 30 meters. It is covered in an abundance of hard and soft corals which make it an ideal habitat for both Hawksbill and Green turtles, as well as many other reef fish.
+
+  There are a number of man made objects as part of a coral propagation project which attracts huge numbers of sea life and makes this site suitable and of interest to all levels of diver.
+
+  If you can’t get enough of turtles check our post about interesting turtle facts.",
+  level: "Beginner",
+  prerequisites:"Be at least 10 years old
+  Certified as a PADI Open Water Diver, or equivalent from agencies recognized by PADI",
+  included:"Equipment Rental
+  Dive Computer Rental",
+  dives: 2)
+offer_22.user = user_3
+offer_22.save!
+
+puts "Offer 22 OK"
+
+offer_23 = Offer.new(name: "Fun Dive at Sunset Reef",
+  category: "Fun Dive",
+  duration: 1,
+  unit_duration: "day" ,
+  price: 100,
+  currency: "USD",
+  briefing: "Sunset Reef is located on the south-west side of Gili Trawagnan. This gradually sloping reef is suitable for all levels of diver. Covered in both hard and soft corals, it is an ideal home for a variety of marine life including snapper, sweetlips, sharks and turtles. Occasionally Manta Rays can be spotted passing through this site.",
+  level: "Beginner",
+  prerequisites:"Be at least 10 years old
+  Certified as a PADI Open Water Diver, or equivalent from agencies recognized by PADI",
+  included:"Equipment Rental
+  Dive Computer Rental",
+  dives: 2)
+offer_23.user = user_3
+offer_23.save!
+
+puts "Offer 23 OK"
+
+offer_24 = Offer.new(name: "Fun Dive at Deep Turbo",
+  category: "Fun Dive",
+  duration: 1,
+  unit_duration: "day" ,
+  price: 100,
+  currency: "USD",
+  briefing: "A dive site of epic proportions! With massive coral pinnacles rolling up from the sandy bottom, diving Deep Turbo is like flying through space looking down on the moon. The reef starts at 16 meters where large schools of batfish, red tooth triggerfish and snapper can be seen. Dropping down to 30 meters, the sandy bottom is home to many blue spotted rays and sharks. Search the gorgonian sea fans for pygmy sea horses, and nudibranch fans won’t be disappointed. We recommend diving Deep Turbo on Nitrox.",
+  level: "Advanced",
+  prerequisites:"Be at least 10 years old
+  Certified as a PADI Advanced Open Water Diver, or equivalent from agencies recognized by PADI",
+  included:"Equipment Rental
+  Dive Computer Rental",
+  dives: 2)
+offer_24.user = user_1
+offer_24.save!
+
+puts "Offer 24 OK"
