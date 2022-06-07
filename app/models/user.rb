@@ -35,10 +35,31 @@ class User < ApplicationRecord
 
   scope :pro, -> { where(pro: true) }
 
+  def all_bookings
+    Booking.where(id: all_booking_ids)
+  end
+
+  def all_booking_ids
+    booking_requested_ids + booking_ids
+  end
+
   def pro_profile_complete?
     return false
     #   return true unless pro?
 
     #   phone_number.present? && location.present?
+  end
+
+  def gotmail?
+    Message.
+      where(booking_id: all_booking_ids, read: false).
+      where.not(user: self).
+      any?
+  end
+
+  def how_many_mail
+    Message.
+      where(booking_id: all_booking_ids, read: false).
+      where.not(user: self).count
   end
 end

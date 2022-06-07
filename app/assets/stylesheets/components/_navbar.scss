@@ -1,5 +1,5 @@
 .container-transparent-navbar {
-  padding-top: 10px;
+  padding-top: 90px;
 }
 
 .navbar {
@@ -22,6 +22,7 @@
       color: $red;
       font-size: smaller;
     }
+
 }
 
 // Navbar White ///
@@ -50,6 +51,19 @@
       font-size: smaller;
     }
   }
+
+.btn-mail {
+  color: $white;
+  font-size: smaller;
+  background-color: red;
+  border-radius: 50%;
+  height: 15px;
+  width: 15px;
+  text-align: center;
+  line-height: 15px;
+  position: absolute;
+  right: 36px;
+}
 
 // DROPDOWN MENU
 
