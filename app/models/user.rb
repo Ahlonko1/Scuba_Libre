@@ -56,4 +56,10 @@ class User < ApplicationRecord
       where.not(user: self).
       any?
   end
+
+  def how_many_mail
+    Message.
+      where(booking_id: all_booking_ids, read: false).
+      where.not(user: self).count
+  end
 end
