@@ -2,7 +2,7 @@
   <div class="row align-items-center justify-content-between">
     <div class="banner-booking-info">
       <h1><%= @booking.offer.name %></h1>
-      <h3><%=@booking.offer.user.first_name%> <%= @booking.user.last_name%></h3>
+      <h3><%=@booking.offer.user.first_name%> <%= @booking.offer.user.last_name%></h3>
       <h5><i class="fa-solid fa-location-pin"></i> <%= @booking.location%></h3>
       <h4><span class="badge-pending bg-white mt-1"><i class="fa-solid fa-spinner color-$deepblue"></i> Status: <%=@booking.status%></span></h4>
     </div>
