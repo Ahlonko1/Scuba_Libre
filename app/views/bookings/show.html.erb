@@ -69,13 +69,16 @@
 
 <% if @booking.methods.include?(:messages) %>
   <div class="container mt-5">
-    <h1>Messagerie:</h1>
+    <h1 id="messenger">Messagerie:</h1>
     <div class="messages">
       <% @booking.messages.each do |message| %>
         <div id="message-<%= message.id %>">
           <small>
             <strong><%= message.user.first_name %></strong>
             <i><%= message.created_at.strftime("%a %b %e at %l:%M %p") %></i>
+            <% unless message.read  %>
+              <i> (unread) </i>
+            <% end %>
           </small>
           <p><%= message.content %></p>
         </div>

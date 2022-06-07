@@ -2,29 +2,17 @@
   <h1 style="text-align: center"><i class="fa-solid fa-paper-plane"></i> OUAICH, ICI C'EST LA POSTE</h1>
   <div class="messenger">
 
-    <%@bookings_owner.each do |b| %>
-      <% if b.messages.last %>
-        <div class="message d-flex justify-content-between">
-          <div>
-            <h3><%= b.offer.name %></h3>
-            <p><%=b.messages.last.user.first_name%>wrote: <%=b.messages.last.content%>/p>
-          </div>
-          <%= link_to "View conversation", booking_path(b), class: "btn btn-primary" %>
+    <%@last_messages.each do |m| %>
+      <div class="message d-flex justify-content-between">
+        <div>
+          <h3><%= m.booking.offer.name %></h3>
+          <i><%= m.created_at.strftime("%a %b %e at %l:%M %p") %></i>
+          <p><%= m.user.first_name %> wrote: <%= m.content%></p>
         </div>
-      <% end %>
+        <%= link_to "View conversation", booking_path(m.booking, anchor:"messenger"), class: "btn btn-primary" %>
+      </div>
     <% end %>
 
-    <%@bookings_user.each do |b| %>
-      <% if b.messages.last %>
-        <div class="message d-flex justify-content-between">
-          <div>
-            <h2><%= b.offer.name %></h2>
-            <p><%=b.messages.last.user.first_name%> wrote: <%=b.messages.last.content %></p>
-          </div>
-          <%= link_to "View conversation", booking_path(b), class: "btn btn-primary" %>
-        </div>
-      <% end %>
-    <% end %>
   </div>
 </div>
 

@@ -4,7 +4,7 @@ class BookingsController < ApplicationController
     @booking = Booking.find(params[:id])
     authorize @booking
     @message = Message.new
-    authorize @message
+    @booking.messages.where.not(user: current_user).update_all(read: true)
   end
 
   def create
