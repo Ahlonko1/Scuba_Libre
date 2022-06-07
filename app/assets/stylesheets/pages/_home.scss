@@ -90,10 +90,11 @@
   background-size: cover;
   background-position: top;
   height: 15vh;
-  background-image: url('VAGUE.png');
-  margin-bottom: -4vh;
-  margin-left: -14vh;
-  width: 200vh;
+  background-image: url(/assets/VAGUE.png);
+  /* margin-bottom: -4vh; */
+  /* margin-left: -14vh; */
+  width: 100%;
+  top: -103px;
 }
 
 .vague-showpro {
