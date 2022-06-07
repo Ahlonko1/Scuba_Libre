@@ -25,7 +25,7 @@
     <div class="mb-3">
       <%= link_to "Course", pro_path(@pro, category:"Course", level: params[:level], query: params[:query]), class: "btn btn-success #{"active" if params[:category] == "Course"} "%>
       <%= link_to "Fun Dive", pro_path(@pro, category:"Fun Dive", level: params[:level], query: params[:query]), class: "btn btn-success #{"active" if params[:category] == "Fun Dive"}" %>
-      <%= link_to "Specialty Training", pro_path(@pro, category:"Specialty Training", level: params[:level], query: params[:query]), class: "btn btn-success #{"active" if params[:category] == "Specialty Training"}" %>
+      <%= link_to "Specialty Training", pro_path(@pro, category:"Specialty Training", level: params[:level]), class: "btn btn-success #{"active" if params[:category] == "Specialty Training"}" %>
     </div>
     <p>Level</p>
     <div class="d-flex mb-3">
