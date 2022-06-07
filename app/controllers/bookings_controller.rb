@@ -11,6 +11,7 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     @booking.user = current_user
     @booking.offer_id = params[:offer_id]
+    @booking.end_at = @booking.start_at + (@booking.offer.duration.day - 1)
     @booking.status = "pending"
     authorize @booking
     if @booking.save
