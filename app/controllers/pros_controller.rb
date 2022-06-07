@@ -19,6 +19,11 @@ class ProsController < ApplicationController
   def show
     @pro = User.find(params[:id])
     @offers = @pro.offers
+    if params[:level].present?
+      @offers = @pro.offers
+    else
+      @offers = @pro.offers
+    end
     @booking = Booking.new
   end
 
