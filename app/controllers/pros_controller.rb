@@ -20,7 +20,7 @@ class ProsController < ApplicationController
     @pro = User.find(params[:id])
     @offers = @pro.offers
     if params[:level].present?
-      @offers = @pro.offers
+      @offers = @pro.offers.where(level: params[:level])
     else
       @offers = @pro.offers
     end
