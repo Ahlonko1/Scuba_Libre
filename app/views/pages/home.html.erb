@@ -1,26 +1,26 @@
-  <div class="video position-relative">
+<div class="video position-relative">
   <%= video_tag "https://res.cloudinary.com/dtohrmf4g/video/upload/v1654167319/aquarium_-_109184_Original_pgrubc.mp4", autoplay: true, muted: true, loop: true, id: "background-video" %>
-    <div class="container">
-      <div class="banner" >
-        <h1>Welcome to ScubaLibre</h1>
-        <p>Find a scuba instructor for your next dive!</p>
-        <div class="search col-sm-9 col-md-6 col-lg-6">
-            <%= form_tag pros_path, method: :get, class: "d-flex" do %>
-              <%= text_field_tag :query,
-                params[:query],
-                class: "form-control",
-                placeholder: "Where do you want to dive?"
-              %>
-            <button name="button" type="submit" class="btn btn-primary">
-              <i class="fas fa-search"></i>
-            </button>
-            <% end %>
-        </div>
-      </div>
+<div class="container">
+  <div class="banner" >
+    <h1>Welcome to ScubaLibre</h1>
+    <p>Find a scuba instructor for your next dive!</p>
+    <div class="search col-sm-9 col-md-6 col-lg-6">
+      <%= form_tag pros_path, method: :get, class: "d-flex" do %>
+        <%= text_field_tag :query,
+            params[:query],
+            class: "form-control",
+            placeholder: "Where do you want to dive?"
+        %>
+        <button name="button" type="submit" class="btn btn-primary">
+          <i class="fas fa-search"></i>
+        </button>
+      <% end %>
     </div>
-    <a class="encircle bounce animated" href="#scroll-position">
-      <div class="arrow"></div>
-    </a>
+  </div>
+</div>
+<a class="encircle bounce animated" href="#scroll-position">
+  <div class="arrow"></div>
+</a>
 <div class="dark fold" id="scroll-position">
   <div class="container d-flex">
     <div class="w-50 px-5 border-end">
@@ -37,7 +37,7 @@
 </div>
 
 
-  <div class="fold container pb-1 position-relative">
+<div class="fold container pb-1 position-relative">
   <div class="font-size-28 text-center">
 
     <h2> Feeling uninspired ? Here are some recommendations for you </h2>
@@ -97,7 +97,7 @@
             <p>Learn underwater photography</p>
         </div>
       </div>
-  <% end %>
+    <% end %>
 
     <%= link_to pros_path(query: 'malta'), class: "card-trip w-25 rounded" do %>
         <img src="https://res.cloudinary.com/dtohrmf4g/image/upload/v1654200702/shifaaz-shamoon-t4a2jEhg1n8-unsplash_tvczol.jpg" />
@@ -120,16 +120,14 @@
     <% end %>
 
     <%= link_to pros_path(query: 'honduras'), class: "card-trip w-25 rounded" do %>
-        <img src="https://res.cloudinary.com/dtohrmf4g/image/upload/v1654238858/beach_dive_dc7juf.jpg" />
-        <div class="card-trip-infos">
-          <div>
-            <h2>Honduras</h2>
-            <p>The best shore dives </p>
-          </div>
+      <img src="https://res.cloudinary.com/dtohrmf4g/image/upload/v1654238858/beach_dive_dc7juf.jpg" />
+      <div class="card-trip-infos">
+        <div>
+          <h2>Honduras</h2>
+          <p>The best shore dives </p>
         </div>
-    </div>
-<% end %>
-</div>
+      </div>
+    <% end %>
+  </div>
 
-<div class="vague">
-</div>
+<div class="vague"></div>
