@@ -157,3 +157,15 @@
   margin-bottom: 30px;
   border-bottom: 1px solid #9aa0b1;
 }
+
+
+.card-valide-booking{
+  h5{
+    color: $deep_blue;
+  }
+  p{
+    color: $gray;
+    font-weight: 300;
+    font-size: 14px;
+  }
+}
