@@ -4,7 +4,7 @@
       <h1><%= @booking.offer.name %></h1>
       <h3><%=@booking.offer.user.first_name%> <%= @booking.offer.user.last_name%></h3>
       <h5><i class="fa-solid fa-location-pin"></i> <%= @booking.location%></h3>
-      <h4><span class="badge-pending bg-white mt-1"> Status: <%= @booking.status %></span></h4>
+      <h4><span class="badge-pending bg-white mt-1"> Status: <%= @booking.status.capitalize %></span></h4>
     </div>
     <div class="wave">
       <%= image_tag 'wave-02.png', class: 'position-absolute bottom-0 end-0 w-50' %>
@@ -57,21 +57,13 @@
         </div>
       </div>
     </div>
-        <h5><u>Briefing:</u></h5>
+        <h5><u>Briefing</u></h5>
         <p><%= @booking.offer.briefing %></p>
-        <h5><u>Prerequisites:</u></h5>
+        <h5><u>Prerequisites</u></h5>
         <p><%= @booking.offer.prerequisites %></p>
-        <h5><u>Included:</u></h5>
+        <h5><u>Included</u></h5>
         <p><%= @booking.offer.included %></p>
-        <div class="card" style="width: 18rem;">
-          <div class="card-body">
-            <h5 class="card-title"><u>Contact</u></h5>
-            <h6 class="card-subtitle mb-2 text-muted">Teacher</h6>
-            <p><i><%= @booking.offer.user.email %></i></p>
-            <h6 class="card-subtitle mb-2 text-muted">Booker</h6>
-            <p class="card-text"><i><%= @booking.user.email %></i></p>
-          </div>
-        </div>
+
     <%= link_to "Back", :back, class: "btn btn-secondary" %>
     </div>
 
