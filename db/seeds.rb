@@ -197,6 +197,87 @@ user_15.avatar.attach(
 )
 user_15.save!
 
+
+puts "Create user 19..."
+user_19 = User.create!(first_name: "Kaja", last_name: "Danda", email: "kdanda@scubalibre.com", phone_number: "01133865205",password:"azerty", languages:["English","Polish"], location:"Bali, Indonesia", pro:true,date_of_birth:"1988-11-18",bio: "Hey ! My name is Kaja, I am a Polish Scuba Diving Instructor and I currently work in Bali. Feel free ton contact me for some new diving adventures !")
+user_19.avatar.attach(
+  {
+    io: File.open('public/images/kd.jpeg'),
+    filename: 'anyname.jpg',
+    content_type: 'image/jpg'
+  }
+)
+user_19.save!
+
+puts "Create user 20..."
+user_20 = User.create!(first_name: "Jonathan", last_name: "Jarrell", email: "jjarrell@scubalibre.com", phone_number: "02333865205",password:"azerty", languages:["English",], location:"Bali, Indonesia", pro:true,date_of_birth:"1989-11-18",bio: " Hello there, my name is Jonathan but people call me Twan. Apart from being a sound engineer for heavy metal bands, I am also a dive instructor and I'd love to see you in Bali !")
+user_20.avatar.attach(
+  {
+    io: File.open('public/images/jj.jpeg'),
+    filename: 'anyname.jpg',
+    content_type: 'image/jpg'
+  }
+)
+user_20.save!
+
+puts "Create user 21..."
+user_21 = User.create!(first_name: "Sarah", last_name: "Jacobs", email: "sjacobs@scubalibre.com", phone_number: "06533865205",password:"azerty", languages:["English",], location:"Bali, Indonesia", pro:true,date_of_birth:"1983-12-18",bio: "Hey I'm Sarah, I'm a Scuba Diving Instructor since 3 years now and I've worked all around the globe. I now live in Bali, feel free to contact me for some lessons !")
+user_21.avatar.attach(
+  {
+    io: File.open('public/images/sj.jpeg'),
+    filename: 'anyname.jpg',
+    content_type: 'image/jpg'
+  }
+)
+user_21.save!
+
+puts "Create user 22..."
+user_22 = User.create!(first_name: "Marie", last_name: "Renodeau", email: "mrenodeau@scubalibre.com", phone_number: "02333865205",password:"azerty", languages:["English","French"], location:"Bali, Indonesia", pro:true,date_of_birth:"1991-12-09",bio: "Hello, my name is Marie. I am an Open Water Scuba Instructor since 3 years and I work in Bali. Hit me up for some lessons and fun dives!")
+user_22.avatar.attach(
+  {
+    io: File.open('public/images/mr.jpeg'),
+    filename: 'anyname.jpg',
+    content_type: 'image/jpg'
+  }
+)
+user_22.save!
+
+puts "Create user 23..."
+user_23 = User.create!(first_name: "Gildas", last_name: "Cousin", email: "gcousin@scubalibre.com", phone_number: "02333865291",password:"azerty", languages:["English","French"], location:"Bali, Indonesia", pro:true,date_of_birth:"1998-02-18",bio: "Bonjour ! I am a French Diving Instructor who's passionate about technical diving as well. Please contact me for some outstanding adventures !")
+user_23.avatar.attach(
+  {
+    io: File.open('public/images/gc.jpeg'),
+    filename: 'anyname.jpg',
+    content_type: 'image/jpg'
+  }
+)
+user_23.save!
+
+puts "Create user 24..."
+user_24 = User.create!(first_name: "Joey", last_name: "Gartman", email: "gcartman@scubalibre.com", phone_number: "04333865291",password:"azerty", languages:["English"], location:"Bali, Indonesia", pro:true,date_of_birth:"1993-08-23",bio: "I am a passionate Scuba Diving Instructor who loves to share new experience with students and or advanced divers. I hope to see you soon in Bali!")
+user_24.avatar.attach(
+  {
+    io: File.open('public/images/jg.jpeg'),
+    filename: 'anyname.jpg',
+    content_type: 'image/jpg'
+  }
+)
+user_24.save!
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 puts "Create user 16..."
 user_16 = User.create!(first_name: "Gauthier", last_name: "Nadaud", email: "gnadaud@scubalibre.com", password:"azerty", pro: false)
 
