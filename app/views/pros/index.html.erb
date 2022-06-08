@@ -1,25 +1,13 @@
 <%# BANNER  %>
-<div class="banner-show-pro position-relative">
-  <div class="row container container-transparent-navbar align-items-center justify-content-between">
-    <div class="text-center">
-      <h3 class="mb-1.5rem ">Discover all our professionnal divers</h3>
-      <div class="search justify-content-center w-25 m-auto">
-          <%= form_tag pros_path, method: :get, class: "d-flex" do %>
-            <%= text_field_tag :query,
-              params[:query],
-              class: "form-control",
-              placeholder: "Search a pro"
-            %>
-          <button name="button" type="submit" class="btn btn-primary">
-            <i class="fas fa-search"></i>
-          </button>
-          <% end %>
-      </div>
+<div class="banner-index-pro position-relative">
+    <div class="wave">
+      <%= image_tag 'wave-03.png', class: 'position-absolute bottom-0 end-0 w-50 h-50' %>
+    </div>
+  <div class="container container-transparent-navbar align-items-center justify-content-between">
+    <div class="text-center position-relative">
+      <h3>Discover all our professionnal divers in <%=params[:query].capitalize %></h3>
     </div>
   </div>
-    <div class="wave">
-      <%= image_tag 'wave-03.png', class: 'position-absolute bottom-0 end-0 w-50' %>
-    </div>
 </div>
 
 <%# FILTRES + CARDS PROS %>
