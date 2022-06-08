@@ -33,3 +33,20 @@
   color:green;
   background-color: white;
 }
+
+.btn-variant{
+  font-weight: 600;
+  color: $deep_blue;
+  border-color: $deep_blue;
+  border-radius: .5rem;
+  margin-top: 20px
+  // hover-color: white;
+}
+
+.btn-cancel{
+  font-weight: 600;
+  color: $orange;
+  border-color: $orange;
+  border-radius: .5rem;
+  margin-top: 20px
+}
