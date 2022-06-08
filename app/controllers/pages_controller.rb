@@ -12,7 +12,13 @@ class PagesController < ApplicationController
 
 
     # For a monthly view:
-    @bookings = Booking.where(start_at: start_date.beginning_of_month.beginning_of_week..start_date.end_of_month.end_of_week)
+    # @bookings = Booking.where(start_at: start_date.beginning_of_month.beginning_of_week..start_date.end_of_month.end_of_week)
+    # @bookings = []
+    @bookings = @bookings_owner.where(start_at: start_date.beginning_of_month.beginning_of_week..start_date.end_of_month.end_of_week).or(
+      @bookings_user.where(start_at: start_date.beginning_of_month.beginning_of_week..start_date.end_of_month.end_of_week)
+    )
+    # @bookings << @bookings_user.where(start_at: start_date.beginning_of_month.beginning_of_week..start_date.end_of_month.end_of_week)
+    # @bookings.flatten
 
     # Offers by user
     @offers = current_user.offers

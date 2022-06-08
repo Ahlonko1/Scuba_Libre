@@ -5,6 +5,10 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+puts "Reviews Destroy"
+Review.destroy_all
+puts "Messages Destroy"
+Message.destroy_all
 puts "Destroy Bookings"
 Booking.destroy_all
 puts "Destroy Offer"
@@ -257,7 +261,7 @@ puts "Create user 24..."
 user_24 = User.create!(first_name: "Joey", last_name: "Gartman", email: "gcartman@scubalibre.com", phone_number: "04333865291",password:"azerty", languages:["English"], location:"Bali, Indonesia", pro:true,date_of_birth:"1993-08-23",bio: "I am a passionate Scuba Diving Instructor who loves to share new experience with students and or advanced divers. I hope to see you soon in Bali!")
 user_24.avatar.attach(
   {
-    io: File.open('public/images/jg.jpeg'),
+    io: File.open('public/images/jg.jpg'),
     filename: 'anyname.jpg',
     content_type: 'image/jpg'
   }
