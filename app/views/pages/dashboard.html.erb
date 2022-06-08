@@ -24,7 +24,9 @@
       <div class="tab-pane fade" id="offers" role="tabpanel" aria-labelledby="offers-tab"><%= render "pages/offers" %></div>
     </div>
   </div>
-<% else %>
-<div class="container mt-3">
-  <%= render "bookings/dashboard" %>
+  <% else %>
+    <div class="container mt-3">
+      <%= render "bookings/dashboard" %>
+    </div>
+
 <% end %>

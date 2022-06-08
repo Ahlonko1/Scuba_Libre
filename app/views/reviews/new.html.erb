@@ -1,12 +1,14 @@
-<div class="container container-transparent-navbar">
-  <h2>Write a review for <%=@booking.offer.user.first_name%></h2>
-  <div class="row">
-    <div class="col-xs-4">
-      <%= simple_form_for [@booking, @review] do |f| %>
-        <%= f.input :content %>
-        <%= f.input :rating, collection: (1..5).to_a, label: "Rate your experience" %>
-        <%= f.submit "Send your review" %>
-      <% end %>
+<div class="container container-transparent-navbar" style="width: 600px">
+  <div class="card border-white p-5 mt-5">
+    <h2>Write a review for <%=@booking.offer.user.first_name%></h2>
+    <div class="row">
+      <div class="col-xs-4">
+        <%= simple_form_for [@booking, @review] do |f| %>
+          <%= f.input :content, label: false, placeholder: "How was your experience?" %>
+          <%= f.input :rating, collection: (1..5).to_a, label: false %>
+          <%= f.submit "Send your review", class: "btn btn-primary" %>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>
