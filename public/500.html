@@ -1,66 +1,106 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>We're sorry, but something went wrong (500)</title>
+  <title>The page you were looking for doesn't exist (500)</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <style>
-  .rails-default-error-page {
-    background-color: #EFEFEF;
-    color: #2E2F30;
-    text-align: center;
-    font-family: arial, sans-serif;
-    margin: 0;
-  }
+ * {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+@font-face {
+  font-family: Code-Pro-Black;
+  src: local("https://unpkg.com/aks-fonts@1.0.0/Codepro/Code-Pro-Black.otf"),
+    url(https://unpkg.com/aks-fonts@1.0.0/Codepro/Code-Pro-Black.otf)
+      format("opentype");
+}
+@font-face {
+  font-family: Code-Pro-Bold;
+  src: local("https://unpkg.com/aks-fonts@1.0.0/Codepro/Code-Pro-Bold.otf"),
+    url(https://unpkg.com/aks-fonts@1.0.0/Codepro/Code-Pro-Bold.otf)
+      format("opentype");
+}
+@font-face {
+  font-family: Code-Pro-Light;
+  src: local("https://unpkg.com/aks-fonts@1.0.0/Codepro/Code-Pro-Light.otf"),
+    url(https://unpkg.com/aks-fonts@1.0.0/Codepro/Code-Pro-Light.otf)
+      format("opentype");
+}
+@font-face {
+  font-family: Code-Pro;
+  src: local("https://unpkg.com/aks-fonts@1.0.0/Codepro/Code-Pro.otf"),
+    url(https://unpkg.com/aks-fonts@1.0.0/Codepro/Code-Pro.otf)
+      format("opentype");
+}
+.aks-500-page {
+  width: 100%;
+  height: 100vh;
+  background: url(https://github.com/Ahmetaksungur/Vehicle-tracking-with-Opencv/blob/master/plane3.jpg?raw=true);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.aks-500-page-content {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  color: white;
+  position: relative;
+  z-index: 10;
+  user-select: none;
+}
+.aks-500-page-content h1 {
+  position: relative;
+  font-size: 177px;
+  font-family: Code-Pro-Bold;
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: normal;
+}
+.aks-500-page-content h3 {
+  font-family: Code-Pro-Light;
+  position: relative;
+  margin-bottom: 2rem;
+  font-size: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: normal;
+  letter-spacing: 0.9px;
+}
+.aks-500-page-btn {
+  color: black;
+  text-decoration: none;
+  padding: 15px 25px;
+  background: white;
+  border-radius: 9999px;
+  font-family: Code-Pro;
+  position: relative;
+  cursor: pointer;
+  transition: all 350ms ease-in-out;
+}
+.aks-500-page-btn:hover {
+  background: #dadada;
+}
 
-  .rails-default-error-page div.dialog {
-    width: 95%;
-    max-width: 33em;
-    margin: 4em auto 0;
-  }
-
-  .rails-default-error-page div.dialog > div {
-    border: 1px solid #CCC;
-    border-right-color: #999;
-    border-left-color: #999;
-    border-bottom-color: #BBB;
-    border-top: #B00100 solid 4px;
-    border-top-left-radius: 9px;
-    border-top-right-radius: 9px;
-    background-color: white;
-    padding: 7px 12% 0;
-    box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
-  }
-
-  .rails-default-error-page h1 {
-    font-size: 100%;
-    color: #730E15;
-    line-height: 1.5em;
-  }
-
-  .rails-default-error-page div.dialog > p {
-    margin: 0 0 1em;
-    padding: 1em;
-    background-color: #F7F7F7;
-    border: 1px solid #CCC;
-    border-right-color: #999;
-    border-left-color: #999;
-    border-bottom-color: #999;
-    border-bottom-left-radius: 4px;
-    border-bottom-right-radius: 4px;
-    border-top-color: #DADADA;
-    color: #666;
-    box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
-  }
   </style>
 </head>
 
 <body class="rails-default-error-page">
   <!-- This file lives in public/500.html -->
-  <div class="dialog">
-    <div>
-      <h1>We're sorry, but something went wrong.</h1>
+  <div class="aks-500-page">
+    <div class="aks-500-page-content">
+      <h1>500</h1>
+      <h3>Page not found</h3>
+      <a href="#" class="aks-500-page-btn">GO TO HOME</a>
     </div>
-    <p>If you are the application owner check the logs for more information.</p>
   </div>
 </body>
 </html>
