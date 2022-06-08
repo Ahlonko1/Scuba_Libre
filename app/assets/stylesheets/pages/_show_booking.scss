@@ -35,17 +35,6 @@
 
 // CSS SUR LES CARDS DES OFFRES DANS LA SHOW DU PRO
 
-.offers {
-  //margin: 0 20%;
-  display: grid;
-  grid-template-columns: 1fr;
-  flex-grow: 1;
-  grid-gap: 16px;
-  a {
-    text-decoration: none;
-  }
-}
-
 .card-offers {
   overflow: hidden;
   background: white;
