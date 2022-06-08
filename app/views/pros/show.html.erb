@@ -8,10 +8,10 @@
     <div class="d-flex">
         <p><% @pro.languages.each do |l|%>
         <span class="badge badge-pill"><%= l %></span>
-        <% end %></p>
+        <% end %> | <span class="font-weight-smaller"><%= @booking.rating %><i class="fas fa-star star-yellow"></i></span></p>
     </div>
     <p><i class="fa-solid fa-location-dot"></i></i> <%= @pro.location %></p>
-    <p><span class="font-weight-normal"><%= @booking.rating %><i class="fas fa-star star-yellow"></i></span></p>
+    <p></p>
     <div class="d-flex align-items-center">
       <p><%= @pro.bio%></p>
     </div>
@@ -54,7 +54,7 @@
     </div>
   </div>
   <div class="offers px-5">
-      <h2 class="mx-4">Experiences</h2>
+      <h2 class="mx-4"><u>Experiences</u></h2>
       <% @offers.each do |o| %>
 
           <div class="card-offers shadow-sm p-4">
