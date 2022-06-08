@@ -39,8 +39,12 @@
   color: $deep_blue;
   border-color: $deep_blue;
   border-radius: .5rem;
-  margin-top: 20px
-  // hover-color: white;
+  margin-top: 20px;
+  width: 80px;
+  &:hover{
+    background-color: $deep_blue;
+    color: white;
+  }
 }
 
 .btn-cancel{
@@ -48,7 +52,12 @@
   color: $orange;
   border-color: $orange;
   border-radius: .5rem;
-  margin-top: 20px
+  margin-top: 20px;
+  width: 80px;
+  &:hover{
+    background-color: $orange;
+    color: white;
+  }
 }
 
 .btn-deny{
@@ -56,5 +65,10 @@
   color: $red;
   border-color: $red;
   border-radius: .5rem;
-  margin-top: 20px
+  margin-top: 20px;
+  width: 80px;
+  &:hover{
+    background-color: $red;
+    color: white;
+  }
 }

@@ -2,18 +2,15 @@
   <div class="cards mx-5 mb-5">
   <% @bookings_user.each do |b| %>
 
-      <div class="card-pro shadow-sm p-4">
+      <div class="card-pro p-4" style="box-shadow:0 .25em 1em 0 #00000020, 0 .1em .2em 0 #00000020;">
 
 
-        <div class="card-valide-booking">
+        <div class="card-valide-booking ">
           <h5><%= b.offer.name %></h5>
-          <p><span class="badge-load bg-deep_blue mt-1">
-
-          </i> Status<strong> <%=b.status %></strong>
-          </p>
+          <div><span class="badge bg-custom align-center" style="background: #01123C; color:white; font-size: 13px "></i> Status:<strong> <%=b.status %></strong></span></div>
           <p>Pro <%=b.offer.user.first_name %></p>
           <p><span class="mt-1">Start date <%= b.start_at %></p>
-          <p><i style=" margin-top: 8px; font-size: 16px; color:$deep_blue;" class="fa-solid fa-location-dot"></i> Location <%= b.location %></p>
+          <p><i style=" margin-top: 8px; font-size: 16px; color:orange;" class="fa-solid fa-location-dot"></i><strong> Location <%= b.location %></strong></p>
           <p><strong><%= b.amount %> <%= b.currency %></strong><i style="font-size: 25px; color:orange; mb-3" class="fa-solid fa-circle-dollar "></i></p>
         </div>
 
@@ -22,8 +19,8 @@
               <%# <i style="font-size: 25px; color:blue;" class="fa-solid fa-user-clock"></i> %>
             </div>
             <div>
-              <%= link_to "Details", booking_path(b), class: "btn btn-variant" %>
-              <%= link_to "Cancel", cancelled_booking_path(b), data: {turbo_method: :patch, turbo_confirm: "Are you sure?"}, class: "btn btn-cancel" %>
+              <%= link_to "Details", booking_path(b), class: "btn btn-variant justify-content-center" %>
+              <%= link_to "Cancel", cancelled_booking_path(b), data: {turbo_method: :patch, turbo_confirm: "Are you sure?"}, class: "btn btn-cancel"%>
             </div>
           <% end %>
           <% if b.status == "cancelled"  %>
@@ -55,13 +52,13 @@
 
     <div class="cards mx-5 mb-5">
       <% @bookings_owner.each do |b| %>
-        <div class="card-pro shadow-sm p-4">
+        <div class="card-pro p-4" style="box-shadow:0 .25em 1em 0 #00000020, 0 .1em .2em 0 #00000020;">
           <div class="card-valide-booking">
             <h5><%= b.offer.name %></h5>
-            <p>Status<strong> <%=b.status %></strong></p>
+            <div><span class="badge bg-custom" style="background: #01123C; color:white;" ></i> Status:<strong> <%=b.status %></strong></span></div>
             <p>Pro <%=b.user.first_name %></p>
             <p>Start date <%= b.start_at %></p>
-            <p><i style=" margin-top: 8px; font-size: 16px; color:$deep_blue;" class="fa-solid fa-location-dot"></i> Location <%= b.location %></p>
+            <p><i style=" margin-top: 8px; font-size: 16px; color:orange;" class="fa-solid fa-location-dot"></i> Location <%= b.location %></p>
             <p><strong><%= b.currency %> <%= b.amount %></strong></p>
           </div>
           <% if b.status == "pending"  %>
