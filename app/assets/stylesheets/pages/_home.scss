@@ -34,9 +34,9 @@
 }
 
 .fold {
-  padding-top: 20vh;
-  padding-bottom: 20vh;
-  margin-bottom: 20px;
+  padding-top: 8vh;
+  padding-bottom: 8vh;
+  // margin-bottom: 20px;
 }
 
 .dark {
@@ -48,6 +48,7 @@
   overflow: hidden;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-radius: 5px;
 }
 
 .card-trip > img {
