@@ -41,7 +41,7 @@
       %>
       <%= hidden_field_tag :category, params[:category] %>
       <%= hidden_field_tag :level, params[:level] %>
-      <%= submit_tag "Search", class: "btn btn-success" %>
+      <%= submit_tag "Search", class: "btn btn-success #{"active" if params[:query] == params[:query]}" %>
     <% end %>
     </strong>
   </div>
