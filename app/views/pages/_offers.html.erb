@@ -1,4 +1,4 @@
-<div class="offers">
+<div class="offers mx-5">
   <% @offers.each do |o| %>
     <div class="card-offers shadow-sm p-4">
       <p><i class="fa-solid fa-clock"></i> <%= o.duration %> <%= o.unit_duration %> | <i class="fa-solid fa-money-bills"></i> <%= o.currency %> <%= o.price %> | <%= o.level %></p>
