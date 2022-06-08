@@ -3,7 +3,15 @@
     <%= date %>
     <% bookings.each do |booking| %>
       <div class="meeting">
+      <% if booking.status == "accepted" %>
         <%= link_to "#{booking.user.first_name}", booking_path(booking), class: "btn btn-outline-success" %>
+      <% elsif booking.status == "pending" %>
+        <%= link_to "#{booking.user.first_name}", booking_path(booking), class: "btn btn-outline-warning" %>
+        <% elsif booking.status == "cancelled" %>
+        <%= link_to "#{booking.user.first_name}", booking_path(booking), class: "btn btn-outline-danger" %>
+        <% elsif booking.status == "denied" %>
+        <%= link_to "#{booking.user.first_name}", booking_path(booking), class: "btn btn-outline-danger" %>
+      <% end %>
       </div>
     <% end %>
   <% end %>

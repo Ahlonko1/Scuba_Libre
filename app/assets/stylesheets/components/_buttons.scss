@@ -33,3 +33,42 @@
   color:green;
   background-color: white;
 }
+
+.btn-variant{
+  font-weight: 600;
+  color: $deep_blue;
+  border-color: $deep_blue;
+  border-radius: .5rem;
+  margin-top: 20px;
+  width: 80px;
+  &:hover{
+    background-color: $deep_blue;
+    color: white;
+  }
+}
+
+.btn-cancel{
+  font-weight: 600;
+  color: $orange;
+  border-color: $orange;
+  border-radius: .5rem;
+  margin-top: 20px;
+  width: 80px;
+  &:hover{
+    background-color: $orange;
+    color: white;
+  }
+}
+
+.btn-deny{
+  font-weight: 600;
+  color: $red;
+  border-color: $red;
+  border-radius: .5rem;
+  margin-top: 20px;
+  width: 80px;
+  &:hover{
+    background-color: $red;
+    color: white;
+  }
+}

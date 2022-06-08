@@ -23,7 +23,6 @@
     color: #9aa0b1;
     text-decoration: underline;
   }
-
 }
 
 
@@ -34,17 +33,6 @@
 
 
 // CSS SUR LES CARDS DES OFFRES DANS LA SHOW DU PRO
-
-.offers {
-  //margin: 0 20%;
-  display: grid;
-  grid-template-columns: 1fr;
-  flex-grow: 1;
-  grid-gap: 16px;
-  a {
-    text-decoration: none;
-  }
-}
 
 .card-offers {
   overflow: hidden;
@@ -156,4 +144,19 @@
   color: $deep_blue;
   margin-bottom: 30px;
   border-bottom: 1px solid #9aa0b1;
+}
+
+
+.card-valide-booking{
+
+  h5{
+    color: $deep_blue;
+    font-weight: 800;
+    margin-top: 9px;
+  }
+  p{
+    color: $gray;
+    font-weight: 300;
+    font-size: 14px;
+  }
 }
