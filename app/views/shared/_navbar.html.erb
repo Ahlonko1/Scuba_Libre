@@ -12,7 +12,9 @@
 <%# The rest of the navbar%>
   <div class="container-fluid">
     <div class="d-flex">
-      <%= link_to "ScubaLibre", root_path, class: "navbar-brand"%>
+      <%= link_to root_path, class: "navbar-brand" do%>
+        <%image_tag "Logo-scuba-Libre.png", alt: "Scuba Libre", width: 150 %>
+      <% end %>
       <% if user_signed_in? && current_user.pro? %>
         <div class="navbar-brand btn-pro">Pro</div>
       <% end %>
