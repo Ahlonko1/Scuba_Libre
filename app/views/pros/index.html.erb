@@ -12,28 +12,25 @@
     <% end %>
 
     </div>
+    <div class="d-flex mt-4 justify-content-center">
+      <%= form_tag pros_path(query: params[:query]), method: :get, class: "d-flex justify-content-between" do %>
+        <%= select_tag :language,
+          options_for_select(User.pro.pluck(:languages).flatten.uniq, (params[:language])),
+          class: "dropdown",
+          placeholder: "language"
+        %>
+        <button name="button" type="submit" class="">
+            <i class="fa-solid fa-filter"></i>
+        </button>
+
+      <% end %>
+    </div>
   </div>
 </div>
-  <div class="search-price col-sm-9 col-md-6 col-lg-6">
-    <%= form_tag pros_path, method: :get, class: "d-flex" do %>
-      <%= select_tag :language,
-        options_for_select(User.pro.pluck(:languages).flatten.uniq, (params[:language] || "french")),
-        class: "form-control",
-        placeholder: "language"
-      %>
-
-      <%#= f.input :flooring_company_name, label: false, collection: @payment_preferences, :label_method => :name, :value_method => :name, include_blank: true %>
-
-      <button name="button" type="submit" class="btn btn-success">
-          <i class="fas fa-search"></i>
-      </button>
-
-    <% end %>
-  </div>
 <%# FILTRES + CARDS PROS %>
 <%# <a class="btn btn-filter" href="#" role="button">Latest</a>
   <button class="btn btn-filter" type="submit">Popular</button> %>
-<div class="container d-flex">
+<div class="d-flex">
   <div class="cards">
     <% @pros.each do |p| %>
       <%= link_to pro_path(p) do %>
@@ -60,7 +57,7 @@
     <% end %>
     </div>
 <%# LA MAP %>
-    <div class="map-index rounded-2 mt-3" style="width: 75%; height: 350px; position: sticky; top: 0"
+    <div class="map-index" style="width: 75%; height: 500px; position: sticky; top: 200px;"
       data-controller="map"
       data-map-markers-value="<%= @markers.to_json %>"
       data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
