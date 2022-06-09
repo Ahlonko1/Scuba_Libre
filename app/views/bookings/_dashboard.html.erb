@@ -49,7 +49,51 @@
     <% if current_user.pro? %>
     <h3 class="mt-3 mx-3">BOOKINGS AWAITING YOUR CONFIRMATION</h3>
       <div class="cards mx-3">
-        <% @bookings_owner.each do |b| %>
+        <% @bookings_owner.where(status: "pending").each do |b| %>
+
+          <div class="card-pro p-4" style="box-shadow:0 .25em 1em 0 #00000020, 0 .1em .2em 0 #00000020;background-color:#ffe7db">
+
+            <div class="card-valide-booking">
+
+              <h6><%= b.offer.name %></h6>
+              <div><span class="badge bg-custom" style="background: #01123C; color:white;" ></i> Status:<strong> <%=b.status.capitalize %></strong></span></div>
+              <p><%= b.offer.duration %> <%= b.offer.unit_duration %></p>
+              <p>with <%=b.user.first_name %></p>
+              <p>begins on <%= b.start_at.strftime('%d-%m-%Y')%></p>
+              <p><i style=" margin-top: 8px; font-size: 16px; color:orange;" class="fa-solid fa-location-dot"></i> <%= b.location %></p>
+              <p><i><strong><%= b.currency %> <%= b.amount %></strong></i></p>
+            </div>
+
+            <% if b.status == "pending"  %>
+                <div class="buttons d-grid">
+                </div>
+                <div >
+                  <%= link_to "Deny", denied_booking_path(b), data: {turbo_method: :patch, turbo_confirm: "Are you sure?"}, class: "btn btn-deny" %>
+                  <%= link_to "Accept", accepted_booking_path(b), data: {turbo_method: :patch, turbo_confirm: "Are you sure?"}, class: "btn btn-accept" %>
+                </div>
+              <% end %>
+              <% if b.status == "cancelled"  %>
+              <div class="buttons d-grid">
+                <%= link_to "Details", booking_path(b), class: "btn btn-variant" %>
+                <i style="font-size: 25px; color:grey;" class="fa-solid fa-xmark"></i>
+              </div>
+            <% end %>
+              <% if b.status == "accepted"  %>
+                <div class="buttons d-grid">
+                  <%= link_to "Details", booking_path(b), class: "btn btn-variant" %>
+                  <i style="font-size: 25px; color:green;" class="fa-solid fa-check"></i>
+                </div>
+              <% end %>
+              <% if b.status == "denied"  %>
+                <div class="buttons d-grid">
+                  <%= link_to "Details", booking_path(b), class: "btn btn-variant" %>
+                  <i style="font-size: 25px; color:red;" class="fa-solid fa-xmark"></i>
+                </div>
+              <% end %>
+          </div>
+        <% end %>
+
+        <% @bookings_owner.where("status != 'pending'").each do |b| %>
 
           <div class="card-pro p-4" style="box-shadow:0 .25em 1em 0 #00000020, 0 .1em .2em 0 #00000020;background-color:#ffe7db">
 
