@@ -1,13 +1,14 @@
 <div class="banner-show-pro position-relative">
       <div class="text-center">
-        <h2>Dashboard</h2>
-        <h4>Welcome <%= current_user.first_name %>, 🤿</h4>
+        <h2>Welcome <%= current_user.first_name %> 🤿</h2>
       </div>
       <div class="col-6 wave">
       <%= image_tag 'wave-05.png', class: 'position-absolute bottom-0 end-0 w-50' %>
       </div>
 </div>
-
+  <div>
+  <h4 class="text-center mt-3"><u>Your dashboard</u></h4>
+  </div>
 <% if current_user.pro? %>
   <div class="mt-3">
     <ul class="nav nav-tabs" id="myTab" role="tablist">
