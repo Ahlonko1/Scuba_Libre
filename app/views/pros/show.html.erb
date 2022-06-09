@@ -8,7 +8,7 @@
     <div class="d-flex">
         <p><% @pro.languages.each do |l|%>
         <span class="badge badge-pill"><%= l %></span>
-        <% end %> | <span class="font-weight-smaller"><%= @pro.pro_average_rating %><i class="fas fa-star star-yellow"></i></span></p>
+        <% end %> | &nbsp; <span class="font-weight-smaller"><div class="gold"><i class="fas fa-star star-yellow"> <%= @pro.pro_average_rating %></i></span></p></div>
     </div>
     <p><i class="fa-solid fa-location-dot"></i></i> <%= @pro.location %></p>
     <p></p>
