@@ -86,3 +86,14 @@
     color: white;
   }
 }
+
+.btn-filtre{
+  color: $orange;
+  border-color: $orange;
+  border-radius: 100px;
+  &:hover{
+    background-color: $orange;
+    color: white;
+  }
+
+}
