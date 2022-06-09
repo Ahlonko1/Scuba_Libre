@@ -10,7 +10,7 @@
     <div class="card-offers shadow-sm p-4">
       <p><i class="fa-solid fa-clock"></i> <%= o.duration %> <%= o.unit_duration %> | <i class="fa-solid fa-money-bills"></i> <%= o.currency %> <%= o.price %> | <%= o.level %></p>
       <h4><%= o.name %></h4>
-      <div class="d-flex">
+      <div class="d-flex justify-content-between align-items-center">
         <div class="col-9">
         <p><%= truncate o.briefing, length:250 %></p>
         </div>
@@ -21,7 +21,6 @@
               Edit Offer <i class="fa-solid fa-pen"></i>
           <% end %></p>
       </div>
-
     </div>
   <% end %>
 </div>
