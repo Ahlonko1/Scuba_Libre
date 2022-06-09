@@ -23,8 +23,8 @@
     <div class="d-flex justify-content-between infos-bookings">
       <div class= "quarter-info">
         <div class="d-flex justify-content-around" style="width 100%">
-          <div>
-            <p>Category:</p>
+          <div class="text-center">
+            <p>Category</p>
             <h3><%= @booking.offer.category %></h3>
           </div>
           <div class="divider"></div>
@@ -32,8 +32,8 @@
       </div>
       <div class= "quarter-info">
         <div class="d-flex justify-content-around" style="width 100%">
-          <div>
-            <p>Level:</p>
+          <div class="text-center">
+            <p>Level</p>
             <h3><%= @booking.offer.level %></h3>
           </div>
           <div class="divider"></div>
@@ -41,8 +41,8 @@
       </div>
       <div class="quarter-info">
         <div class="d-flex justify-content-around " style="width 100%">
-          <div>
-            <p>Number of dives:</p>
+          <div class="text-center">
+            <p>Number of dives</p>
             <h3><%= @booking.offer.dives %></h3>
             </div>
           <div class="divider"></div>
@@ -50,8 +50,8 @@
       </div>
       <div class="quarter-info">
         <div class="d-flex justify-content-around " style="width 100%">
-          <div>
-            <p>Duration:</p>
+          <div class="text-center">
+            <p>Duration</p>
             <h3><%= @booking.offer.duration %> <%= @booking.offer.unit_duration %></h3>
           </div>
         </div>
@@ -90,7 +90,7 @@
             %>
             <%= f.input :content,
                         label: false,
-                        placeholder: "Coucou",
+                        placeholder: "Type a message",
                         wrapper_html: {class: "flex-grow-1"}
                         %>
             <%= f.submit "Send", class: "btn btn-primary mb-3" %>
