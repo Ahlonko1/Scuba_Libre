@@ -20,6 +20,7 @@
     </div>
   </div>
 
+
 </div>
   <div class="mt-3 ms-3">
     <%= link_to "Back", :back, class: "btn btn-secondary" %>
@@ -29,15 +30,15 @@
     <strong>
     <p>Category</p>
     <div class="mb-3">
-      <%= link_to "Course", pro_path(@pro, category:"Course", level: params[:level], query: params[:query]), class: "btn btn-success #{"active" if params[:category] == "Course"} "%>
-      <%= link_to "Fun Dive", pro_path(@pro, category:"Fun Dive", level: params[:level], query: params[:query]), class: "btn btn-success #{"active" if params[:category] == "Fun Dive"}" %>
+      <%= link_to "Course", pro_path(@pro, category:"Course", level: params[:level], query: params[:query]), class: "btn btn-filtre #{"active" if params[:category] == "Course"} "%>
+      <%= link_to "Fun Dive", pro_path(@pro, category:"Fun Dive", level: params[:level], query: params[:query]), class: "btn btn-filtre #{"active" if params[:category] == "Fun Dive"}" %>
 
-      <div class="margin mt-2"><%= link_to "Specialty Training", pro_path(@pro, category:"Specialty Training", level: params[:level]), class: "btn btn-success #{"active" if params[:category] == "Specialty Training"}" %></div>
+      <div class="margin mt-2"><%= link_to "Specialty Training", pro_path(@pro, category:"Specialty Training", level: params[:level]), class: "btn btn-filtre #{"active" if params[:category] == "Specialty Training"}" %></div>
     </div>
     <p>Level</p>
     <div class="mb-3">
-      <%= link_to "Beginner", pro_path(@pro, level:"Beginner", category: params[:category], query: params[:query]), class: "btn btn-success #{"active" if params[:level] == "Beginner"}" %>
-      <%= link_to "Advanced", pro_path(@pro, level:"Advanced", category: params[:category], query: params[:query]), class: "btn btn-success #{"active" if params[:level] == "Advanced"}" %>
+      <%= link_to "Beginner", pro_path(@pro, level:"Beginner", category: params[:category], query: params[:query]), class: "btn btn-filtre #{"active" if params[:level] == "Beginner"}" %>
+      <%= link_to "Advanced", pro_path(@pro, level:"Advanced", category: params[:category], query: params[:query]), class: "btn btn-filtre #{"active" if params[:level] == "Advanced"}" %>
     </div>
     <p>Price</p>
     </strong>
@@ -50,8 +51,8 @@
       %>
       <%= hidden_field_tag :category, params[:category] %>
       <%= hidden_field_tag :level, params[:level] %>
-      <button name="button" type="submit" class="btn btn-success">
-          <i class="fas fa-search"></i>
+      <button name="button" type="submit" class="btn btn-filtre">
+          <i class="fas fa-search" style="color: orange"></i>
       </button>
 
     <% end %>
