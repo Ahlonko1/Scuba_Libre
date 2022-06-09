@@ -1,7 +1,7 @@
 <div class="row">
   <div class="col">
     <h3 class="mt-3 mx-3">YOUR BOOKINGS</h3>
-    <div class="cards">
+    <div class="cards mx-3">
       <% @bookings_user.each do |b| %>
 
         <div class="card-pro p-4" style="box-shadow:0 .25em 1em 0 #00000020, 0 .1em .2em 0 #00000020; background-color: #DBE2F4">
@@ -48,7 +48,7 @@
   <div class="col">
     <% if current_user.pro? %>
     <h3 class="mt-3 mx-3">BOOKINGS AWAITING YOUR CONFIRMATION</h3>
-      <div class="cards">
+      <div class="cards mx-3">
         <% @bookings_owner.each do |b| %>
 
           <div class="card-pro p-4" style="box-shadow:0 .25em 1em 0 #00000020, 0 .1em .2em 0 #00000020;background-color:#ffe7db">
