@@ -5,16 +5,31 @@
     </div>
   <div class="container container-transparent-navbar align-items-center justify-content-between">
     <div class="text-center position-relative">
-    <% if params[:query].empty? %>
-      <h3>Discover all our professionnal divers on Earth<h3>
-    <% else %>
+    <% if params[:query] && !params[:query].empty? %>
       <h3>Discover all our professionnal divers in <%=params[:query].capitalize %></h3>
+    <% else %>
+      <h3>Discover all our professionnal divers on Earth<h3>
     <% end %>
 
     </div>
   </div>
 </div>
+  <div class="search-price col-sm-9 col-md-6 col-lg-6">
+    <%= form_tag pros_path, method: :get, class: "d-flex" do %>
+      <%= select_tag :language,
+        options_for_select(User.pro.pluck(:languages).flatten.uniq, (params[:language] || "french")),
+        class: "form-control",
+        placeholder: "language"
+      %>
 
+      <%#= f.input :flooring_company_name, label: false, collection: @payment_preferences, :label_method => :name, :value_method => :name, include_blank: true %>
+
+      <button name="button" type="submit" class="btn btn-success">
+          <i class="fas fa-search"></i>
+      </button>
+
+    <% end %>
+  </div>
 <%# FILTRES + CARDS PROS %>
 <%# <a class="btn btn-filter" href="#" role="button">Latest</a>
   <button class="btn btn-filter" type="submit">Popular</button> %>
@@ -32,6 +47,11 @@
                  <i class="fas fa-star star-yellow"></i> <%= p.pro_average_rating %>
                 <p><%= truncate p.bio, length: 75 %></p>
                 <span class="underline">Read more</span>
+                  <div class="d-flex">
+                    <p><% p.languages.each do |l| %>
+                    <span class="badge badge-pill"><%= l %></span>
+                    <% end %></p>
+                  </div>
                 <p><i style="color:#477E9F d-flex" class="fa-solid fa-location-dot"></i> <%= p.location %></p>
             </div>
           </div>
