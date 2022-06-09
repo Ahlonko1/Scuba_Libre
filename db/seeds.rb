@@ -268,20 +268,6 @@ user_24.avatar.attach(
 )
 user_24.save!
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 puts "Create user 16..."
 user_16 = User.create!(first_name: "Gauthier", last_name: "Nadaud", email: "gnadaud@scubalibre.com", password:"azerty", pro: false)
 
@@ -970,3 +956,101 @@ offer_24.user = user_1
 offer_24.save!
 
 puts "Offer 24 OK"
+
+review_template1 = {
+  content: ".",
+  rating: 4
+}
+
+review_template2 = {
+  content: ".",
+  rating: 5
+}
+
+review_template3 = {
+  content: ".",
+  rating: 3
+}
+
+review_template4 = {
+  content: ".",
+  rating: 5
+}
+
+review_template5 = {
+  content: ".",
+  rating: 5
+}
+
+review_template6 = {
+  content: ".",
+  rating: 4
+}
+
+review_template7 = {
+  content: ".",
+  rating: 5
+}
+
+review_template8 = {
+  content: ".",
+  rating: 4
+}
+
+review_template9 = {
+  content: ".",
+  rating: 5
+}
+
+review_template10 = {
+  content: ".",
+  rating: 4
+}
+
+review_template11 = {
+  content: ".",
+  rating: 5
+}
+
+review_template12 = {
+  content: ".",
+  rating: 3
+}
+
+review_template13 = {
+  content: ".",
+  rating: 5
+}
+
+review_template14 = {
+  content: ".",
+  rating: 4
+}
+
+review_template15 = {
+  content: ".",
+  rating: 5
+}
+
+
+review_templates = [review_template1, review_template2, review_template3, review_template4, review_template5, review_template6, review_template7, review_template8, review_template9, review_template10, review_template11, review_template12, review_template13, review_template14, review_template15]
+
+
+User.pro.each do |u|
+  10.times do |i|
+    puts "Create booking #{i} for #{u.first_name}"
+    booking = Booking.new
+    booking.offer = u.offers.sample
+    booking.start_at = Date.new(2021,12,01)
+    booking.user = User.all.sample
+    booking.status = "Done"
+    booking.save!
+
+    puts "Create review #{i} for #{booking.id}"
+    review = Review.new(review_templates.sample)
+    review.booking = booking
+    review.user = booking.user
+    review.save!
+    puts "Review #{i} for #{booking.id} done"
+  end
+end
