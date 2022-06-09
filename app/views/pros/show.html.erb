@@ -1,9 +1,9 @@
-<div class="banner-show-pro d-flex align-items-center">
+<div class="banner-show-pro d-flex align-items-center position-relative">
   <div>
     <%= cl_image_tag @pro.avatar.key, class: "avatar-profile" %>
     <p class="mx-5"><i style="font-size: 30px;" class="fa-brands fa-instagram"></i></p>
   </div>
-  <div class="banner-pro-info">
+  <div class="banner-pro-info col 6">
     <h1><%= @pro.first_name %> <%= @pro.last_name[0].capitalize%>.</h1>
     <div class="d-flex">
         <p><% @pro.languages.each do |l|%>
@@ -14,6 +14,9 @@
     <p></p>
     <div class="d-flex align-items-center">
       <p><%= @pro.bio%></p>
+    </div>
+    <div class="col-6 wave">
+    <%= image_tag 'wave-08.png', class: 'position-absolute bottom-0 start-0 w-50' %>
     </div>
   </div>
 
