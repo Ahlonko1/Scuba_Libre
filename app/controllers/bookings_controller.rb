@@ -15,6 +15,7 @@ class BookingsController < ApplicationController
     authorize @booking
     if @booking.save
       @booking.end_at = @booking.start_at + (@booking.offer.duration.day - 1)
+      @booking.save
       redirect_to dashboard_path
     else
       redirect_to pro_path(@booking.offer.user), status: :unprocessable_entity
