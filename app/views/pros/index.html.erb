@@ -5,7 +5,12 @@
     </div>
   <div class="container container-transparent-navbar align-items-center justify-content-between">
     <div class="text-center position-relative">
+    <% if params[:query].empty? %>
+      <h3>Discover all our professionnal divers on Earth<h3>
+    <% else %>
       <h3>Discover all our professionnal divers in <%=params[:query].capitalize %></h3>
+    <% end %>
+
     </div>
   </div>
 </div>
