@@ -12,8 +12,6 @@
   }
 
 
-
-
 .banner {
   background-size: fill;
   background-position: center;
@@ -31,6 +29,15 @@
     color: white;
     text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
   }
+}
+
+.home {
+  // margin: 0 auto;
+  background-color: rgba(0, 0, 0, 0.473);
+  padding : 30px;
+  border-radius: 50px;
+  width: 70%;
+  max-width: 600px;
 }
 
 .fold {

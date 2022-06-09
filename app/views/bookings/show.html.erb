@@ -9,7 +9,22 @@
     <div class="wave">
       <%= image_tag 'wave-02.png', class: 'position-absolute bottom-0 end-0 w-50' %>
     </div>
-    <div class="atcb" style="display:none;"></div>
+    <div class="atcb" style="display:none;">
+        {
+          "name":"Event Title",
+          "startDate":"2022-02-24",
+          "endDate":"2022-02-28",
+          "options":[
+            // add/remove calendars here
+            "Apple",
+            "Google",
+            "iCal",
+            "Microsoft365",
+            "Outlook.com",
+            "Yahoo"
+          ],
+        }
+    </div>
   </div>
   <div>
     <%if !current_user.pro? && DateTime.now > @booking.end_at %>
