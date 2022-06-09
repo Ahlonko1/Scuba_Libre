@@ -11,6 +11,8 @@ class User < ApplicationRecord
   has_many :user_associations, dependent: :destroy
   has_many :organisms, through: :user_associations
   has_many :certifications, through: :user_certifications
+  has_many :offer_bookings, through: :offers, source: :bookings
+  has_many :pro_reviews, through: :bookings, source: :reviews
   has_one_attached :avatar
 
   pg_search_scope :global_search,
@@ -61,5 +63,11 @@ class User < ApplicationRecord
     Message.
       where(booking_id: all_booking_ids, read: false).
       where.not(user: self).count
+  end
+
+  def pro_average_rating
+    return -1 unless pro?
+
+    pro_reviews.sum(&:rating).fdiv(pro_reviews.count).round(1)
   end
 end

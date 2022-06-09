@@ -2,8 +2,7 @@ class Booking < ApplicationRecord
   belongs_to :offer
   belongs_to :user
   has_many :messages, dependent: :destroy
-  has_many :reviews, dependent: :destroy
-
+  has_many :reviews, dependent: :destroy # should be has_one?
 
   after_create :set_price, :set_currency, :set_location
 
