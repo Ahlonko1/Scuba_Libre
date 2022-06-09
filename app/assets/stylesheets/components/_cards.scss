@@ -40,14 +40,14 @@
   h2 {
     font-size: 20px;
     font-weight: bold;
-    color: #3439C9;
+    color: $deep_blue;
     margin: 0;
     margin-top: 15px;
     margin-bottom: 20px;
     font-family: $headers-font;
       &:hover{
       text-decoration: underline;
-      color: #3439C9;}
+      color: $deep_blue;}
   }
   p {
     font-size: 12px;

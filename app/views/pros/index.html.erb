@@ -44,8 +44,8 @@
           <div class="card-infos font-weight-light background-white p-3">
             <div>
                 <h2><%= p.first_name %> <%= p.last_name[0].capitalize%>.</h2>
-                <i class="fas fa-star star-yellow"></i> <%= p.pro_average_rating %>
-                <p><%= truncate p.bio, length: 100 %></p>
+                 <i class="fas fa-star star-yellow"></i> <%= p.pro_average_rating %>
+                <p><%= truncate p.bio, length: 75 %></p>
                 <span class="underline">Read more</span>
                   <div class="d-flex">
                     <p><% p.languages.each do |l| %>
