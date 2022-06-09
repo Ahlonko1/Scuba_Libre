@@ -9,7 +9,22 @@
     <div class="wave">
       <%= image_tag 'wave-02.png', class: 'position-absolute bottom-0 end-0 w-50' %>
     </div>
-    <div class="atcb" style="display:none;"></div>
+    <div class="atcb" style="display:none;">
+        {
+          "name":"Event Title",
+          "startDate":"2022-02-24",
+          "endDate":"2022-02-28",
+          "options":[
+            // add/remove calendars here
+            "Apple",
+            "Google",
+            "iCal",
+            "Microsoft365",
+            "Outlook.com",
+            "Yahoo"
+          ],
+        }
+    </div>
   </div>
   <div>
     <%if !current_user.pro? && DateTime.now > @booking.end_at %>
@@ -25,6 +40,7 @@
         <div class="d-flex justify-content-around" style="width 100%">
           <div class="text-center">
             <p>Category</p>
+            <p>Category:</p>
             <h3><%= @booking.offer.category %></h3>
           </div>
           <div class="divider"></div>
@@ -34,6 +50,7 @@
         <div class="d-flex justify-content-around" style="width 100%">
           <div class="text-center">
             <p>Level</p>
+            <p>Level:</p>
             <h3><%= @booking.offer.level %></h3>
           </div>
           <div class="divider"></div>
@@ -43,6 +60,7 @@
         <div class="d-flex justify-content-around " style="width 100%">
           <div class="text-center">
             <p>Number of dives</p>
+            <p>Number of dives:</p>
             <h3><%= @booking.offer.dives %></h3>
             </div>
           <div class="divider"></div>
@@ -52,6 +70,7 @@
         <div class="d-flex justify-content-around " style="width 100%">
           <div class="text-center">
             <p>Duration</p>
+            <p>Duration:</p>
             <h3><%= @booking.offer.duration %> <%= @booking.offer.unit_duration %></h3>
           </div>
         </div>
