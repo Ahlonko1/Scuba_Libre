@@ -14,6 +14,9 @@ class ProsController < ApplicationController
         lng: pro.longitude
       }
     end
+    if params[:language].present?
+      @pros = User.pro.where("? = ANY (languages)", params[:language])
+    end
   end
 
   def show
