@@ -47,6 +47,20 @@
   }
 }
 
+.btn-accept{
+  font-weight: 600;
+  color: white;
+  background-color: darkgreen;
+  border-color: darkgreen;
+  border-radius: .5rem;
+  margin-top: 20px;
+  width: 80px;
+  &:hover{
+    background-color: #ffe7db;
+    color: darkgreen;
+  }
+}
+
 .btn-cancel{
   font-weight: 600;
   color: $orange;
