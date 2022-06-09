@@ -10,7 +10,7 @@ export default class extends Controller {
     mapboxgl.accessToken = this.apiKeyValue
     this.map = new mapboxgl.Map({
       container: this.element,
-      style: "mapbox://styles/mapbox/streets-v10"
+      style: "mapbox://styles/goyer/cl3w4zbjl001b15ola5yquwg8"
     })
     this.#addMarkersToMap()
     this.#fitMapToMarkers()
