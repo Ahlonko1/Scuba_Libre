@@ -1,6 +1,7 @@
-<div class="banner-show-pro position-relative">
-      <div class="text-center">
-        <h2>Welcome <%= current_user.first_name %> <i class="fa-solid fa-ship"></i></h2>
+<div class="banner-dashboard position-relative">
+      <div class="text-center mt-4">
+        <h2>Welcome <%= current_user.first_name %>  <span class="material-symbols-outlined" style="font-size: 20px;">
+          scuba_diving</span><i class="fa-solid fa-ship"></i></h2>
       </div>
       <div class="col-6 wave">
       <%= image_tag 'wave-02.png', class: 'position-absolute bottom-0 start-0 w-50' %>
@@ -11,19 +12,19 @@
 <% if current_user.pro? %>
   <div class="mt-3">
     <ul class="nav nav-tabs" id="myTab" role="tablist">
-      <li class="nav-item" role="presentation" >
-        <button class="nav-link active" id="calendar-tab" data-bs-toggle="tab" data-bs-target="#calendar" type="button" role="tab" aria-controls="home" aria-selected="true">Calendar</button>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link active" id="booking-tab" data-bs-toggle="tab" data-bs-target="#bookings" type="button" role="tab" aria-controls="bookings" aria-selected="true">Bookings</button>
       </li>
       <li class="nav-item" role="presentation">
-        <button class="nav-link" id="booking-tab" data-bs-toggle="tab" data-bs-target="#bookings" type="button" role="tab" aria-controls="profile" aria-selected="false">Bookings</button>
+        <button class="nav-link" id="calendar-tab" data-bs-toggle="tab" data-bs-target="#calendar" type="button" role="tab" aria-controls="calendar" aria-selected="false">Calendar</button>
       </li>
       <li class="nav-item" role="presentation">
-        <button class="nav-link" id="offer-tab" data-bs-toggle="tab" data-bs-target="#offers" type="button" role="tab" aria-controls="profile" aria-selected="false">Offers</button>
+        <button class="nav-link" id="offer-tab" data-bs-toggle="tab" data-bs-target="#offers" type="button" role="tab" aria-controls="offers" aria-selected="false">Offers</button>
       </li>
     </ul>
     <div class="tab-content" id="myTabContent">
-      <div class="tab-pane fade show active" id="calendar" role="tabpanel" aria-labelledby="calendar-tab"><%= render "pages/calendar" %></div>
-      <div class="tab-pane fade" id="bookings" role="tabpanel" aria-labelledby="bookings-tab"><%= render "bookings/dashboard" %></div>
+      <div class="tab-pane fade show active" id="bookings" role="tabpanel" aria-labelledby="bookings-tab"><%= render "bookings/dashboard" %></div>
+      <div class="tab-pane fade " id="calendar" role="tabpanel" aria-labelledby="calendar-tab"><%= render "pages/calendar" %></div>
       <div class="tab-pane fade" id="offers" role="tabpanel" aria-labelledby="offers-tab"><%= render "pages/offers" %></div>
     </div>
   </div>
