@@ -3,7 +3,14 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 15px;
-  padding :15px;
+  padding:15px ;
+  flex-grow: 1;
+  a {
+    text-decoration: none;
+  }
+}
+
+.cards-home{
   flex-grow: 1;
   a {
     text-decoration: none;
