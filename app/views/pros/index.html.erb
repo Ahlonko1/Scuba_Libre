@@ -57,7 +57,7 @@
     <% end %>
     </div>
 <%# LA MAP %>
-    <div class="map-index" style="width: 75%; height: 500px; position: sticky; top: 200px;"
+    <div class="map-index" style="width: 75%; height: 500px; position: sticky; top: 100px;"
       data-controller="map"
       data-map-markers-value="<%= @markers.to_json %>"
       data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
