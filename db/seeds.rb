@@ -1042,6 +1042,7 @@ User.pro.each do |u|
     booking = Booking.new
     booking.offer = u.offers.sample
     booking.start_at = Date.new(2021,12,01)
+    booking.end_at = Date.new(2021,12,01)
     booking.user = User.all.sample
     booking.status = "Done"
     booking.save!
