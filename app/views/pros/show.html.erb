@@ -39,7 +39,9 @@
       <%= link_to "Course", pro_path(@pro, category:"Course", level: params[:level], query: params[:query]), class: "btn btn-filtre #{"active" if params[:category] == "Course"} "%>
       <%= link_to "Fun Dive", pro_path(@pro, category:"Fun Dive", level: params[:level], query: params[:query]), class: "btn btn-filtre #{"active" if params[:category] == "Fun Dive"}" %>
 
-      <div class="margin mt-2"><%= link_to "Specialty Training", pro_path(@pro, category:"Specialty Training", level: params[:level]), class: "btn btn-filtre #{"active" if params[:category] == "Specialty Training"}" %></div>
+      <%# <div class="margin mt-2"> %>
+      <%= link_to "Specialty Training", pro_path(@pro, category:"Specialty Training", level: params[:level]), class: "btn btn-filtre #{"active" if params[:category] == "Specialty Training"}" %>
+      <%# </div> %>
     </div>
     <p>Level</p>
     <div class="mb-3">
