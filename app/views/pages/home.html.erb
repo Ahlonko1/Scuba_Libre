@@ -5,7 +5,7 @@
     <div class="home">
       <h1>Welcome to Scuba Libre</h1>
       <p>Find a scuba instructor for your next dive!</p>
-      <div class="search col-sm-6 col-md-6 col-lg-4">
+      <div class="search col-sm-12 col-md-12 col-lg-12">
         <%= form_tag pros_path, method: :get, class: "d-flex" do %>
           <%= text_field_tag :query,
               params[:query],
@@ -24,13 +24,13 @@
   <div class="arrow"></div>
 </a>
 <div class="dark fold" id="scroll-position">
-  <div class="container d-flex">
-    <div class="w-50 px-5 border-end">
+  <div class="container row d-flex justify-content-between m-auto">
+    <div class="col-12 col-sm-12 col-md-6 col-lg-6 px-5">
       <h2 class="font-size-28 pb-5 text-center">About us</h2>
       <p class="font-size-18 text-align-justify">Founded by divers and ocean lovers, Scuba Libre allows you to explore the underwater world the easiest way possible.
       Whether you're eager to learn how to dive or you want to perfect your skills, our members will find the best option for you!</p>
     </div>
-    <div class="w-50 px-5">
+    <div class="col-12 col-sm-12 col-md-6 col-lg-6 hidden border-start px-5">
       <h2 class="font-size-28 pb-5 text-center">Scuba Libre and the environment</h2>
       <p class="font-size-18 text-align-justify">Wondering how to protect the ocean? Here are a bunch of straightforward things to do and smart ways to help save the oceans as a diver.
       Since the ocean covers more than 71% of our planet’s surface, it is home to an astounding diversity of species and affects everything from climate regulations to food systems.</p>
@@ -40,14 +40,13 @@
 
 
 
-<div class="fold container pb-1 position-relative" style="margin-bottom: 180px">
+<div class="fold container pb-1 position-relative" >
   <div class="font-size-28 text-center">
-
-    <h2 class="mb-5"> Feeling uninspired ? Here are some recommendations for you </h2>
+    <h2 class="mb-4"> Feeling uninspired ? Here are some recommendations for you </h2>
   </div>
 
-  <div class="cards d-flex px-5 py-3 fold">
-    <%= link_to pros_path(query: 'bali'), class: "card-trip w-25 rounded" do %>
+  <div class="cards-home row d-flex justify-content-evenly fold mb-5">
+    <%= link_to pros_path(query: 'bali'), class: "card-trip col-12 col-sm-12 col-md-3 col-lg-3 m-3" do %>
       <img src="https://res.cloudinary.com/dtohrmf4g/image/upload/v1654246358/sonaal-bangera-RVuj71bsU4Y-unsplash_ihtj9y.jpg" />
       <div class="card-trip-infos">
         <div>
@@ -57,7 +56,7 @@
       </div>
     <% end %>
 
-    <%= link_to pros_path(query: 'belize'), class: "card-trip w-25 rounded" do %>
+    <%= link_to pros_path(query: 'belize'), class: "card-trip col-12 col-sm-12 col-md-3 col-lg-3 m-3" do %>
       <img src="https://res.cloudinary.com/dtohrmf4g/image/upload/v1654246658/david-reynolds--eMN9QKB5bE-unsplash_glwpns.jpg" />
       <div class="card-trip-infos">
         <div>
@@ -67,7 +66,7 @@
       </div>
     <% end %>
 
-    <%= link_to pros_path(query: 'cozumel'), class: "card-trip w-25 rounded" do %>
+    <%= link_to pros_path(query: 'cozumel'), class: "card-trip col-12 col-sm-12 col-md-3 col-lg-3 m-3" do %>
       <img src="https://res.cloudinary.com/dtohrmf4g/image/upload/v1654246509/malek-bee-Zw_eV19BC58-unsplash_wsile0.jpg" />
         <div class="card-trip-infos">
           <div>
@@ -79,7 +78,7 @@
 
 
 
-    <%= link_to pros_path(query: 'cancun'), class: "card-trip w-25 rounded" do %>
+    <%= link_to pros_path(query: 'cancun'), class: "card-trip col-12 col-sm-12 col-md-3 col-lg-3 m-3" do %>
       <img src="https://res.cloudinary.com/dtohrmf4g/image/upload/v1654174745/cenote_nma8pr.jpg" />
       <div class="card-trip-infos">
         <div>
@@ -87,12 +86,10 @@
           <p>Dive in the cenotes</p>
         </div>
       </div>
-    </div>
-  <% end %>
+    <% end %>
 
 
-  <div class="cards d-flex px-5  py-3 fold">
-    <%= link_to pros_path(query: 'baja california'), class: "card-trip w-25 rounded" do %>
+    <%= link_to pros_path(query: 'baja california'), class: "card-trip col-12 col-sm-12 col-md-4 col-lg-3 m-3" do %>
         <img src="https://res.cloudinary.com/dtohrmf4g/image/upload/v1654245062/photodiver_gnf3nr.jpg" />
         <div class="card-trip-infos">
           <div>
@@ -102,7 +99,7 @@
       </div>
     <% end %>
 
-    <%= link_to pros_path(query: 'malta'), class: "card-trip w-25 rounded" do %>
+    <%= link_to pros_path(query: 'malta'), class: "card-trip col-12 col-sm-12 col-md-4 col-lg-3 m-3" do %>
         <img src="https://res.cloudinary.com/dtohrmf4g/image/upload/v1654200702/shifaaz-shamoon-t4a2jEhg1n8-unsplash_tvczol.jpg" />
         <div class="card-trip-infos">
           <div>
@@ -112,7 +109,7 @@
         </div>
     <% end %>
 
-    <%= link_to pros_path(query: 'norway'), class: "card-trip w-25 rounded" do %>
+    <%= link_to pros_path(query: 'norway'), class: "card-trip col-12 col-sm-12 col-md-4 col-lg-3 m-3" do %>
         <img src="https://res.cloudinary.com/dtohrmf4g/image/upload/v1654238708/tech_diving_mgbnnc.jpg" />
         <div class="card-trip-infos">
           <div>
@@ -122,7 +119,7 @@
         </div>
     <% end %>
 
-    <%= link_to pros_path(query: 'honduras'), class: "card-trip w-25 rounded" do %>
+    <%= link_to pros_path(query: 'honduras'), class: "card-trip col-12 col-sm-12 col-md-4 col-lg-3 m-3" do %>
       <img src="https://res.cloudinary.com/dtohrmf4g/image/upload/v1654238858/beach_dive_dc7juf.jpg" />
       <div class="card-trip-infos">
         <div>
