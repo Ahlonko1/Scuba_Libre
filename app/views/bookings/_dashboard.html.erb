@@ -92,7 +92,9 @@
               <% end %>
           </div>
         <% end %>
-
+      </div>
+      <h4 class="mx-3">ARCHIVE</h4>
+        <div class="cards mx-3">
         <% @bookings_owner.where("status != 'pending'").each do |b| %>
 
           <div class="card-pro p-4" style="box-shadow:0 .25em 1em 0 #00000020, 0 .1em .2em 0 #00000020;background-color:#ffe7db">
@@ -136,7 +138,7 @@
               <% end %>
           </div>
         <% end %>
-      </div>
+        </div>
     <% end %>
   </div>
 </div>
