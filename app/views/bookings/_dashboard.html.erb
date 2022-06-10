@@ -115,8 +115,8 @@
                 </div>
                 <div >
                   <%= link_to "Deny", denied_booking_path(b), data: {turbo_method: :patch, turbo_confirm: "Are you sure?"}, class: "btn btn-deny" %>
-                  <%= link_to "Accept", accepted_booking_path(b), data: {turbo_method: :patch, turbo_confirm: "Are you sure?"}, class: "btn btn-accept" %>
                   <%= link_to "Details", booking_path(b), class: "btn btn-variant" %>
+                  <%= link_to "Accept", accepted_booking_path(b), data: {turbo_method: :patch, turbo_confirm: "Are you sure?"}, class: "btn btn-accept" %>
                 </div>
               <% end %>
               <% if b.status == "cancelled"  %>
