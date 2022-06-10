@@ -12,19 +12,19 @@
     <% end %>
 
     </div>
-    <div class="d-flex mt-4 justify-content-center">
-      <%= form_tag pros_path(query: params[:query]), method: :get, class: "d-flex justify-content-between" do %>
-        <%= select_tag :language,
-          options_for_select(User.pro.pluck(:languages).flatten.uniq, (params[:language])),
-          class: "dropdown",
-          placeholder: "language"
-        %>
-        <button name="button" type="submit" class="">
-            <i class="fa-solid fa-filter"></i>
-        </button>
+    <%# <div class="d-flex mt-4 justify-content-center"> %>
+      <%# <%= form_tag pros_path(query: params[:query]), method: :get, class: "d-flex justify-content-between" do %>
+        <%# <%= select_tag :language, %>
+          <%# options_for_select(User.pro.pluck(:languages).flatten.uniq, (params[:language])), %>
+          <%# class: "dropdown", %>
+          <%# placeholder: "language" %>
 
-      <% end %>
-    </div>
+        <%# <button name="button" type="submit" class=""> %>
+            <%# <i class="fa-solid fa-filter"></i> %>
+        <%# </button> %>
+
+      <%# <% end %>
+    <%# </div> %>
   </div>
 </div>
 <%# FILTRES + CARDS PROS %>
